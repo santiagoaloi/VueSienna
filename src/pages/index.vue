@@ -1,19 +1,12 @@
 <template>
-  <v-container class="">
-    <v-card class="card-border mx-auto blue-lighten-1" width="800">
-      <h1>Hello Word</h1>
-    </v-card>
-
-    <base-split>
-      <HomeTitle />
-      <HomeSubtitle />
-    </base-split>
-  </v-container>
+  <base-split src="homebg.svg">
+    <HomeTitle />
+    <HomeSubtitle />
+  </base-split>
 </template>
 
 <script setup>
-import BaseSplit from "../components/BaseSplit.vue";
 defineOptions({
-  name: "YourComopnentName",
-});
+  name: 'YourComopnentName',
+})
 </script>
