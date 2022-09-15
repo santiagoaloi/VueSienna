@@ -14,6 +14,9 @@ export default {
           mdiSvg,
         },
       },
+      theme: {
+        defaultTheme: 'dark'
+      }
     })
     app.use(v)
   },
