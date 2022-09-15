@@ -14,9 +14,16 @@ export default {
           mdiSvg,
         },
       },
+
+      defaults: {
+        // Override the auto-injected text variant.
+        VToolbar: {
+          VBtn: { variant: 'elevated' },
+        },
+      },
       theme: {
-        defaultTheme: 'dark'
-      }
+        defaultTheme: 'dark',
+      },
     })
     app.use(v)
   },

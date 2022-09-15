@@ -1,11 +1,11 @@
-{
+  {
   "name": "v-test",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "serve": "vite preview",
-    "build": "vite build",
-    "build:preview": "vite build && vite preview",
+    "build": "vite build --port 7000",
+    "build:preview": "vite build && vite preview --open",
     "dev": "vite --port 8000",
     "preview": "vite preview"
   },
