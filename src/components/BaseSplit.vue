@@ -2,7 +2,6 @@
   <v-row no-gutters class="fill-height">
     <v-col :order="colOrder" :md="remainingCols" cols="12">
       <v-img :src="src" height="100%" cover />
-      <!-- <MyImage eager :src="src" /> -->
     </v-col>
     <v-col class="d-flex" :md="col" cols="12">
       <div class="pa-10 align-start justify-center d-flex flex-column">
