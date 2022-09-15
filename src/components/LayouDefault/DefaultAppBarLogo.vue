@@ -4,8 +4,9 @@
       src="avatar.png"
       height="40"
       width="40"
-      class="ml-7 shrink"
+      class="ml-10 shrink"
       transition="fab-transition"
     />
   </div>
+  /homebg.svg
 </template>
