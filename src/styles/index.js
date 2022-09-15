@@ -1,2 +1,2 @@
-import './myCard.css'
 import './palette.css'
+import './theme.css'
