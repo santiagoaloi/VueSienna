@@ -4,12 +4,15 @@
       <h1>Hello Word</h1>
     </v-card>
 
-    <HomeTitle />
-    <HomeSubtitle />
+    <base-split>
+      <HomeTitle />
+      <HomeSubtitle />
+    </base-split>
   </v-container>
 </template>
 
 <script setup>
+import BaseSplit from "../components/BaseSplit.vue";
 defineOptions({
   name: "YourComopnentName",
 });
