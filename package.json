@@ -1,0 +1,32 @@
+{
+  "name": "v-test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vite preview",
+    "build": "vite build",
+    "build:preview": "vite build && vite preview",
+    "dev": "vite --port 8000",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "pinia": "^2.0.22",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.5",
+    "vuetify": "npm:@vuetify/nightly@next"
+  },
+  "devDependencies": {
+    "@mdi/js": "^7.0.96",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "sass": "^1.54.9",
+    "unplugin-auto-import": "^0.11.2",
+    "unplugin-vue-components": "^0.22.7",
+    "unplugin-vue-macros": "^0.11.2",
+    "vite": "^3.1.0",
+    "vite-plugin-pages": "^0.26.0",
+    "vite-plugin-vue-layouts": "^0.7.0",
+    "vite-plugin-vuetify": "^1.0.0-alpha.12",
+    "vue-cli-plugin-vuetify": "~2.5.8"
+  },
+  "type": "module"
+}
