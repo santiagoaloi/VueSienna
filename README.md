@@ -26,6 +26,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 ### Plugins
 
+- [Vue Macros](https://github.com/sxzz/unplugin-vue-macros)
 - [Vue Router](https://github.com/vuejs/router)
   - [`vite-plugin-pages`](https://github.com/hannoeru/vite-plugin-pages) - file system based routing
   - [`vite-plugin-vue-layouts`](https://github.com/JohnCampionJr/vite-plugin-vue-layouts) - layouts for pages
