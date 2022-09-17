@@ -7,6 +7,8 @@ import VueMacros from 'unplugin-vue-macros/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 
+// Application config
+import autoGenerateRoutes from './src/utils/autoGenerateRoutes'
 import vuetify from 'vite-plugin-vuetify'
 
 // https://vitejs.dev/config/
@@ -52,6 +54,16 @@ export default defineConfig({
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue'],
+
+      dirs: [
+        { dir: 'src/pages', baseRoute: '/' },
+        { dir: 'src/pages/protected/**/', baseRoute: '' },
+        { dir: 'src/pages/public/**/', baseRoute: '' },
+      ],
+
+      // Route guards are managed in @/modules/routeguards.
+      // Metadata injection is done @/utils/autoGenerateRoutes.
+      onRoutesGenerated: autoGenerateRoutes,
     }),
 
     vuetify({ autoImport: true, styles: { configFile: 'src/settings.scss' } }),
