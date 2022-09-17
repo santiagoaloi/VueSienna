@@ -5,7 +5,6 @@
   </article>
 </template>
 
-<script setup></script>
 <style scoped>
 article {
   background: linear-gradient(to right, rgb(203, 211, 219), rgb(109, 118, 161));
