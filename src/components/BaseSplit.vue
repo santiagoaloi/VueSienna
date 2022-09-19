@@ -1,12 +1,17 @@
 <template>
-  <v-row no-gutters class="fill-height">
-    <v-col :order="colOrder" :md="remainingCols" cols="12">
+  <v-row class="fill-height" align="center" no-gutters>
+    <v-col
+      class="d-lg-flex d-none fill-height"
+      :order="colOrder"
+      :md="remainingCols"
+      cols="12"
+    >
       <v-img eager :transition="false" :src="src" height="100%" cover />
     </v-col>
-    <v-col class="d-flex" :md="col" cols="12">
-      <div class="pa-10 align-start justify-center d-flex flex-column">
-        <slot></slot>
-      </div>
+    <v-col :md="mdAndDown ? 12 : col" cols="12">
+      <v-container fluid class="px-15">
+        <slot />
+      </v-container>
     </v-col>
   </v-row>
 </template>
@@ -27,11 +32,11 @@ const props = defineProps({
 
   col: {
     type: [Number, String],
-    default: 5,
+    default: 6,
   },
 })
 
-const { smAndDown } = useDisplay()
+const { smAndDown, mdAndDown } = useDisplay()
 
 const colOrder = computed(() => {
   return !props.right || !smAndDown ? '12' : '-1'
