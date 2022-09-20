@@ -15,13 +15,13 @@ import vuetify from 'vite-plugin-vuetify'
 export default defineConfig({
   resolve: {
     alias: {
-      '@/': `${path.resolve(__dirname, 'src')}/`,
+      '@': path.resolve(__dirname, './src'),
     },
   },
 
-  optimizeDeps: {
-    include: ['vue', 'vue-router'],
-  },
+  // optimizeDeps: {
+  //   include: ['vue', 'vue-router'],
+  // },
 
   plugins: [
     // https://github.com/vitejs/vite/tree/main/packages/plugin-vue
@@ -32,7 +32,7 @@ export default defineConfig({
     // https://github.com/sxzz/unplugin-vue-macros
     VueMacros(),
 
-    // https://github.com/dishait/vite-auto-import-resolvers
+    // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: ['vue', 'vue-router', 'vue/macros'],
       dirs: ['src/composables', 'src/store'],
