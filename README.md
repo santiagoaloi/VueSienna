@@ -11,6 +11,21 @@
 - 🤙🏻 [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) enabled
 - 📥 [APIs auto importing](https://github.com/antfu/unplugin-auto-import) - use Composition API and others directly
 
+
+## CSS shortcuts
+### Done with SCSS extend
+
+```scss
+@use 'vuetify';
+
+.buttonClass {
+  @extend .text-white, .mx-2
+}
+```
+```html
+<v-btn class="buttonClass"> ... </v-btn>
+```
+
 ## Pre-packed
 
 ### UI Frameworks
