@@ -26,8 +26,45 @@
 <v-btn class="buttonClass"> ... </v-btn>
 ```
 
-## Pre-packed
+## Auto import plugins
+### main.js example
 
+```js
+import { createApp as instance } from 'vue'
+import CoreApp from '@/App.vue'
+
+// Auto import any plugins in @/plugins
+import autoImportPlugins from '@/utils/autoImportPlugins'
+
+const Vue = instance(CoreApp)
+autoImportPlugins(Vue)
+Vue.mount('#app')
+```
+
+### autoImportPlugins.js example
+```js
+export default function (app) {
+  Object.values(import.meta.globEager('@/plugins/*.js')).map(i =>
+    i.default.install(app)
+  )
+}
+```
+
+### Plugin module example
+```js
+// Vuetify
+import { createVuetify } from 'vuetify'
+
+export default {
+  install: app => {
+    const v = createVuetify()
+    app.use(v)
+  },
+}
+```
+
+
+## Pre-packed
 ### UI Frameworks
 
 - [Vuetify 3, Beta](https://next.vuetify.com ) - Material Design Framework
