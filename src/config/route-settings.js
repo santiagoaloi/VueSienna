@@ -15,13 +15,13 @@ function routeModifier() {
         requiresAuth: true,
       },
     },
-    {
-      keyword: 'public',
-      meta: {
-        layout: 'public',
-        requiresAuth: false,
-      },
-    },
+    // {
+    //   keyword: 'public',
+    //   meta: {
+    //     layout: 'default',
+    //     requiresAuth: false,
+    //   },
+    // },
   ]
 }
 

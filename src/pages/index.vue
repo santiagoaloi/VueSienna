@@ -1,5 +1,5 @@
 <template>
-  <base-split src="homebg.svg">
+  <base-split src="bg1.svg">
     <HomeTitle />
     <HomeSubtitle />
   </base-split>
@@ -7,6 +7,6 @@
 
 <script setup>
 defineOptions({
-  name: "YourComopnentName",
-});
+  name: 'Home',
+})
 </script>

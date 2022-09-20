@@ -1,2 +1,2 @@
-import './palette.css'
 import './theme.css'
+import './scss/theme.scss'

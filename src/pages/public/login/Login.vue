@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <h1>Login</h1>
-  </div>
+  <base-split src="bg2.svg">
+    <LoginButtons />
+  </base-split>
 </template>
 
 <script setup>
 defineOptions({
-  name: 'LoginPage',
+  name: 'Login',
 })
 </script>
