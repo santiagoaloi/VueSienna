@@ -1,12 +1,12 @@
 <template>
-  <v-row class="fill-height" align="center" no-gutters>
+  <v-row v-bind="rowPreset">
     <v-col
-      class="d-lg-flex d-none fill-height"
+      class="split-col-img"
       :order="colOrder"
       :md="remainingCols"
       cols="12"
     >
-      <v-img eager :transition="false" :src="src" height="100%" cover />
+      <v-img :src="src" v-bind="imgPreset" />
     </v-col>
     <v-col :md="mdAndDown ? 12 : col" cols="12">
       <v-container fluid class="px-15">
@@ -18,6 +18,8 @@
 
 <script setup>
 import { useDisplay } from 'vuetify'
+import { imgPreset } from '@/components/presets/full-size-img'
+import { rowPreset } from '@/components/presets/full-size-row'
 
 const props = defineProps({
   src: {
