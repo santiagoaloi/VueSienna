@@ -2,9 +2,7 @@ import { routeModifier } from '../../src/config/route-settings'
 
 export default routes => {
   const routeConfig = routeModifier()
-  const allRoutes = JSON.parse(JSON.stringify(routes))
-
-  allRoutes.forEach(route => {
+  routes.forEach(route => {
     // Injet meta  defined in @/config/route-settings.
     const { component } = route
     for (const rule of routeConfig) {
@@ -15,6 +13,5 @@ export default routes => {
       }
     }
   })
-  //Paresed routes with meta injected.
-  return allRoutes
+  return routes
 }

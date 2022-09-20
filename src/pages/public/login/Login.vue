@@ -1,5 +1,5 @@
 <template>
-  <base-split src="bg2.svg">
+  <base-split col="5" src="bg2.svg">
     <LoginButtons />
   </base-split>
 </template>
