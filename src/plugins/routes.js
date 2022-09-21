@@ -5,7 +5,7 @@ const routes = setupLayouts(generatedRoutes)
 
 export default {
   install: app => {
-    const router = createRouter({
+    let router = createRouter({
       history: createWebHistory(),
       routes: [...routes],
     })

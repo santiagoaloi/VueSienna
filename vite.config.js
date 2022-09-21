@@ -7,9 +7,14 @@ import VueMacros from 'unplugin-vue-macros/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 
+import progress from 'vite-plugin-progress'
+import removeConsole from 'vite-plugin-remove-console'
+
 // Application config
 import autoGenerateRoutes from './src/utils/autoGenerateRoutes'
 import vuetify from 'vite-plugin-vuetify'
+
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,9 +24,13 @@ export default defineConfig({
     },
   },
 
-  // optimizeDeps: {
-  //   include: ['vue', 'vue-router'],
-  // },
+  server: {
+    port: 8000,
+  },
+  preview: {
+    port: 8089,
+    open: true,
+  },
 
   plugins: [
     // https://github.com/vitejs/vite/tree/main/packages/plugin-vue
@@ -29,15 +38,29 @@ export default defineConfig({
       reactivityTransform: true,
     }),
 
+    vueJsx(),
+
+    //https://github.com/jeddygong/vite-plugin-progress
+    progress(),
+
+    //https://github.com/xiaoxian521/vite-plugin-remove-console
+    removeConsole(),
+
     // https://github.com/sxzz/unplugin-vue-macros
     VueMacros(),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      imports: ['vue', 'vue-router', 'vue/macros'],
-      dirs: ['src/composables', 'src/store'],
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+      ],
+
+      imports: ['vue', 'vue-router', 'vue/macros', 'pinia'],
+      // dirs: ['src/composables/**', 'src/store/**', 'src/plugins/**', 'src/**'],
       vueTemplate: true,
-      dts: false,
+      // dts: false,
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
@@ -45,8 +68,12 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-vue-components
     Components({
-      extensions: ['vue'],
-      include: [/\.vue$/, /\.vue\?vue/],
+      extensions: ['vue', 'jsx', 'js'],
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+      ],
       dts: false,
       deep: true,
     }),

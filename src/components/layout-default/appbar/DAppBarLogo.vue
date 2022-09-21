@@ -5,8 +5,8 @@
         eager
         :transition="false"
         src="avatar.png"
-        height="40"
-        width="40"
+        height="45"
+        width="45"
         class="ml-10 shrink"
       />
     </router-link>

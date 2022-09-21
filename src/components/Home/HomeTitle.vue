@@ -1,6 +1,8 @@
 <template>
   <article>
-    <h2 class="main-title">Make the best app you've ever made.</h2>
+    <h2 class="main-title font-weight-black">
+      Make the best app you've ever made.
+    </h2>
     <!-- <v-btn color="red" class="mt-10">hellos</v-btn> -->
   </article>
 </template>
@@ -11,7 +13,6 @@ article {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 600;
   line-height: 1.1;
 }
 .main-title {

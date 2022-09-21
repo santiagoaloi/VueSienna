@@ -1,12 +1,11 @@
 {
-  "name": "v-test",
+  "name": "vue-sienna",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "serve": "vite preview",
-    "build": "vite build --port 7000",
-    "build:preview": "vite build && vite preview --open",
-    "dev": "vite --port 8000",
+    "dev": "vite",
+    "build": "vite build",
+    "build:preview": "vite build && vite preview",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -18,12 +17,15 @@
   "devDependencies": {
     "@mdi/js": "^7.0.96",
     "@vitejs/plugin-vue": "^3.1.0",
+    "@vitejs/plugin-vue-jsx": "^2.0.1",
     "sass": "^1.54.9",
     "unplugin-auto-import": "^0.11.2",
     "unplugin-vue-components": "^0.22.7",
     "unplugin-vue-macros": "^0.11.2",
     "vite": "^3.1.0",
     "vite-plugin-pages": "^0.26.0",
+    "vite-plugin-progress": "^0.0.4",
+    "vite-plugin-remove-console": "^1.1.0",
     "vite-plugin-vue-layouts": "^0.7.0",
     "vite-plugin-vuetify": "^1.0.0-alpha.12"
   },
