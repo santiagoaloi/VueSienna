@@ -57,10 +57,10 @@ export default defineConfig({
         /\.vue\?vue/, // .vue
       ],
 
-      imports: ['vue', 'vue-router', 'vue/macros', 'pinia'],
+      imports: ['vue', 'vue-router', 'vue/macros'],
       // dirs: ['src/composables/**', 'src/store/**', 'src/plugins/**', 'src/**'],
       vueTemplate: true,
-      // dts: false,
+      dts: true,
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
@@ -74,7 +74,7 @@ export default defineConfig({
         /\.vue$/,
         /\.vue\?vue/, // .vue
       ],
-      dts: false,
+      dts: true,
       deep: true,
     }),
 
@@ -84,7 +84,7 @@ export default defineConfig({
 
       dirs: [
         { dir: 'src/pages', baseRoute: '/' },
-        { dir: 'src/pages/protected/**/', baseRoute: '' },
+        { dir: 'src/pages/private/**/', baseRoute: '' },
         { dir: 'src/pages/public/**/', baseRoute: '' },
       ],
 
