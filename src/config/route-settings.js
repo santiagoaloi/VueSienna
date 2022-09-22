@@ -9,19 +9,20 @@
 function routeModifier() {
   return [
     {
-      keyword: 'private',
+      keyword: 'public',
       meta: {
-        layout: 'secure',
+        layout: 'default',
         requiresAuth: true,
       },
     },
-    // {
-    //   keyword: 'public',
-    //   meta: {
-    //     layout: 'default',
-    //     requiresAuth: false,
-    //   },
-    // },
+
+    {
+      keyword: 'private',
+      meta: {
+        layout: 'private',
+        requiresAuth: true,
+      },
+    },
   ]
 }
 
