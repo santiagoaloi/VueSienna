@@ -1,6 +1,8 @@
 <template>
   <v-app-bar color="transparent">
-    <SkriptagTitle></SkriptagTitle>
+    <div class="d-inline-block ml-10">
+      <SkriptagTitle></SkriptagTitle>
+    </div>
     <v-spacer> </v-spacer>
     <DPlaygroundBtn class="mr-2" />
     <DDashboardBtn class="mr-2" />

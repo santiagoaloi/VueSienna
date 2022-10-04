@@ -10,7 +10,7 @@ declare global {
   const $toRef: typeof import('vue/macros')['$toRef']
   const EffectScope: typeof import('vue')['EffectScope']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
-  const autoImportPlugins: typeof import('./src/utils/autoImportPlugins.js')['default']
+  const autoImportModules: typeof import('./src/utils/autoImportModules.js')['default']
   const autoInjectRouteMeta: typeof import('./src/utils/autoInjectRouteMeta.js')['default']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
@@ -93,7 +93,7 @@ declare module '@vue/runtime-core' {
     readonly $toRef: UnwrapRef<typeof import('vue/macros')['$toRef']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
-    readonly autoImportPlugins: UnwrapRef<typeof import('./src/utils/autoImportPlugins.js')['default']>
+    readonly autoImportModules: UnwrapRef<typeof import('./src/utils/autoImportModules.js')['default']>
     readonly autoInjectRouteMeta: UnwrapRef<typeof import('./src/utils/autoInjectRouteMeta.js')['default']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>

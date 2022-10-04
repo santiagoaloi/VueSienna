@@ -1,6 +1,6 @@
 <template>
   <h2 class="main-title font-weight-black">
-    Make the best app you've ever made.
+    <slot></slot>
   </h2>
 </template>
 

@@ -1,20 +1,18 @@
 <template>
-  <div class="d-inline-block ml-10">
-    <component
-      @click="$router.push('/')"
-      :is="size"
-      style="color: #adbac7 !important; cursor: pointer"
-      class="ignore-font"
-    >
-      <slot name="text" /> Skriptag
-      <span
-        :class="small ? 'ml-n8' : large ? 'ml-n16' : 'ml-n10'"
-        class="logo-icon-color"
-        >ˆ
-      </span>
-      <span class="ml-6"> banking</span>
-    </component>
-  </div>
+  <component
+    @click="$router.push('/')"
+    :is="size"
+    style="color: #adbac7 !important; cursor: pointer"
+    class="ignore-font"
+  >
+    <slot name="text" /> Skriptag
+    <span
+      :class="small ? 'ml-n8' : large ? 'ml-n16' : 'ml-n10'"
+      class="logo-icon-color"
+      >ˆ
+    </span>
+    <span class="ml-6"> banking</span>
+  </component>
 </template>
 
 <script setup>

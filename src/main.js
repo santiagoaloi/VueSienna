@@ -6,8 +6,8 @@ import { useAuthStore } from '@@/authenticationStore'
 let V
 firebaseAuth.onAuthStateChanged(async authenticatedUser => {
   if (!V) {
-    V = createApp(Root, {})
-    autoImportPlugins(V)
+    V = createApp(Root)
+    autoImportModules(V)
     V.mount('#app')
     const auth = useAuthStore()
     auth.user = authenticatedUser

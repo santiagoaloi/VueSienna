@@ -9,11 +9,10 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
   const isAuth = await getUserState()
-
   const atLoginAndAuthenticated = to.matched.some(
-    n => n.name === 'login' && isAuth
+    r => r.name === 'login' && isAuth
   )
-  const requiresAuth = to.matched.some(m => m.meta.requiresAuth)
+  const requiresAuth = to.matched.some(r => r.meta.requiresAuth)
 
   // If the route requires the user to be authenticated and it is not,
   // route to the login page.
@@ -25,7 +24,7 @@ router.beforeEach(async (to, from, next) => {
   // If the user navigates to the login page and it's already authenticated,
   // route to the profile page instead.
   if (atLoginAndAuthenticated) {
-    next({ name: 'dashboard' })
+    next({ path: '/account/overview' })
     return
   }
 

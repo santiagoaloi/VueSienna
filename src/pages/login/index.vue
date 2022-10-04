@@ -1,5 +1,8 @@
 <template>
-  <splitView col="4" src="bg2.svg">
+  <splitView col="4" src="bg5.svg">
+    <skriptag-title v-once class="mb-8" small>
+      <template #text> Sign In to </template>
+    </skriptag-title>
     <LoginButtons />
   </splitView>
 </template>

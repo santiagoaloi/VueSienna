@@ -3,7 +3,7 @@
     <v-list-item
       class="text-teal-lighten-4"
       title="Account Balance"
-      subtitle="$ 38.238,21"
+      subtitle="$ 0"
     >
     </v-list-item>
   </v-list>
