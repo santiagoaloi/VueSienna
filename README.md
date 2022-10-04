@@ -1,4 +1,4 @@
-# Vue 3 + Vite + Vuetify
+# Vue 3 + Vite + Vuetify + Firebase
 
 ## Features
 
@@ -26,28 +26,34 @@
 <v-btn class="buttonClass"> ... </v-btn>
 ```
 
-## Auto import plugins
+## Auto import plugin modules.
+## Verifiy firebase authentication before Vue is initialized.
 ### main.js example
 
 ```js
-import { createApp as instance } from 'vue'
-import CoreApp from '@/App.vue'
+import '@/styles'
+import Root from '@/App.vue'
+import { auth as firebaseAuth } from '@/firebase'
+import { useAuthStore } from '@@/authenticationStore'
 
-// Auto import any plugins in @/plugins
-import autoImportPlugins from '@/utils/autoImportPlugins'
-
-const Vue = instance(CoreApp)
-autoImportPlugins(Vue)
-Vue.mount('#app')
+let V
+firebaseAuth.onAuthStateChanged(async authenticatedUser => {
+  if (!V) {
+    V = createApp(Root)
+    autoImportModules(V)
+    V.mount('#app')
+    const auth = useAuthStore()
+    auth.user = authenticatedUser
+  }
+})
 ```
 
 ### autoImportPlugins.js example
 ```js
-export default function (app) {
-  Object.values(import.meta.globEager('@/plugins/*.js')).map(i =>
-    i.default.install(app)
-  )
+export default app => {
+  Object.values(import.meta.globEager('@@@/*.js')).map(m => m.install(app))
 }
+
 ```
 
 ### Plugin module example
