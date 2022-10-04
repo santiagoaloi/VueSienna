@@ -9,7 +9,7 @@
       elevation="2"
       color="#2e3640"
     >
-      <h4 class="pl-1">includes the following benefits</h4>
+      <h4 class="pl-1">This package Includes the following benefits</h4>
       <v-list
         :items="[
           {
@@ -45,7 +45,7 @@
       >
       </v-list>
 
-      <v-checkbox v-model="terms" label="Accepts terms and conditions.">
+      <v-checkbox v-model="terms" label="Accept terms and conditions.">
       </v-checkbox>
 
       <div>

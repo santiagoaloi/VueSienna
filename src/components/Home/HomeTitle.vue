@@ -2,7 +2,6 @@
   <h2 class="main-title font-weight-black">
     Make the best app you've ever made.
   </h2>
-  <!-- <v-btn color="red" class="mt-10">hellos</v-btn> -->
 </template>
 
 <style>

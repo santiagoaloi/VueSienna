@@ -19,7 +19,7 @@
       color="#2e3640"
       class="mt-n2"
     >
-      You don't have any accounts registered.
+      You don't have any account plans assigned.
       <v-btn color="#22272e" size="small" class="ml-4"
         >Create new account</v-btn
       >

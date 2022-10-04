@@ -11,8 +11,6 @@ import removeConsole from 'vite-plugin-remove-console'
 
 import { default as injectMetadata } from './src/utils/autoInjectRouteMeta'
 
-console.log('ℹ️ importing "vite.config.imports"')
-
 export {
   resolve,
   defineConfig,

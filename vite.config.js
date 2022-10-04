@@ -10,6 +10,10 @@ export default use.defineConfig(async () => {
           find: '@@',
           replacement: use.resolve(__dirname, './src/stores/modules'),
         },
+        {
+          find: '@@@',
+          replacement: use.resolve(__dirname, './src/modules'),
+        },
       ],
     },
 

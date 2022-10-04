@@ -1,4 +1,4 @@
-import { router } from '@/modules/routes'
+import { router } from '@@@/routes'
 
 export const install = app => {
   const pinia = createPinia()

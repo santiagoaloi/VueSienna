@@ -5,13 +5,13 @@ import { auth, db } from '@/firebase'
 export const useAuthStore = defineStore('authentication', {
   // Data
   state: () => ({
-    user: {},
+    user: null,
   }),
 
   getters: {
     //Computed
     isLoggedIn(state) {
-      return state.user
+      return state.user !== null
     },
 
     userName(state) {
@@ -29,15 +29,15 @@ export const useAuthStore = defineStore('authentication', {
 
   actions: {
     async logout() {
-      // Singout and route to homepage
+      // Singout and route to login.
       signOut(auth)
-      this.user = {}
+      this.user = null
       this.router.push('/login')
     },
 
     //Methods
     async addUserToUsersCollectionGgoogle(user) {
-      // Adds a document in a  firestore collection.
+      // Adds a document in a firestore collection.
       // doc (Firestore instance, collection name, collection id).
       const userDocRef = doc(db, 'users', user.uid)
 
@@ -98,9 +98,12 @@ export const useAuthStore = defineStore('authentication', {
             return
           }
         }
+
+        //Set user data to state management.
         this.user = userCredential.user
         return true
       } catch ({ ...error }) {
+        //Make sure user doesn't exists with that email.
         if (error.code === 'auth/account-exists-with-different-credential') {
           alert('User already exists...')
         }
@@ -109,6 +112,5 @@ export const useAuthStore = defineStore('authentication', {
   },
 })
 
-if (import.meta.hot) {
+if (import.meta.hot)
   import.meta.hot.accept(acceptHMRUpdate(useAuthStore, import.meta.hot))
-}
