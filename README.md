@@ -48,7 +48,7 @@ firebaseAuth.onAuthStateChanged(async authenticatedUser => {
 })
 ```
 
-### autoImportPlugins.js example
+### autoImportModules.js
 ```js
 export default app => {
   Object.values(import.meta.globEager('@@@/*.js')).map(m => m.install(app))
@@ -56,9 +56,8 @@ export default app => {
 
 ```
 
-### Plugin module example
+### Vuetify Plugin module example
 ```js
-// Vuetify
 import { createVuetify } from 'vuetify'
 
 export default {
@@ -69,6 +68,21 @@ export default {
 }
 ```
 
+### Pinia Plugin module example with global router
+```js
+import { router } from '@@@/routes'
+
+export const install = app => {
+  const pinia = createPinia()
+
+  pinia.use(({ store }) => {
+    store.router = markRaw(router)
+  })
+
+  app.use(pinia)
+}
+
+```
 
 ## Pre-packed
 ### UI Frameworks
