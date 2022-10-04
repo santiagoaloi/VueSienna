@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+
+  // Roots can do anything.
+  // Checking for root means one document read per rule check.
+  match /{document=**} {
+    allow read, write: if
+    get(/databases/$(database)/documents/users/$(request.auth.uid)).data.roles.hasAny(['root'])
+  }
+
+  // Grants a user (write,read) access to a node matching their user ID
+  // writes are allowed if no new fields are added.
+   
+  match /users/{uid}/{allPaths=**}  {
+    allow read: if request.auth.uid == uid; 
+    allow write:  if request.auth.uid == uid
+    //&& (request.resource.data.keys() == resource.data.keys()) 
+  }
+
+}}

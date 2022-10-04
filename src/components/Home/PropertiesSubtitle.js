@@ -1,4 +1,4 @@
 const settings = {
-  class: 'subtitle pt-5 font-weight-thin',
-};
-export { settings };
+  class: 'subtitle pt-5',
+}
+export { settings }

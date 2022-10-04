@@ -1,5 +1,5 @@
-export default function (app) {
-  Object.values(import.meta.globEager('@/plugins/*.js')).map(i =>
-    i.default.install(app)
+export default app => {
+  Object.values(import.meta.globEager('@/modules/*.js')).map(module =>
+    module.install(app)
   )
 }

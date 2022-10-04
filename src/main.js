@@ -1,12 +1,16 @@
 // Auto import any styles in @/styles
 import '@/styles'
+import { auth as firebaseAuth } from '@/firebase'
+import { useAuthStore } from '@@/authenticationStore'
+import ROOT from '@/App.vue'
 
-// import { createApp as instance } from 'vue'
-import CoreApp from '@/App'
-
-// Auto import any plugins in @/plugins
-import autoImportPlugins from '@/utils/autoImportPlugins'
-
-const Vue = createApp(CoreApp)
-autoImportPlugins(Vue)
-Vue.mount('#app')
+let app
+firebaseAuth.onAuthStateChanged(async authenticatedUser => {
+  if (!app) {
+    app = createApp(ROOT, {})
+    autoImportPlugins(app)
+    app.mount('#app')
+    const auth = useAuthStore()
+    auth.user = authenticatedUser
+  }
+})

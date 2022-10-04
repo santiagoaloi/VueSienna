@@ -1,8 +1,8 @@
 <template>
-  <base-split col="5" src="bg1.svg">
+  <HomeLanding>
     <HomeTitle />
     <HomeSubtitle />
-  </base-split>
+  </HomeLanding>
 </template>
 
 <script setup>

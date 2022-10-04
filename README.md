@@ -107,3 +107,7 @@ Yarn dev
 ```ts
 Yarn build:preview
 ```
+
+### Highlights
+
+- Installed "vue": "3.2.37" to avoid "beta vue reactivity transform" potential future braking changes.

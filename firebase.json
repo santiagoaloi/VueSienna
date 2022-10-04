@@ -1,0 +1,54 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "functions": {
+    "source": "functions"
+  },
+  "hosting": {
+    "site": "skriptag-bank",
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "predeploy": [
+      "vite build"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "emulators": {
+    "storage": {
+      "port": 5001
+    },
+    "functions": {
+      "port": 5002
+    },
+    "firestore": {
+      "port": 5003
+    },
+    "auth": {
+      "port": 5004
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    }
+  },
+  "extensions": {
+    "firestore-send-email": "firebase/firestore-send-email@0.1.16",
+    "delete-user-data": "firebase/delete-user-data@0.1.13"
+  }
+}

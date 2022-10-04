@@ -2,11 +2,12 @@
  * Define the route object data before building
  * he Routes array.
  * @Keyword  Any word in the component path string.
+ *
  * @meta     metadata object that will be added.
  * @ruleEnabled  Enable / Disable the rule.
  */
 
-function routeModifier() {
+export function routeModifier() {
   return [
     {
       keyword: 'public',
@@ -32,10 +33,8 @@ function routeModifier() {
  * @ConsoleLogRoutes  Print all routes to console after parsing and  injecting meta.
  */
 
-function debug() {
+export function debug() {
   return {
-    consoleLogRoutes: false,
+    consoleLogRoutes: true,
   }
 }
-
-export { routeModifier, debug }
