@@ -1,4 +1,4 @@
-import { doc, getDoc, setDoc } from 'firebase/firestore'
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'
 import { signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth'
 import { auth, db } from '@/firebase'
 
@@ -10,20 +10,20 @@ export const useAuthStore = defineStore('authentication', {
 
   getters: {
     //Computed
-    isLoggedIn(state) {
-      return state.user !== null
+    isLoggedIn() {
+      return this.user !== null
     },
 
-    userName(state) {
-      return state.user?.displayName
+    userName() {
+      return this.user?.displayName
     },
 
-    userEmail(state) {
-      return state.user?.email
+    userEmail() {
+      return this.user?.email
     },
 
-    userAvatar(state) {
-      return state.user?.photoURL
+    userAvatar() {
+      return this.user?.photoURL
     },
   },
 
@@ -31,8 +31,15 @@ export const useAuthStore = defineStore('authentication', {
     async logout() {
       // Singout and route to login.
       signOut(auth)
-      this.user = null
       this.router.push('/login')
+    },
+
+    //Methods
+    async saveCustomer(customer) {
+      // Add a new document in collection "cities"
+      await setDoc(doc(db, 'customers', 'newCustomer'), {
+        ...JSON.parse(JSON.stringify(customer)),
+      })
     },
 
     //Methods
@@ -73,8 +80,9 @@ export const useAuthStore = defineStore('authentication', {
       }
     },
 
-    async authenticateWithGoogle() {
+    async authenticateWithGoogle(ctx) {
       try {
+        ctx.loading = true
         const provider = new GoogleAuthProvider()
 
         provider.setCustomParameters({
@@ -101,8 +109,10 @@ export const useAuthStore = defineStore('authentication', {
 
         //Set user data to state management.
         this.user = userCredential.user
+        ctx.loading = false
         return true
       } catch ({ ...error }) {
+        ctx.loading = false
         //Make sure user doesn't exists with that email.
         if (error.code === 'auth/account-exists-with-different-credential') {
           alert('User already exists...')

@@ -1,3 +1,3 @@
 <template>
-  <BaseBtn @click="$router.push('/dashboard')"> Go to dashboard</BaseBtn>
+  <BaseBtn @click="$router.push('/account/overview')"> Go to dashboard</BaseBtn>
 </template>

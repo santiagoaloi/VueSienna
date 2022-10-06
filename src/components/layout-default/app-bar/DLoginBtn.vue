@@ -5,8 +5,8 @@
 <script setup>
 import { useAuthStore } from '@@/authenticationStore'
 
-const auth = useAuthStore()
 const router = useRouter()
+const auth = useAuthStore()
 
 const userName = computed(() => {
   return auth.userName ? 'Logout ' + auth.userName : 'Login'

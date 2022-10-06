@@ -8,6 +8,8 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BaseBtn: typeof import('./src/components/base/BaseBtn.vue')['default']
+    BaseDivider: typeof import('./src/components/base/BaseDivider.vue')['default']
+    copy: typeof import('./src/components/base/BaseBtn copy.vue')['default']
     DAppBar: typeof import('./src/components/layout-default/app-bar/DAppBar.vue')['default']
     DAppBarLogo: typeof import('./src/components/layout-default/app-bar/DAppBarLogo.vue')['default']
     DAppView: typeof import('./src/components/layout-default/app-view/DAppView.vue')['default']

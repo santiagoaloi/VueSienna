@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar color="transparent">
+  <v-app-bar color="#22272e">
     <div class="d-inline-block ml-10">
       <SkriptagTitle></SkriptagTitle>
     </div>

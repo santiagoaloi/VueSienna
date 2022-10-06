@@ -16,11 +16,6 @@ export const install = app => {
     theme: {
       defaultTheme: 'dark',
     },
-
-    locale: {
-      defaultLocale: 'en',
-      fallbackLocale: 'en',
-    },
   })
   app.use(vuetify)
 }

@@ -90,10 +90,7 @@ export default use.defineConfig(async () => {
 
       // https://github.com/hannoeru/vite-plugin-pages
       use.pages({
-        dirs: [
-          { dir: 'src/pages', baseRoute: '' },
-          { dir: 'src/pages/account', baseRoute: 'account' },
-        ],
+        dirs: [{ dir: 'src/pages', baseRoute: '' }],
 
         // Metadata injection is done @/utils/autoGenerateRoutes.
         // onRoutesGenerated: use.injectMetadata,'

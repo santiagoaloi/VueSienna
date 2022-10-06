@@ -20,9 +20,15 @@
       class="mt-n2"
     >
       You don't have any account plans assigned.
-      <v-btn color="#22272e" size="small" class="ml-4"
-        >Create new account</v-btn
-      >
+      <div class="d-flex">
+        <v-btn
+          @click="$router.push({ path: '/account/createaccount' })"
+          color="#22272e"
+          size="small"
+          class="mt-4"
+          >Create new account</v-btn
+        >
+      </div>
     </v-alert>
   </v-container>
 </template>

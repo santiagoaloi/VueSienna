@@ -1,6 +1,7 @@
 import generatedRoutes from '~pages'
-import { setupLayouts } from 'virtual:generated-layouts'
 import { getUserState } from '@/firebase'
+import { setupLayouts } from 'virtual:generated-layouts'
+import NProgress from 'nprogress'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -8,6 +9,10 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
+  console.log('beforeEach')
+
+  if (to.path !== from.path) NProgress.start()
+
   const isAuth = await getUserState()
   const atLoginAndAuthenticated = to.matched.some(
     r => r.name === 'login' && isAuth
@@ -29,6 +34,11 @@ router.beforeEach(async (to, from, next) => {
   }
 
   next()
+})
+
+router.afterEach(() => {
+  console.log('afterEach ')
+  NProgress.done()
 })
 
 const install = app => {

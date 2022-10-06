@@ -1,6 +1,6 @@
 <template>
   <HomeLanding>
-    <GradientTitle> Make the best app you've ever made. </GradientTitle>
+    <GradientTitle> Let us take care of the numbers.</GradientTitle>
     <HomeSubtitle />
   </HomeLanding>
 </template>

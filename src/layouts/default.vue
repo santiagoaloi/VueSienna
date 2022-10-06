@@ -1,4 +1,6 @@
 <template>
-  <DAppBar />
-  <DAppView />
+  <v-app>
+    <DAppBar />
+    <DAppView />
+  </v-app>
 </template>
