@@ -9,8 +9,6 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
-  console.log('beforeEach')
-
   if (to.path !== from.path) NProgress.start()
 
   const isAuth = await getUserState()
@@ -36,13 +34,8 @@ router.beforeEach(async (to, from, next) => {
   next()
 })
 
-router.afterEach(() => {
-  console.log('afterEach ')
-  NProgress.done()
-})
+router.afterEach(() => NProgress.done())
 
-const install = app => {
-  app.use(router)
-}
+const install = app => app.use(router)
 
 export { install, router }

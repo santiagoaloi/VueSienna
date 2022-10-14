@@ -1,5 +1,7 @@
 <template>
-  <SAppBar />
-  <SDrawer />
-  <SAppView />
+  <div>
+    <SAppBar />
+    <SDrawer />
+    <SAppView />
+  </div>
 </template>

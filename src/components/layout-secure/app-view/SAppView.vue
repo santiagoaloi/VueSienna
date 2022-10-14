@@ -1,5 +1,5 @@
 <template>
-  <v-main scrollable>
-    <routerView></routerView>
-  </v-main>
+  <VMain scrollable>
+    <RouterView />
+  </VMain>
 </template>

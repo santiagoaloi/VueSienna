@@ -1,3 +1,2 @@
-export default app => {
-  Object.values(import.meta.globEager('@@@/*.js')).map(m => m.install(app))
-}
+const modules = import.meta.globEager('@M/*.js')
+export default app => Object.values(modules).map(m => m.install(app))

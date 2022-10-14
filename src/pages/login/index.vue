@@ -1,10 +1,11 @@
 <template>
-  <splitView col="4" src="bg5.svg">
-    <skriptag-title v-once class="mb-8" small>
+  <SplitView col="4" src="x1.svg">
+    <SkriptagTitle v-once class="mb-8" small>
       <template #text> Secure login to </template>
-    </skriptag-title>
+    </SkriptagTitle>
     <LoginButtons />
-  </splitView>
+    <LoginButtonEmail />
+  </SplitView>
 </template>
 
 <script setup>

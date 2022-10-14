@@ -1,5 +1,5 @@
 <template>
-  <v-btn
+  <VBtn
     border
     style="
       border-color: #cdd9e51a !important;
@@ -10,5 +10,5 @@
     class="text-capitalize px-2 font-weight-regular"
   >
     <slot />
-  </v-btn>
+  </VBtn>
 </template>

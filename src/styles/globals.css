@@ -1,9 +1,8 @@
 html,
 body,
-#app,
-.v-application {
-  background: #22272e !important;
-  color: #ccc9f3 !important;
+#app .v-aplication {
+  background: #323a44 !important;
+  color: #adbac7 !important;
 }
 
 .v-application__wrap {
@@ -15,6 +14,10 @@ body,
 
 .logo-icon-color {
   color: #7366ff;
+}
+
+global-font-color {
+  color: #adbac7 !important;
 }
 
 #nprogress {

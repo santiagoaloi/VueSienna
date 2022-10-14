@@ -9,6 +9,7 @@ declare global {
   const $shallowRef: typeof import('vue/macros')['$shallowRef']
   const $toRef: typeof import('vue/macros')['$toRef']
   const EffectScope: typeof import('vue')['EffectScope']
+  const Vue: typeof import('./src/utils/instanciateVue.js')['Vue']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const autoImportModules: typeof import('./src/utils/autoImportModules.js')['default']
   const autoInjectRouteMeta: typeof import('./src/utils/autoInjectRouteMeta.js')['default']
@@ -73,6 +74,8 @@ declare global {
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useDisplay: typeof import('vuetify')['useDisplay']
+  const useGoTo: typeof import('./src/composables/routerGo.js')['useGoTo']
+  const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
   const useSlots: typeof import('vue')['useSlots']
   const watch: typeof import('vue')['watch']
@@ -92,6 +95,7 @@ declare module '@vue/runtime-core' {
     readonly $shallowRef: UnwrapRef<typeof import('vue/macros')['$shallowRef']>
     readonly $toRef: UnwrapRef<typeof import('vue/macros')['$toRef']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly Vue: UnwrapRef<typeof import('./src/utils/instanciateVue.js')['Vue']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly autoImportModules: UnwrapRef<typeof import('./src/utils/autoImportModules.js')['default']>
     readonly autoInjectRouteMeta: UnwrapRef<typeof import('./src/utils/autoInjectRouteMeta.js')['default']>
@@ -156,6 +160,8 @@ declare module '@vue/runtime-core' {
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useDisplay: UnwrapRef<typeof import('vuetify')['useDisplay']>
+    readonly useGoTo: UnwrapRef<typeof import('./src/composables/routerGo.js')['useGoTo']>
+    readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>

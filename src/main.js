@@ -1,15 +1,8 @@
 import '@/styles'
-import Root from '@/App.vue'
-import { auth as firebaseAuth } from '@/firebase'
-import { useAuthStore } from '@@/authenticationStore'
+import { auth } from '@/firebase'
+import { Vue } from '@U/instanciateVue'
 
-let V
-firebaseAuth.onAuthStateChanged(async authenticatedUser => {
-  if (!V) {
-    V = createApp(Root)
-    autoImportModules(V)
-    V.mount('#app')
-    const auth = useAuthStore()
-    auth.user = authenticatedUser
-  }
+// Init Vue.
+auth.onAuthStateChanged(async user => {
+  Vue(user)
 })

@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { useAuthStore } from '@@/authenticationStore'
+import { useAuthStore } from '@S/authenticationStore'
 
 const auth = useAuthStore()
 const router = useRouter()

@@ -1,6 +1,6 @@
 export const rowPreset = {
   align: 'center',
-  class: 'fill-height ',
+  class: 'fill-height',
   'no-gutters': true,
-  style: 'overflow: hidden',
+  style: 'overflow-x: hidden',
 }

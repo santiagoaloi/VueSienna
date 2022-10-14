@@ -1,3 +1,8 @@
 <template>
-  <BaseBtn @click="$router.push('/playground')"> Playground</BaseBtn>
+  <BaseBtn
+    prepend-icon="$mdiSpaceInvaders"
+    @click="$router.push('/playground')"
+  >
+    Playground</BaseBtn
+  >
 </template>

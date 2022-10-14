@@ -1,7 +1,7 @@
 <template>
-  <v-divider></v-divider>
-  <v-container fluid>
-    <v-alert
+  <VDivider />
+  <VContainer fluid>
+    <VAlert
       title="Standard Account"
       icon="mdi-bank"
       border="start"
@@ -10,34 +10,33 @@
       color="#2e3640"
     >
       <h4 class="pl-1">This package Includes the following benefits</h4>
-      <v-list :items="services" item-props bgColor="transparent"> </v-list>
+      <VList :items="services" item-props bgColor="transparent"> </VList>
 
-      <v-checkbox v-model="terms" label="Accept terms and conditions.">
-      </v-checkbox>
+      <VCheckbox v-model="terms" label="Accept terms and conditions." />
 
       <div>
-        <v-btn
+        <VBtn
           @click="createAccount()"
           :disabled="!terms"
           color="deep-purple"
           class="text-white ml-4"
           size="small"
-          >Continue with application</v-btn
+          >Continue with application</VBtn
         >
       </div>
 
       <div>
-        <v-btn
+        <VBtn
           @click="saveAccount()"
           :disabled="!terms"
           color="deep-purple"
           class="text-white ml-4"
           size="small"
-          >Save to firebase</v-btn
+          >Save to firebase</VBtn
         >
       </div>
-    </v-alert>
-  </v-container>
+    </VAlert>
+  </VContainer>
 </template>
 
 <script setup>

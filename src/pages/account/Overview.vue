@@ -1,16 +1,16 @@
 <template>
-  <v-list bgColor="transparent">
-    <v-list-item
+  <VList bgColor="transparent">
+    <VListItem
       class="text-teal-lighten-4"
       title="Account Balance"
       subtitle="$ 0"
     >
-    </v-list-item>
-  </v-list>
+    </VListItem>
+  </VList>
 
-  <v-divider></v-divider>
-  <v-container fluid>
-    <v-alert
+  <VDivider />
+  <VContainer fluid>
+    <VAlert
       title="Accounts"
       icon="mdi-bank"
       border="start"
@@ -21,16 +21,16 @@
     >
       You don't have any account plans assigned.
       <div class="d-flex">
-        <v-btn
+        <VBtn
           @click="$router.push({ path: '/account/createaccount' })"
           color="#22272e"
           size="small"
           class="mt-4"
-          >Create new account</v-btn
+          >Create new account</VBtn
         >
       </div>
-    </v-alert>
-  </v-container>
+    </VAlert>
+  </VContainer>
 </template>
 
 <script setup>

@@ -1,5 +1,4 @@
 export const useAppStore = defineStore('app', {
-  // Data
   state: () => ({
     drawer: true,
   }),

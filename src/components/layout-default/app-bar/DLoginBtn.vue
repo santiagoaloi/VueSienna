@@ -1,22 +1,20 @@
 <template>
-  <BaseBtn @click="handler()"> {{ userName }}</BaseBtn>
+  <BaseBtn prepend-icon="$mdiAccount" :disabled="isCurrent" @click="handler()">
+    {{ userName }}
+  </BaseBtn>
 </template>
 
 <script setup>
-import { useAuthStore } from '@@/authenticationStore'
+import { useAuthStore } from '@S/authenticationStore'
+import { useGoTo } from '@C/routerGo'
 
-const router = useRouter()
 const auth = useAuthStore()
 
-const userName = computed(() => {
-  return auth.userName ? 'Logout ' + auth.userName : 'Login'
-})
+const { isCurrent, goTo } = useGoTo('login')
 
-function handler() {
-  if (auth.isLoggedIn) {
-    auth.logout()
-  } else {
-    router.push('login')
-  }
-}
+const userName = computed(() =>
+  auth.userName ? `Logout ${auth.userName}` : 'Login'
+)
+
+const handler = () => (auth.isLoggedIn ? auth.logout() : goTo())
 </script>

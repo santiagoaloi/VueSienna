@@ -1,13 +1,13 @@
 <template>
-  <v-container class="ma-15">
-    <v-autocomplete
+  <VContainer class="ma-15">
+    <VAutocomplete
       item-title="method"
       iten-value="id"
       :items="allowedPaymentMethods"
       attach
     >
-    </v-autocomplete>
-  </v-container>
+    </VAutocomplete>
+  </VContainer>
 </template>
 
 <script setup>

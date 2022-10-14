@@ -12,8 +12,8 @@ h5,
 h6,
 p,
 a,
-.v-application_wrap,
-.v-btn {
+.VApplication_wrap,
+.VBtn {
   font-family: 'Product Sans', sans-serif !important;
   color: #adbac7 !important;
 }

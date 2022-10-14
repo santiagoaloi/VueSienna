@@ -1,7 +1,21 @@
 <template>
   <HomeLanding>
-    <GradientTitle> Let us take care of the numbers.</GradientTitle>
-    <HomeSubtitle />
+    <v-chip
+      icon="$mdiGithub"
+      class="mb-2"
+      color="indigo-accent-1"
+      text-color="white"
+      border
+    >
+      <v-icon start icon="$mdiGithub" />
+      v1.0.1
+    </v-chip>
+    <SkriptagTitle large class="mb-2" />
+    <GradientTitle> Make the best app you've ever made.</GradientTitle>
+    <HomeSubtitle>
+      Get consultancy , learn coding, download free and premium application
+      templates, access JS/VueJS training material and participate in blogs.
+    </HomeSubtitle>
   </HomeLanding>
 </template>
 
@@ -9,16 +23,4 @@
 defineOptions({
   name: 'Home',
 })
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-
-if (mySwitch) {
-  console.log('yes, switch is true')
-}
->>>>>>> Stashed changes
 </script>

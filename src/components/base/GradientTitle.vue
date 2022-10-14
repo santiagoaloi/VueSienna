@@ -6,12 +6,13 @@
 
 <style>
 .main-title {
-  font-size: 70px;
-  background: linear-gradient(to right, rgb(203, 211, 219), rgb(109, 118, 161));
+  color: #adbac7;
+  background-image: -webkit-linear-gradient(225deg, #9898df 0%, #adbac7 73%);
   background-clip: text;
   -webkit-background-clip: text;
+  text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
-  line-height: 1.1;
-  font-size: 70px;
+  line-height: 1;
+  font-size: 75px;
 }
 </style>

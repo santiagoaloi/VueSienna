@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer
+  <VNavigationDrawer
     width="280"
     permanent
     color="#22272e"
@@ -11,17 +11,17 @@
     position="fixed"
     hide-overlay
   >
-    <v-list>
-      <v-list-item
+    <VList>
+      <VListItem
         :prepend-avatar="auth.userAvatar"
         :title="auth.userName"
         :subtitle="auth.userEmail"
-      ></v-list-item>
-    </v-list>
+      ></VListItem>
+    </VList>
 
-    <v-divider></v-divider>
+    <VDivider />
 
-    <v-list
+    <VList
       item-props
       :items="[
         {
@@ -46,12 +46,12 @@
       density="compact"
       nav
     >
-    </v-list>
-  </v-navigation-drawer>
+    </VList>
+  </VNavigationDrawer>
 </template>
 <script setup>
-import { useAppStore } from '@@/appStore'
-import { useAuthStore } from '@@/authenticationStore'
+import { useAppStore } from '@S/appStore'
+import { useAuthStore } from '@S/authenticationStore'
 
 const app = useAppStore()
 const auth = useAuthStore()

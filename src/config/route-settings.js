@@ -1,40 +1,19 @@
-/**
+/*
  * Define the route object data before building
  * he Routes array.
- * @Keyword  Any word in the component path string.
- *
+ * @keywords  Any word in the component path string.
  * @meta     metadata object that will be added.
  * @ruleEnabled  Enable / Disable the rule.
  */
 
-export function routeModifier() {
+export function metadataInjector() {
   return [
     {
-      keyword: 'public',
-      meta: {
-        layout: 'default',
-        requiresAuth: true,
-      },
-    },
-
-    {
-      keyword: 'private',
+      keywords: ['something'],
       meta: {
         layout: 'private',
         requiresAuth: true,
       },
     },
   ]
-}
-
-/**
- * Define the route object data before building
- * the Routes array.
- * @ConsoleLogRoutes  Print all routes to console after parsing and  injecting meta.
- */
-
-export function debug() {
-  return {
-    consoleLogRoutes: true,
-  }
 }

@@ -5,13 +5,10 @@
     style="color: #adbac7 !important; cursor: pointer"
     class="ignore-font"
   >
-    <slot name="text" /> Skriptag
-    <span
-      :class="small ? 'ml-n8' : large ? 'ml-n16' : 'ml-n10'"
-      class="logo-icon-color"
-      >ˆ
-    </span>
-    <span class="ml-6"> banking</span>
+    <slot name="text" />
+    <span :class="{ large: large }"
+      >Skript<span class="skriptag-a">â</span>g</span
+    >
   </component>
 </template>
 
@@ -19,7 +16,7 @@
 const props = defineProps({
   small: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   large: {
     type: Boolean,
@@ -32,12 +29,20 @@ const props = defineProps({
 })
 
 const size = computed(() => {
-  return props.small ? 'h2' : 'h1'
+  if (props.small) return 'h2'
 })
 </script>
 
 <style scoped>
 .large {
-  font-size: 300% !important;
+  font-size: 180% !important;
+}
+
+.skriptag-a {
+  color: #aaaaaa;
+  background-image: -webkit-linear-gradient(90deg, #adbac7 65%, #57bb9f 56%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 </style>

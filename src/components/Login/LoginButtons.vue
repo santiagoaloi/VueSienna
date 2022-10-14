@@ -1,44 +1,41 @@
 <template>
   <div>
-    <Base-btn
-      @click="button.action(button)"
+    <BaseBtn
       block
-      :key="i"
-      v-for="(button, i) in loginButtons"
+      :key="button.name"
       class="my-3"
       :disabled="button.disabled"
       :loading="button.loading"
+      :prependIcon="button.icon"
+      @click="button.action(button)"
+      v-for="button in buttons"
     >
       Signup with {{ button.name }}
-    </Base-btn>
-
-    <div class="d-flex align-center my-4">
-      <baseDivider>or </baseDivider><baseDivider />
-    </div>
-    <Base-btn disabled class="mt-2" block> Continue with email </Base-btn>
+    </BaseBtn>
   </div>
 </template>
 
 <script setup>
-import { useAuthStore } from '@@/authenticationStore'
+import { useAuthStore } from '@S/authenticationStore'
+import { LoginButton } from './instances'
 
 const auth = useAuthStore()
 
-async function processLogin(button) {
-  await auth.authenticateWithGoogle(button)
-}
-
-const loginButtons = $ref([
-  {
+const buttons = $ref([
+  new LoginButton({
     name: 'Google',
-    icon: '',
-    to: '',
-    disabled: false,
-    loading: false,
+    icon: '$mdiGoogle',
     action() {
-      processLogin(this)
+      return auth.authenticateWithGoogle(this)
     },
-  },
-  { name: 'Github', icon: '', to: '', disabled: true },
+  }),
+  new LoginButton({
+    name: 'GitHub',
+    icon: '$mdiGithub',
+    disabled: true,
+    action() {
+      return auth.authenticateWithGithub(this)
+    },
+  }),
 ])
 </script>

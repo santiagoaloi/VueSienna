@@ -1,6 +1,6 @@
 <template>
-  <v-app>
+  <div>
     <DAppBar />
     <DAppView />
-  </v-app>
+  </div>
 </template>

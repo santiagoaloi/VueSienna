@@ -1,9 +1,9 @@
 <template>
-  <v-col :md="mdAndDown ? 12 : col" cols="12">
-    <v-container fluid class="px-11">
+  <VCol :md="mdAndDown ? 12 : col" cols="12">
+    <VContainer fluid class="px-11">
       <slot />
-    </v-container>
-  </v-col>
+    </VContainer>
+  </VCol>
 </template>
 
 <script setup>

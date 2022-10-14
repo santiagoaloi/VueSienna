@@ -11,22 +11,24 @@
 - 🤙🏻 [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) enabled
 - 📥 [APIs auto importing](https://github.com/antfu/unplugin-auto-import) - use Composition API and others directly
 
-
 ## CSS shortcuts
+
 ### Done with SCSS extend
 
 ```scss
 @use 'vuetify';
 
 .buttonClass {
-  @extend .text-white, .mx-2
+  @extend .text-white, .mx-2;
 }
 ```
+
 ```html
-<v-btn class="buttonClass"> ... </v-btn>
+<VBtn class="buttonClass"> ... </VBtn>
 ```
 
 ## Auto import plugins
+
 ### main.js example
 
 ```js
@@ -42,6 +44,7 @@ Vue.mount('#app')
 ```
 
 ### autoImportPlugins.js example
+
 ```js
 export default function (app) {
   Object.values(import.meta.globEager('@/plugins/*.js')).map(i =>
@@ -51,6 +54,7 @@ export default function (app) {
 ```
 
 ### Plugin module example
+
 ```js
 // Vuetify
 import { createVuetify } from 'vuetify'
@@ -63,17 +67,15 @@ export default {
 }
 ```
 
-
 ## Pre-packed
+
 ### UI Frameworks
 
-- [Vuetify 3, Beta](https://next.vuetify.com ) - Material Design Framework
-
+- [Vuetify 3, Beta](https://next.vuetify.com) - Material Design Framework
 
 ## Recommended IDE Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-
 
 ### Plugins
 
@@ -93,7 +95,6 @@ export default {
   - [Vite](https://marketplace.visualstudio.com/items?itemName=antfu.vite) - Fire up Vite server automatically
   - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - Vue 3 `<script setup>` IDE support
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-
 
 ### Deploy and run
 

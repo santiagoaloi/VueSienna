@@ -1,7 +1,12 @@
 <template>
-  <v-container class="ma-15">
-    <v-autocomplete :items="projects" v-model="selectedProject" />
-  </v-container>
+  <VContainer class="fill-height">
+    <VRow class="fill-height align-center justify-center text-center">
+      <VCol cols="6">
+        <h1 class="pb-5">Choose a playground below</h1>
+        <VSelect :items="projects" v-model="selectedProject" />
+      </VCol>
+    </VRow>
+  </VContainer>
 </template>
 
 <script setup>
@@ -13,19 +18,15 @@ const router = useRouter()
 
 const selectedProject = $ref('')
 
-watchEffect(() => {
-  if (selectedProject) router.push(`/playground/projects/${selectedProject}`)
-})
-
-const projects = reactive([])
-
-onMounted(async () => {
-  const regex = /(\w+).vue$/
-  const run = await import.meta.glob('./projects/*.vue')
-  const components = Object.keys(run)
-
-  for (const component of components) {
-    projects.push(component.match(regex)[1])
+watch(
+  () => selectedProject,
+  newValue => {
+    router.push(`/playground/projects/${newValue}`)
   }
-})
+)
+
+const regex = /(\w+).vue$/
+const run = await import.meta.glob('./projects/*.vue')
+const components = Object.keys(run)
+const projects = components.map(c => c.match(regex)[1])
 </script>

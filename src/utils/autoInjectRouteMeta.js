@@ -1,14 +1,23 @@
-import { routeModifier } from '../config/route-settings'
+import { metadataInjector } from '../config/route-settings'
+
+const useMetadataInjector = metadataInjector()
 
 export default routes => {
   const allRoutes = JSON.parse(JSON.stringify(routes))
-  allRoutes.forEach(({ component, meta }) => {
-    // Inject meta defined in @/config/route-settings.
-    for (const { keyword, meta: inject } of routeModifier()) {
-      // if (component.includes(keyword)) {
-      // Adds component full route path string and meta.
-      meta = { ...meta, ...inject, fullPath: component }
-      // }
+
+  allRoutes.forEach(route => {
+    // Injet meta  defined in @/config/route-settings.
+    const { component } = route
+
+    for (const rule of useMetadataInjector) {
+      const { keywords, meta: injectNewMeta } = rule
+
+      //Match any keyword defined.
+      // Use every instead of some if you need exact matches.
+
+      if (keywords.some(keyword => component.includes(keyword))) {
+        route.meta = { ...route.meta, ...injectNewMeta, fullPath: component }
+      }
     }
   })
 

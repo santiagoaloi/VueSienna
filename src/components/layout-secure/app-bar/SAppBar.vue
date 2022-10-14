@@ -1,10 +1,9 @@
 <template>
-  <v-app-bar color="#22272e">
+  <VAppBar color="#22272e">
     <div class="d-inline-block ml-10">
       <SkriptagTitle />
     </div>
-    <small class="mt-5 ml-2 text-indigo-lighten-3">Secure</small>
-    <v-spacer> </v-spacer>
+    <VSpacer> </VSpacer>
     <DLoginBtn />
-  </v-app-bar>
+  </VAppBar>
 </template>

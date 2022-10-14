@@ -1,3 +1,7 @@
 <template>
-  <routerView></routerView>
+  <VApp>
+    <VFadeTransition>
+      <RouterView />
+    </VFadeTransition>
+  </VApp>
 </template>

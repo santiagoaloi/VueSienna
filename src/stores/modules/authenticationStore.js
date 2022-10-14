@@ -1,49 +1,30 @@
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'
+import { doc, getDoc, setDoc } from 'firebase/firestore'
 import { signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth'
 import { auth, db } from '@/firebase'
+import NProgress from 'nprogress'
 
 export const useAuthStore = defineStore('authentication', {
-  // Data
   state: () => ({
     user: null,
   }),
 
   getters: {
-    //Computed
-    isLoggedIn() {
-      return this.user !== null
-    },
-
-    userName() {
-      return this.user?.displayName
-    },
-
-    userEmail() {
-      return this.user?.email
-    },
-
-    userAvatar() {
-      return this.user?.photoURL
-    },
+    isLoggedIn: state => !!state.user,
+    userEmail: state => state.user?.email,
+    userAvatar: state => state.user?.photoURL,
+    userName: state => state.user?.displayName,
   },
 
   actions: {
-    async logout() {
-      // Singout and route to login.
-      signOut(auth)
-      this.router.push('/login')
-    },
+    // async saveCustomer(customer) {
+    //   // Add a new document in collection "cities"
+    //   await setDoc(doc(db, 'customers', 'newCustomer'), {
+    //     ...JSON.parse(JSON.stringify(customer)),
+    //   })
+    // },
 
-    //Methods
-    async saveCustomer(customer) {
-      // Add a new document in collection "cities"
-      await setDoc(doc(db, 'customers', 'newCustomer'), {
-        ...JSON.parse(JSON.stringify(customer)),
-      })
-    },
-
-    //Methods
     async addUserToUsersCollectionGgoogle(user) {
+      console.log(user)
       // Adds a document in a firestore collection.
       // doc (Firestore instance, collection name, collection id).
       const userDocRef = doc(db, 'users', user.uid)
@@ -82,6 +63,7 @@ export const useAuthStore = defineStore('authentication', {
 
     async authenticateWithGoogle(ctx) {
       try {
+        NProgress.start()
         ctx.loading = true
         const provider = new GoogleAuthProvider()
 
@@ -99,7 +81,7 @@ export const useAuthStore = defineStore('authentication', {
         const docSnap = await getDoc(docRef)
 
         if (!docSnap.exists()) {
-          const profile = await addUserToUsersCollectionGgoogle(user)
+          const profile = await this.addUserToUsersCollectionGgoogle(user)
 
           if (!profile.created) {
             console.log('something went wrong')
@@ -108,16 +90,21 @@ export const useAuthStore = defineStore('authentication', {
         }
 
         //Set user data to state management.
-        this.user = userCredential.user
+        await this.router.push('/account/overview')
         ctx.loading = false
-        return true
       } catch ({ ...error }) {
+        NProgress.done()
         ctx.loading = false
         //Make sure user doesn't exists with that email.
         if (error.code === 'auth/account-exists-with-different-credential') {
           alert('User already exists...')
         }
       }
+    },
+
+    async logout() {
+      await signOut(auth)
+      this.router.push('/')
     },
   },
 })

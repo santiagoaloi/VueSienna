@@ -7,6 +7,6 @@
 
 <script setup>
 defineOptions({
-  name: 'Basic',
+  name: 'NotFound',
 })
 </script>

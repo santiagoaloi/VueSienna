@@ -1,11 +1,11 @@
 <template>
-  <v-col
+  <VCol
     class="split-col-img split-col-img justify-center"
     v-bind="{ ...config }"
     cols="12"
   >
     <slot />
-  </v-col>
+  </VCol>
 </template>
 <script setup>
 const props = defineProps({

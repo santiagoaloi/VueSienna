@@ -7,12 +7,20 @@ export default use.defineConfig(async () => {
       alias: [
         { find: '@', replacement: use.resolve(__dirname, './src') },
         {
-          find: '@@',
+          find: '@S',
           replacement: use.resolve(__dirname, './src/stores/modules'),
         },
         {
-          find: '@@@',
+          find: '@M',
           replacement: use.resolve(__dirname, './src/modules'),
+        },
+        {
+          find: '@C',
+          replacement: use.resolve(__dirname, './src/composables'),
+        },
+        {
+          find: '@U',
+          replacement: use.resolve(__dirname, './src/utils'),
         },
       ],
     },
@@ -49,9 +57,8 @@ export default use.defineConfig(async () => {
     },
 
     plugins: [
-      // https://github.com/vitejs/vite/tree/main/packages/plugin-vue
       use.vue({
-        reactivityTransform: true, //Still in beta, use with caution.
+        reactivityTransform: true,
       }),
 
       // https://github.com/xiaoxian521/vite-plugin-remove-console
@@ -67,13 +74,18 @@ export default use.defineConfig(async () => {
           'vue/macros',
           'pinia',
           {
-            'vue-router': ['createRouter', 'createWebHistory', 'useRouter'],
+            'vue-router': [
+              'createRouter',
+              'createWebHistory',
+              'useRouter',
+              'useRoute',
+            ],
           },
           {
             vuetify: ['useDisplay', 'createVuetify'],
           },
         ],
-        dirs: ['src/utils/*', 'src/presets/*'],
+        dirs: ['src/utils/*', 'src/presets/*', 'src/composables/*'],
         vueTemplate: true,
         dts: true,
       }),
@@ -93,7 +105,8 @@ export default use.defineConfig(async () => {
         dirs: [{ dir: 'src/pages', baseRoute: '' }],
 
         // Metadata injection is done @/utils/autoGenerateRoutes.
-        // onRoutesGenerated: use.injectMetadata,'
+        onRoutesGenerated: use.injectMetadata,
+
         importMode(filepath, options) {
           for (const page of options.dirs) {
             if (
