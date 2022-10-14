@@ -2,14 +2,14 @@
   <v-card color="transparent" flat class="d-flex flex-column fill-height px-11">
     <v-card-actions class="pa-0 ma-0">
       <v-card-title class="pa-0 ma-0" primary-title>
-        Wizzard directory
+        Wizard directory
       </v-card-title>
       <VSpacer />
       <v-btn size="small" icon="$mdiFilterVariant" />
     </v-card-actions>
     <v-text-field
       v-model="searchQuery"
-      placeholder="Search wizzards..."
+      placeholder="Search wizards..."
       hide-details
     />
 
@@ -30,11 +30,11 @@
         <tbody>
           <tr
             class="fill-height"
-            v-for="wizzard in searchWizzards"
-            :key="wizzard.name"
+            v-for="wizard in searchWizards"
+            :key="wizard.name"
           >
-            <td>{{ wizzard.name }}</td>
-            <td>{{ wizzard.lastName }}</td>
+            <td>{{ wizard.name }}</td>
+            <td>{{ wizard.lastName }}</td>
             <td class="text-center">
               <v-btn size="x-small" color="#323a44" icon="$mdiDotsVertical" />
             </td>
@@ -54,7 +54,7 @@ const searchQuery = $ref('')
 
 const headers = $ref(['Name', 'Last Name', ''])
 
-const wizzards = $ref([
+const wizards = $ref([
   { name: 'Harry', lastName: 'Potter' },
   { name: 'Lord', lastName: 'Voldemort' },
   { name: 'Ron', lastName: 'Weasley' },
@@ -73,13 +73,10 @@ const wizzards = $ref([
   { name: 'Dean', lastName: 'Thomas' },
 ])
 
-const searchWizzards = computed(() => {
-  return wizzards.filter(w => {
-    return (
-      w.name.toLowerCase().indexOf(searchQuery.toLowerCase()) != -1 ||
-      w.lastName.toLowerCase().indexOf(searchQuery.toLowerCase()) != -1
-    )
-  })
+
+const searchWizards = computed(() => wizards.filter(wizard => {
+  const { name, lastName } = wizard
+  return [name, lastName].some(s => s.toLowerCase().includes(searchQuery.toLowerCase()))
 })
 </script>
 
