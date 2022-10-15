@@ -6,4 +6,6 @@ export {
   mdiSpaceInvaders,
   mdiDotsVertical,
   mdiFilterVariant,
+  mdiMagnify,
+  mdiMenu,
 } from '@mdi/js'

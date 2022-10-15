@@ -4,14 +4,49 @@
       <v-card-title class="pa-0 ma-0" primary-title>
         Wizard directory
       </v-card-title>
-      <VSpacer />
-      <v-btn size="small" icon="$mdiFilterVariant" />
     </v-card-actions>
     <v-text-field
+      prepend-inner-icon="$mdiMagnify"
+      placeholder="Search Wizards"
       v-model="searchQuery"
-      placeholder="Search wizards..."
       hide-details
-    />
+      density="compact"
+      class="mb-1"
+    >
+      <template v-slot:append-inner>
+        <v-menu offset-y :close-on-content-click="false" location="top start">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              class="mt-n1"
+              v-bind="props"
+              size="x-small"
+              icon="$mdiFilterVariant"
+              variant="plain"
+            />
+          </template>
+
+          <v-card class="mr-n3" min-width="300" color="dark-grey">
+            <v-card-text>
+              <VSelect
+                density="compact"
+                label="Select columns to search"
+                multiple
+                hide-details
+                v-model="selectedProject"
+                :items="[
+                  'California',
+                  'Colorado',
+                  'Florida',
+                  'Georgia',
+                  'Texas',
+                  'Wyoming',
+                ]"
+              />
+            </v-card-text>
+          </v-card>
+        </v-menu>
+      </template>
+    </v-text-field>
 
     <v-card class="fill-height" flat color="transparent">
       <VTable
@@ -22,8 +57,8 @@
       >
         <thead>
           <tr>
-            <th v-for="name in headers" class="text-left header-background">
-              {{ name }}
+            <th v-for="header in headers" class="text-left header-background">
+              {{ header.alias }}
             </th>
           </tr>
         </thead>
@@ -47,12 +82,16 @@
 
 <script setup>
 defineOptions({
-  name: 'Playground',
+  name: 'PlaygroundTable',
 })
 
 const searchQuery = $ref('')
 
-const headers = $ref(['Name', 'Last Name', ''])
+const headers = $ref([
+  { name: 'name', alias: 'Name' },
+  { name: 'lastName', alias: 'Last Name' },
+  { name: 'actions', alias: '' },
+])
 
 const wizards = $ref([
   { name: 'Harry', lastName: 'Potter' },
@@ -73,11 +112,19 @@ const wizards = $ref([
   { name: 'Dean', lastName: 'Thomas' },
 ])
 
-
-const searchWizards = computed(() => wizards.filter(wizard => {
-  const { name, lastName } = wizard
-  return [name, lastName].some(s => s.toLowerCase().includes(searchQuery.toLowerCase()))
+const tableColumns = computed(() => {
+  return Object.getOwnPropertyNames(wizards)
 })
+
+const searchWizards = computed(() =>
+  wizards.filter(wizard => {
+    const columns = ['name', 'lastName']
+
+    return columns
+      .map(col => wizard[col])
+      .some(s => s.toLowerCase().includes(searchQuery.toLowerCase()))
+  })
+)
 </script>
 
 <style scoped>

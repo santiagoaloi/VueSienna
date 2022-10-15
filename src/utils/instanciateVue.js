@@ -1,13 +1,15 @@
 import rootApp from '@/App.vue'
 import { useAuthStore } from '@S/authenticationStore'
 
-export const Vue = user => {
-  let app
+let app
 
+export const Vue = user => {
   const setStoreUser = user => (useAuthStore().user = user)
 
   if (!app) {
     app = createApp(rootApp)
+
+    console.log('creating app')
 
     // install all plugin modules.
     autoImportModules(app)
