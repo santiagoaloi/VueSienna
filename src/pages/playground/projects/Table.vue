@@ -18,28 +18,47 @@
           <template v-slot:activator="{ props }">
             <v-btn
               class="mt-n1"
+              icon
               v-bind="props"
               size="x-small"
-              icon="$mdiFilterVariant"
               variant="plain"
-            />
+            >
+              <v-icon icon="$mdiFilterVariant" />
+              <v-tooltip location="left" activator="parent">
+                Searchable cols
+              </v-tooltip>
+            </v-btn>
           </template>
 
           <v-card
+            color="#323a44"
+            flat
             class="mr-n3"
             min-width="300"
             max-height="300"
-            color="dark-grey"
           >
-            <v-checkbox
-              class="ml-2"
-              hide-details
-              density="compact"
-              v-for="header in tableHeaders"
-              v-model="selectedHeaders"
-              :label="header.alias"
-              :value="header.name"
-            />
+            <v-card-title class="mb-n4"> Search columns </v-card-title>
+
+            <VExpandTransition>
+              <v-card-subtitle
+                v-if="!isEmptySelectedHeaders"
+                class="text-teal-accent-2"
+              >
+                Searching all columns
+              </v-card-subtitle>
+            </VExpandTransition>
+
+            <div class="mb-3 mt-2">
+              <v-checkbox
+                v-for="header in tableHeaders"
+                class="ml-3"
+                hide-details
+                density="compact"
+                v-model="selectedHeaders"
+                :label="header.alias"
+                :value="header.name"
+              />
+            </div>
           </v-card>
         </v-menu>
       </template>
@@ -104,16 +123,15 @@ const wizards = $ref([
 ])
 
 // Headers can only be strings or numbers.
-const tableHeaders = computed(() => {
-  return headers.filter(
+const tableHeaders = $computed(() =>
+  headers.filter(
     h => ['string', 'number'].includes(typeof h.alias) && h.alias !== ''
   )
-})
-
+)
 // Get an array of header names only.
-const tableHeadersFlat = computed(() => {
-  return tableHeaders.value.flatMap(h => h.name)
-})
+const tableHeadersFlat = $computed(() => tableHeaders.flatMap(h => h.name))
+
+const isEmptySelectedHeaders = $computed(() => !!selectedHeaders.length)
 
 const headers = $ref([
   { name: 'name', alias: 'Name' },
@@ -122,24 +140,28 @@ const headers = $ref([
 ])
 
 // By default all headers are searchable.
-const selectedHeaders = $ref([...tableHeaders.value.flatMap(h => h.name)])
+const selectedHeaders = $ref([])
+
+const searchableHeaders = $computed(() =>
+  selectedHeaders.length ? selectedHeaders : tableHeadersFlat
+)
 
 // Only selectedHeaders will be searched.
-const searchWizards = computed(() =>
-  wizards.filter(wizard => {
-    const columns = [
-      ...(selectedHeaders.length ? selectedHeaders : tableHeadersFlat.value),
-    ]
-
-    return columns
-      .map(col => wizard[col])
-      .some(s => s.toLowerCase().includes(searchQuery.toLowerCase()))
-  })
+const searchWizards = $computed(() =>
+  wizards.filter(row =>
+    searchableHeaders
+      .map(column => row[column])
+      .some(name => name.toLowerCase().includes(searchQuery.toLowerCase()))
+  )
 )
 </script>
 
-<style scoped>
+<!-- <style scoped>
 .header-background {
-  background: #323a44 !important;
+  background: rgb(51, 55, 60) !important;
 }
-</style>
+
+.v-input--density-compact {
+  --v-input-control-height: 25px;
+}
+</style> -->

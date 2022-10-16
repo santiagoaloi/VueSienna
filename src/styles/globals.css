@@ -34,3 +34,11 @@ global-font-color {
   width: 100%;
   height: 1px;
 }
+
+.header-background {
+  background: rgb(51, 55, 60) !important;
+}
+
+.v-input--density-compact {
+  --v-input-control-height: 25px !important;
+}
