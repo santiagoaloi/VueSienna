@@ -82,27 +82,6 @@ defineOptions({
   name: 'PlaygroundTable',
 })
 
-const items = $ref([
-  'California',
-  'Colorado',
-  'Florida',
-  'Georgia',
-  'Texas',
-  'Wyoming',
-  'California',
-  'Colorado',
-  'Florida',
-  'Georgia',
-  'Texas',
-  'Wyoming',
-  'California',
-  'Colorado',
-  'Florida',
-  'Georgia',
-  'Texas',
-  'Wyoming',
-])
-
 const searchQuery = $ref('')
 
 const wizards = $ref([
