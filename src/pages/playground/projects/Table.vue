@@ -134,19 +134,19 @@ const tableHeadersFlat = computed(() => {
   return tableHeaders.value.flatMap(h => h.name)
 })
 
-const selectedHeaders = $ref(tableHeadersFlat)
-
 const headers = $ref([
   { name: 'name', alias: 'Name' },
   { name: 'lastName', alias: 'Last Name' },
   { name: 'actions', alias: '' },
 ])
 
+const selectedHeaders = $ref([...tableHeaders.value.flatMap(h => h.name)])
+
 const searchWizards = computed(() =>
   wizards.filter(wizard => {
-    const columns = selectedHeaders.length
-      ? [...selectedHeaders]
-      : [...tableHeadersFlat.value]
+    const columns = [
+      ...(selectedHeaders.length ? selectedHeaders : tableHeadersFlat.value),
+    ]
 
     return columns
       .map(col => wizard[col])
