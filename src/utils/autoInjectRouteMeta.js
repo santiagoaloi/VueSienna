@@ -5,8 +5,7 @@ const useMetadataInjector = metadataInjector()
 export default routes => {
   const allRoutes = JSON.parse(JSON.stringify(routes))
 
-  allRoutes.forEach(route => {
-    // Injet meta  defined in @/config/route-settings.
+  return allRoutes.map(route => {
     const { component } = route
 
     for (const rule of useMetadataInjector) {
@@ -19,7 +18,7 @@ export default routes => {
         route.meta = { ...route.meta, ...injectNewMeta, fullPath: component }
       }
     }
-  })
 
-  return allRoutes
+    return route
+  })
 }
