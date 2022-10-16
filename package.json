@@ -8,15 +8,18 @@
     "build:preview": "vite build && vite preview --open",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "vue": "^3.2.38",
+    "vue-chemistry": "^0.2.2",
+    "vue-router": "^4.1.5"
+  },
   "devDependencies": {
+    "@mdi/js": "6.2.95",
+    "@vitejs/plugin-vue": "^3.1.0",
     "firebase": "^9.10.0",
     "firebase-tools": "^11.11.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.22",
-    "vue": "^3.2.37",
-    "vue-router": "^4.1.5",
-    "@mdi/js": "6.2.95",
-    "@vitejs/plugin-vue": "^3.1.0",
     "sass": "^1.54.9",
     "unplugin-auto-import": "^0.11.2",
     "unplugin-vue-components": "^0.22.7",

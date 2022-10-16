@@ -1,5 +1,6 @@
 import rootApp from '@/App.vue'
 import { useAuthStore } from '@S/authenticationStore'
+import { log } from 'vue-chemistry/console'
 
 let app
 
@@ -9,7 +10,7 @@ export const Vue = user => {
   if (!app) {
     app = createApp(rootApp)
 
-    console.log('creating app')
+    log('creating app')
 
     // install all plugin modules.
     autoImportModules(app)
