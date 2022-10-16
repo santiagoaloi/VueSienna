@@ -103,12 +103,14 @@ const wizards = $ref([
   { name: 'Dean', lastName: 'Thomas' },
 ])
 
+// Headers can only be strings or numbers.
 const tableHeaders = computed(() => {
   return headers.filter(
     h => ['string', 'number'].includes(typeof h.alias) && h.alias !== ''
   )
 })
 
+// Get an array of header names only.
 const tableHeadersFlat = computed(() => {
   return tableHeaders.value.flatMap(h => h.name)
 })
@@ -119,8 +121,10 @@ const headers = $ref([
   { name: 'actions', alias: '' },
 ])
 
+// By default all headers are searchable.
 const selectedHeaders = $ref([...tableHeaders.value.flatMap(h => h.name)])
 
+// Only selectedHeaders will be searched.
 const searchWizards = computed(() =>
   wizards.filter(wizard => {
     const columns = [
