@@ -155,13 +155,3 @@ const searchWizards = $computed(() =>
   )
 )
 </script>
-
-<!-- <style scoped>
-.header-background {
-  background: rgb(51, 55, 60) !important;
-}
-
-.v-input--density-compact {
-  --v-input-control-height: 25px;
-}
-</style> -->
