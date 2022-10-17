@@ -1,9 +1,11 @@
 <template>
   <VCard color="transparent" flat class="d-flex flex-column fill-height px-11">
+    <!-- Table data toolbar (menu icons and title) -->
     <BaseTableToolbar :data="toolbarPayload"> </BaseTableToolbar>
 
+    <!-- Table data search field -->
     <VTextField
-      :disabled="isSearchDisabled"
+      :disabled="isSearchFieldDisabled"
       prepend-inner-icon="$mdiMagnify"
       placeholder="Search..."
       v-model="searchQuery"
@@ -14,7 +16,7 @@
     <VCard class="fill-height" flat color="transparent">
       <VFadeTransition>
         <VTable
-          v-if="!isSearchResultsEmpty && !isEmptyVisibleHeaders"
+          v-if="!isSearchResultsEmpty && !isVisibleHeadersEmpty"
           class="pa-0 ma-0 fill-height bg-transparent"
           fixed-header
           height="100%"
@@ -30,7 +32,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="fill-height" v-for="(item, i) in searchItems" :key="i">
+            <tr
+              class="fill-height"
+              v-for="(item, i) in searchTableData"
+              :key="i"
+            >
               <td v-for="col in visibleHeadersFlat">
                 {{ item[col] }}
               </td>
@@ -39,6 +45,7 @@
         </VTable>
       </VFadeTransition>
 
+      <!-- Only shows when table has no results or no columns are selected -->
       <BaseTableNoData />
     </VCard>
   </VCard>
@@ -64,6 +71,7 @@ const props = defineProps({
   },
 })
 
+// Table data search
 const searchQuery = $ref('')
 
 const searchableHeadersFlat = $computed(() =>
@@ -90,9 +98,9 @@ const visibleHeadersFlat = $computed(() =>
 const allHeaders = $computed(() => tableHeaders.flatMap(header => header.name))
 
 // Only selected columns will be searchable.
-const searchItems = $computed(() =>
+const searchTableData = $computed(() =>
   props.items.filter(row =>
-    isEmptysearchableHeaders
+    isSearchableHeadersEmpty
       ? allHeaders
       : searchableHeadersFlat
           .map(column => row[column])
@@ -103,20 +111,23 @@ const searchItems = $computed(() =>
 )
 
 //Getters
-const isSearchResultsEmpty = $computed(() => !searchItems.length)
-const isEmptyVisibleHeaders = $computed(() => !visibleHeaders.length)
-const isEmptysearchableHeaders = $computed(() => !searchableHeadersFlat.length)
-const isSearchDisabled = $computed(
-  () => isEmptysearchableHeaders || isEmptyVisibleHeaders
+const isSearchResultsEmpty = $computed(() => !searchTableData.length)
+
+const isVisibleHeadersEmpty = $computed(() => !visibleHeaders.length)
+
+const isSearchableHeadersEmpty = $computed(() => !searchableHeadersFlat.length)
+
+const isSearchFieldDisabled = $computed(
+  () => isSearchableHeadersEmpty || isVisibleHeadersEmpty
 )
 
-const menuOptions = $ref([
+const ToolbarMenuOptions = $ref([
   {
     icon: '$mdiViewColumnOutline',
     tooltip: 'Visible columns',
     title: 'Display columns',
     subtitle: {
-      visible: $$(isEmptyVisibleHeaders),
+      visible: $$(isVisibleHeadersEmpty),
       text: 'Select one or more columns to show',
     },
     data: { array: tableHeaders, model: 'visible' },
@@ -126,7 +137,7 @@ const menuOptions = $ref([
     tooltip: 'Searchable columns',
     title: 'Search columns',
     subtitle: {
-      visible: $$(isEmptysearchableHeaders),
+      visible: $$(isSearchableHeadersEmpty),
       text: 'Select one ore more columns to search',
     },
     data: { array: tableHeaders, model: 'searchable' },
@@ -135,6 +146,6 @@ const menuOptions = $ref([
 
 const toolbarPayload = $ref({
   title: props.title,
-  menuOptions,
+  ToolbarMenuOptions,
 })
 </script>

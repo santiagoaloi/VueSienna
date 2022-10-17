@@ -4,10 +4,10 @@
       {{ data.title }}
     </VCardTitle>
     <VSpacer />
-    <BaseTableMenuOptions
-      v-for="option in data.menuOptions"
+    <BaseTableToolbarMenuOptions
+      v-for="option in data.ToolbarMenuOptions"
       :option="option"
-    ></BaseTableMenuOptions>
+    ></BaseTableToolbarMenuOptions>
   </VCardActions>
 </template>
 

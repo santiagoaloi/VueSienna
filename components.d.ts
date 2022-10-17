@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     BaseTableNoData: typeof import('./src/components/base/base-table/BaseTableNoData.vue')['default']
     BaseTableSearch: typeof import('./src/components/base/base-table/BaseTableSearch.vue')['default']
     BaseTableToolbar: typeof import('./src/components/base/base-table/BaseTableToolbar.vue')['default']
+    BaseTableToolbarMenuOptions: typeof import('./src/components/base/base-table/BaseTableToolbarMenuOptions.vue')['default']
     copy: typeof import('./src/components/base/base-table/BaseTable copy.vue')['default']
     DAppBar: typeof import('./src/components/layout-default/app-bar/DAppBar.vue')['default']
     DAppBarLogo: typeof import('./src/components/layout-default/app-bar/DAppBarLogo.vue')['default']
