@@ -1,7 +1,7 @@
-// import '@mdi/font/css/materialdesignicons.css'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import 'vuetify/lib/styles/main.sass'
 import * as icons from '@/config/icons'
+import { defaults } from '@/config/defaults'
 
 export const install = app => {
   const vuetify = createVuetify({
@@ -15,16 +15,7 @@ export const install = app => {
         mdi,
       },
     },
-    defaults: {
-      VToolbar: {
-        VBtn: { variant: 'elevated' },
-      },
-      VAppBar: {
-        flat: true,
-        border: true,
-        density: 'comfortable',
-      },
-    },
+    defaults,
     theme: {
       defaultTheme: 'dark',
     },

@@ -1,44 +1,37 @@
 <template>
-  <template>
-    <v-table fixed-header height="300px">
-      <thead>
-        <tr>
-          <th class="text-left">Name</th>
-          <th class="text-left">Calories</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in desserts" :key="item.name">
-          <td>{{ item.name }}</td>
-          <td>{{ item.calories }}</td>
-        </tr>
-      </tbody>
-    </v-table>
-  </template>
+  <v-card color="#323a44">
+    {{ product }}
+    <v-card-text>
+      <v-autocomplete
+        v-model="product"
+        return-object
+        :items="products"
+        item-title="name"
+        label="Products"
+        :filter-keys="['raw.name', 'raw.brand']"
+        filter-mode="some"
+        @input="doSomething"
+      >
+      </v-autocomplete>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script setup>
-let wizards = [
-  { id: 1, name: 'Harry', lastName: 'Potter' },
-  { id: 2, name: 'Ron', lastName: 'Weasley' },
-  { id: 3, name: 'Hermione', lastName: 'Granger' },
-]
+const product = $ref([])
+const products = ref([
+  { name: 'Macbook', brand: 'Apple', id: 1 },
+  { name: 'iPad', brand: 'Apple', id: 2 },
+  { name: 'iPhone', brand: 'Apple', id: 3 },
+  { name: 'Galaxy 1', brand: 'Samsung', id: 4 },
+  { name: 'Galaxy 2', brand: 'Samsung', id: 5 },
+  { name: 'every', brand: 'every', id: 6 },
+])
 
-function findWizzard(name) {
-  for (const wizzard of wizards) {
-    if (wizzard.name === name) {
-      return wizzard
-    }
+watch(
+  () => product,
+  (newValue, oldValue) => {
+    console.log(product)
   }
-}
-console.log(findWizzard('Harry'))
-
-// const newArray = wizards
-//   .filter(item => {
-//     return item.name === 'Harry'
-//   })
-//   .map(newItem => {
-//     const obj = { ...newItem }
-//     return obj
-//   })
+)
 </script>

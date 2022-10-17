@@ -1,5 +1,5 @@
 import * as use from './vite.config.imports.js'
-
+screenTop
 // https://vitejs.dev/config/
 export default use.defineConfig(async () => {
   return {
@@ -15,12 +15,12 @@ export default use.defineConfig(async () => {
           replacement: use.resolve(__dirname, './src/modules'),
         },
         {
-          find: '@C',
-          replacement: use.resolve(__dirname, './src/composables'),
-        },
-        {
           find: '@U',
           replacement: use.resolve(__dirname, './src/utils'),
+        },
+        {
+          find: '@C',
+          replacement: use.resolve(__dirname, './src/composables'),
         },
       ],
     },

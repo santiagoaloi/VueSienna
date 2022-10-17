@@ -42,3 +42,7 @@ global-font-color {
 .v-input--density-compact {
   --v-input-control-height: 25px !important;
 }
+
+.wizard-icon {
+  font-size: 600%;
+}

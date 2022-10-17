@@ -9,6 +9,13 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BaseBtn: typeof import('./src/components/base/BaseBtn.vue')['default']
     BaseDivider: typeof import('./src/components/base/BaseDivider.vue')['default']
+    BaseTable: typeof import('./src/components/base/base-table/BaseTable.vue')['default']
+    BaseTableMenuButton: typeof import('./src/components/base/base-table/BaseTableMenuButton.vue')['default']
+    BaseTableMenuOptions: typeof import('./src/components/base/base-table/BaseTableMenuOptions.vue')['default']
+    BaseTableNoData: typeof import('./src/components/base/base-table/BaseTableNoData.vue')['default']
+    BaseTableSearch: typeof import('./src/components/base/base-table/BaseTableSearch.vue')['default']
+    BaseTableToolbar: typeof import('./src/components/base/base-table/BaseTableToolbar.vue')['default']
+    copy: typeof import('./src/components/base/base-table/BaseTable copy.vue')['default']
     DAppBar: typeof import('./src/components/layout-default/app-bar/DAppBar.vue')['default']
     DAppBarLogo: typeof import('./src/components/layout-default/app-bar/DAppBarLogo.vue')['default']
     DAppView: typeof import('./src/components/layout-default/app-view/DAppView.vue')['default']
@@ -34,5 +41,6 @@ declare module '@vue/runtime-core' {
     SplitLeftCol: typeof import('./src/components/base/split-view/SplitLeftCol.vue')['default']
     SplitRightCol: typeof import('./src/components/base/split-view/SplitRightCol.vue')['default']
     SplitView: typeof import('./src/components/base/split-view/SplitView.vue')['default']
+    Xxxx: typeof import('./src/components/base/base-table/xxxx.vue')['default']
   }
 }
