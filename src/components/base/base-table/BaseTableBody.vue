@@ -16,7 +16,7 @@ defineOptions({
   name: 'BaseTableView',
 })
 
-const props = defineProps({
+const props = defineProps({´
   data: {
     type: Array,
     default: () => [],
