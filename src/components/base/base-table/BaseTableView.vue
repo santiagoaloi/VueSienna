@@ -2,9 +2,7 @@
   <VCard class="fill-height" flat color="transparent">
     <VFadeTransition>
       <VTable
-        v-if="
-          !data.isSearchResultsEmpty.value && !data.isVisibleHeadersEmpty.value
-        "
+        v-if="!data.isSearchFieldDisabled.value"
         class="base-table"
         fixed-header
         height="100%"
