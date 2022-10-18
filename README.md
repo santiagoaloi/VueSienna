@@ -32,39 +32,37 @@
 ### main.js example
 
 ```js
-import { createApp as instance } from 'vue'
-import CoreApp from '@/App.vue'
+import '@/styles'
+import { auth } from '@/firebase'
+import { Vue } from '@U/instanciateVue'
 
-// Auto import any plugins in @/plugins
-import autoImportPlugins from '@/utils/autoImportPlugins'
+// Init Vue.
+auth.onAuthStateChanged(async user => {
+  Vue(user)
+})
 
-const Vue = instance(CoreApp)
-autoImportPlugins(Vue)
-Vue.mount('#app')
 ```
 
 ### autoImportPlugins.js example
 
 ```js
-export default function (app) {
-  Object.values(import.meta.globEager('@/plugins/*.js')).map(i =>
-    i.default.install(app)
-  )
-}
+const modules = import.meta.globEager('@M/*.js')
+export default app => Object.values(modules).map(m => m.install(app))
+
 ```
 
 ### Plugin module example
 
 ```js
 // Vuetify
-import { createVuetify } from 'vuetify'
+import '@/styles'
+import { auth } from '@/firebase'
+import { Vue } from '@U/instanciateVue'
 
-export default {
-  install: app => {
-    const v = createVuetify()
-    app.use(v)
-  },
-}
+// Init Vue.
+auth.onAuthStateChanged(async user => {
+  Vue(user)
+})
 ```
 
 ## Pre-packed
