@@ -1,5 +1,5 @@
 export const useTableItems = props => {
-  //TODO: reactivity transforms.
+  //TODO: reactivity transforms...
 
   const title = ref(props.title)
   const searchQuery = ref('')
