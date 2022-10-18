@@ -54,15 +54,18 @@ export default app => Object.values(modules).map(m => m.install(app))
 ### Plugin module example
 
 ```js
-// Vuetify
-import '@/styles'
-import { auth } from '@/firebase'
-import { Vue } from '@U/instanciateVue'
+import { router } from '@M/routes'
 
-// Init Vue.
-auth.onAuthStateChanged(async user => {
-  Vue(user)
-})
+export const install = app => {
+  const pinia = createPinia()
+
+  // Router can be used in any pinia store module.
+  pinia.use(({ store }) => {
+    store.router = markRaw(router)
+  })
+
+  app.use(pinia)
+}
 ```
 
 ## Pre-packed
