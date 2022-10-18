@@ -1,7 +1,7 @@
 <template>
   <VCardActions class="no-gutters">
     <VCardTitle class="no-gutters">
-      {{ data.title.value }}
+      {{ data.title }}
     </VCardTitle>
     <VSpacer />
     <BaseTableMenus v-for="menu in menus" :menu="menu" />
