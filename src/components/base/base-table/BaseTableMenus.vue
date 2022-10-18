@@ -34,7 +34,7 @@
 
 <script setup>
 defineOptions({
-  name: 'BaseTabletoolbarMenus',
+  name: 'BaseTableToolbarMenus',
 })
 
 const props = defineProps({

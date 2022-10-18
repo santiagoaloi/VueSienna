@@ -2,24 +2,15 @@
   <VCard class="fill-height" flat color="transparent">
     <VFadeTransition>
       <VTable
-        v-if="!data.isSearchFieldDisabled.value"
+        v-if="
+          !data.isSearchResultsEmpty.value && !data.isVisibleHeadersEmpty.value
+        "
         class="base-table"
         fixed-header
         height="100%"
       >
         <BaseTableHead :headers="data.visibleHeaders" />
-
-        <tbody>
-          <tr
-            class="fill-height"
-            v-for="(item, i) in data.searchTableData.value"
-            :key="i"
-          >
-            <td v-for="col in data.visibleHeadersFlat.value">
-              {{ item[col] }}
-            </td>
-          </tr>
-        </tbody>
+        <BaseTableBody :data="data"> </BaseTableBody>
       </VTable>
     </VFadeTransition>
 
@@ -29,6 +20,10 @@
 </template>
 
 <script setup>
+defineOptions({
+  name: 'BaseTableView',
+})
+
 const props = defineProps({
   data: {
     type: Array,

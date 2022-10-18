@@ -9,6 +9,10 @@
 </template>
 
 <script setup>
+defineOptions({
+  name: 'BaseTableHead',
+})
+
 const props = defineProps({
   headers: {
     type: Array,

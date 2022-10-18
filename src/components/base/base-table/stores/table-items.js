@@ -11,7 +11,7 @@ export const useTableItems = props => {
       ['string', 'number'].includes(typeof header.name)
     )
   )
-  const searchableHeadersFlat = computed(() =>
+  const tableHeadersFlat = computed(() =>
     tableHeaders.value
       .filter(header => header.searchable)
       .flatMap(header => header.name)
@@ -19,9 +19,9 @@ export const useTableItems = props => {
 
   const searchTableData = computed(() =>
     props.items.filter(row =>
-      isSearchableHeadersEmpty
+      isSearchableHeadersEmpty.value
         ? allHeaders.value
-        : searchableHeadersFlat.value
+        : tableHeadersFlat.value
             .map(column => row[column])
             .some(value =>
               value.toLowerCase().includes(searchQuery.value.toLowerCase())
@@ -43,7 +43,7 @@ export const useTableItems = props => {
   const isSearchResultsEmpty = computed(() => !searchTableData.value.length)
   const isVisibleHeadersEmpty = computed(() => !visibleHeaders.value.length)
   const isSearchableHeadersEmpty = computed(
-    () => !searchableHeadersFlat.value.length
+    () => !tableHeadersFlat.value.length
   )
   const isSearchFieldDisabled = computed(
     () => isSearchableHeadersEmpty.value || isVisibleHeadersEmpty.value
@@ -53,7 +53,7 @@ export const useTableItems = props => {
     title,
     searchQuery,
     tableHeaders,
-    searchableHeadersFlat,
+    tableHeadersFlat,
     searchTableData,
     visibleHeaders,
     visibleHeadersFlat,

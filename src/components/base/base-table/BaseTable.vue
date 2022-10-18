@@ -20,6 +20,10 @@
 <script setup>
 import { useTableItems } from './stores/table-items'
 
+defineOptions({
+  name: 'BaseTable',
+})
+
 const props = defineProps({
   items: {
     type: Array,
