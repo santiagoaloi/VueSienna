@@ -2,15 +2,13 @@
   <VCard class="fill-height" flat color="transparent">
     <VFadeTransition>
       <VTable
-        v-if="
-          !data.isSearchResultsEmpty.value && !data.isVisibleHeadersEmpty.value
-        "
+        v-if="!data.isSearchResultsEmpty && !data.isVisibleHeadersEmpty"
         class="base-table"
         fixed-header
         height="100%"
       >
         <BaseTableHead :headers="data.visibleHeaders" />
-        <BaseTableBody :data="data"> </BaseTableBody>
+        <BaseTableBody :data="data" />
       </VTable>
     </VFadeTransition>
 

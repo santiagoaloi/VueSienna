@@ -1,11 +1,7 @@
 <template>
   <tbody>
-    <tr
-      class="fill-height"
-      v-for="(item, i) in data.searchTableData.value"
-      :key="i"
-    >
-      <td v-for="col in data.visibleHeadersFlat.value">
+    <tr class="fill-height" v-for="(item, i) in data.searchTableData" :key="i">
+      <td v-for="col in data.visibleHeadersFlat">
         {{ item[col] }}
       </td>
     </tr>
@@ -16,7 +12,7 @@ defineOptions({
   name: 'BaseTableView',
 })
 
-const props = defineProps({´
+const props = defineProps({
   data: {
     type: Array,
     default: () => [],

@@ -5,10 +5,10 @@
 
     <!-- Table data search field -->
     <VTextField
-      :disabled="table.isSearchFieldDisabled.value"
+      :disabled="table.isSearchFieldDisabled"
       prepend-inner-icon="$mdiMagnify"
       placeholder="Search..."
-      v-model="table.searchQuery.value"
+      v-model="table.searchQuery"
       clearable
     >
     </VTextField>
