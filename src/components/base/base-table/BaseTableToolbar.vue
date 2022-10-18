@@ -1,13 +1,10 @@
 <template>
-  <VCardActions class="pa-0 ma-0">
-    <VCardTitle class="pa-0 ma-0" primary-title>
-      {{ data.title }}
+  <VCardActions class="no-gutters">
+    <VCardTitle class="no-gutters">
+      {{ data.title.value }}
     </VCardTitle>
     <VSpacer />
-    <BaseTableToolbarMenuOptions
-      v-for="option in data.ToolbarMenuOptions"
-      :option="option"
-    ></BaseTableToolbarMenuOptions>
+    <BaseTableMenus v-for="menu in menus" :menu="menu" />
   </VCardActions>
 </template>
 
@@ -18,8 +15,31 @@ defineOptions({
 
 const props = defineProps({
   data: {
-    type: Object,
-    default: () => {},
+    type: Array,
+    default: () => [],
   },
 })
+
+const menus = ref([
+  {
+    icon: '$mdiViewColumnOutline',
+    tooltip: 'Visible columns',
+    title: 'Display columns',
+    subtitle: {
+      visible: props.data.isVisibleHeadersEmpty,
+      text: 'Select one or more columns to show',
+    },
+    data: { headers: props.data.tableHeaders, model: 'visible' },
+  },
+  {
+    icon: '$mdiFilterVariant',
+    tooltip: 'Searchable columns',
+    title: 'Search columns',
+    subtitle: {
+      visible: props.data.isSearchableHeadersEmpty,
+      text: 'Select one ore more columns to search',
+    },
+    data: { headers: props.data.tableHeaders, model: 'searchable' },
+  },
+])
 </script>
