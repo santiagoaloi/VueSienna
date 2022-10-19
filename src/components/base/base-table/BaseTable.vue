@@ -8,7 +8,7 @@
       :disabled="isSearchFieldDisabled"
       prepend-inner-icon="$mdiMagnify"
       placeholder="Search..."
-      v-model="searchQuery"
+      v-model="searchField"
       clearable
     >
     </VTextField>
@@ -41,7 +41,7 @@ const props = defineProps({
 
 const table = useTableItems(props)
 
-const { isSearchFieldDisabled, searchQuery } = toRefs(table)
+const { isSearchFieldDisabled, searchField } = toRefs(table)
 
 console.log(table)
 </script>

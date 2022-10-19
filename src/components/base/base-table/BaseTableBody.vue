@@ -1,7 +1,7 @@
 <template>
   <tbody>
     <tr class="fill-height" v-for="(item, i) in data.searchTableData" :key="i">
-      <td v-for="col in isVisibleHeadersFlat">
+      <td v-for="col in visibleTableHeaders">
         {{ item[col] }}
       </td>
     </tr>
@@ -19,5 +19,5 @@ const props = defineProps({
   },
 })
 
-const { isVisibleHeadersFlat } = toRefs(props.data)
+const { visibleTableHeaders } = toRefs(props.data)
 </script>

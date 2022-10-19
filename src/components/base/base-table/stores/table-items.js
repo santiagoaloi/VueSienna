@@ -1,61 +1,54 @@
 export const useTableItems = props => {
-  //TODO: reactivity transforms...
-
   const title = $ref(props.title)
 
-  const searchQuery = $ref('')
+  const searchField = $ref('')
+  const isSearchFieldDisabled = $computed(
+    () => isSearchableHeadersEmpty || isVisibleHeadersEmpty
+  )
+  const isSearchResultsEmpty = $computed(() => !searchTableData.length)
 
   const allHeaders = $computed(() => tableHeaders.flatMap(h => h.name))
-
   const tableHeaders = $computed(() =>
     props.headers.filter(h => ['string', 'number'].includes(typeof h.name))
   )
-
-  const tableHeadersFlat = $computed(() =>
+  const searchableTableHeaders = $computed(() =>
     tableHeaders.filter(h => h.isSearchable).flatMap(h => h.name)
+  )
+  const isVisibleHeaders = $computed(() =>
+    tableHeaders.filter(h => h.isVisible)
+  )
+  // Headers can only be strings or numbers.
+  const visibleTableHeaders = $computed(() =>
+    tableHeaders.filter(h => h.isVisible).flatMap(h => h.name)
+  )
+  const isVisibleHeadersEmpty = $computed(() => !isVisibleHeaders.length)
+
+  const isSearchableHeadersEmpty = $computed(
+    () => !searchableTableHeaders.length
   )
 
   const searchTableData = $computed(() =>
     props.items.filter(row =>
       isSearchableHeadersEmpty
         ? allHeaders
-        : tableHeadersFlat
+        : searchableTableHeaders
             .map(h => row[h])
-            .some(v => v.toLowerCase().includes(searchQuery.toLowerCase()))
+            .some(v => v.toLowerCase().includes(searchField.toLowerCase()))
     )
-  )
-
-  const isVisibleHeaders = $computed(() =>
-    tableHeaders.filter(h => h.isVisible)
-  )
-
-  // Headers can only be strings or numbers.
-  const isVisibleHeadersFlat = $computed(() =>
-    tableHeaders.filter(h => h.isVisible).flatMap(h => h.name)
-  )
-
-  const isSearchResultsEmpty = $computed(() => !searchTableData.length)
-
-  const isVisibleHeadersEmpty = $computed(() => !isVisibleHeaders.length)
-
-  const isSearchableHeadersEmpty = $computed(() => !tableHeadersFlat.length)
-
-  const isSearchFieldDisabled = $computed(
-    () => isSearchableHeadersEmpty || isVisibleHeadersEmpty
   )
 
   return reactive({
     title,
     allHeaders: $$(allHeaders),
-    searchQuery: $$(searchQuery),
+    searchField: $$(searchField),
     tableHeaders: $$(tableHeaders),
-    isVisibleHeaders: $$(isVisibleHeaders),
     searchTableData: $$(searchTableData),
-    tableHeadersFlat: $$(tableHeadersFlat),
-    isVisibleHeadersFlat: $$(isVisibleHeadersFlat),
+    isVisibleHeaders: $$(isVisibleHeaders),
+    visibleTableHeaders: $$(visibleTableHeaders),
     isSearchResultsEmpty: $$(isSearchResultsEmpty),
     isVisibleHeadersEmpty: $$(isVisibleHeadersEmpty),
     isSearchFieldDisabled: $$(isSearchFieldDisabled),
+    searchableTableHeaders: $$(searchableTableHeaders),
     isSearchableHeadersEmpty: $$(isSearchableHeadersEmpty),
   })
 }
