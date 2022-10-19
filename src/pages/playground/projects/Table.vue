@@ -31,7 +31,7 @@ const wizards = $ref([
 ])
 
 const headers = $ref([
-  { name: 'name', alias: 'Name', visible: true, searchable: true },
-  { name: 'lastName', alias: 'Last Name', visible: true, searchable: true },
+  { name: 'name', alias: 'Name', isVisible: true, isSearchable: true },
+  { name: 'lastName', alias: 'Last Name', isVisible: true, isSearchable: true },
 ])
 </script>

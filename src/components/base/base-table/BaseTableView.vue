@@ -7,7 +7,7 @@
         fixed-header
         height="100%"
       >
-        <BaseTableHead :headers="visibleHeaders" />
+        <BaseTableHead :headers="isVisibleHeaders" />
         <BaseTableBody :data="data" />
       </VTable>
     </VFadeTransition>
@@ -29,7 +29,6 @@ const props = defineProps({
   },
 })
 
-const { isSearchResultsEmpty, isVisibleHeadersEmpty, visibleHeaders } = toRefs(
-  props.data
-)
+const { isSearchResultsEmpty, isVisibleHeadersEmpty, isVisibleHeaders } =
+  toRefs(props.data)
 </script>

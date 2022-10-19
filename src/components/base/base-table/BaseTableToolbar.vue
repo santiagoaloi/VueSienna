@@ -26,23 +26,23 @@ const { tableHeaders, isSearchableHeadersEmpty, isVisibleHeadersEmpty } =
 const menus = ref([
   {
     icon: '$mdiViewColumnOutline',
-    tooltip: 'Visible columns',
+    tooltip: 'isVisible columns',
     title: 'Display columns',
     subtitle: {
-      visible: isVisibleHeadersEmpty,
+      isVisible: isVisibleHeadersEmpty,
       text: 'Select one or more columns to show',
     },
-    data: { headers: tableHeaders, model: 'visible' },
+    data: { headers: tableHeaders, model: 'isVisible' },
   },
   {
     icon: '$mdiFilterVariant',
-    tooltip: 'Searchable columns',
+    tooltip: 'isSearchable columns',
     title: 'Search columns',
     subtitle: {
-      visible: isSearchableHeadersEmpty,
+      isVisible: isSearchableHeadersEmpty,
       text: 'Select one ore more columns to search',
     },
-    data: { headers: tableHeaders, model: 'searchable' },
+    data: { headers: tableHeaders, model: 'isSearchable' },
   },
 ])
 </script>

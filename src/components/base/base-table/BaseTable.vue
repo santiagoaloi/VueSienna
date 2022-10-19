@@ -1,7 +1,7 @@
 <template>
   <VCard color="transparent" flat class="base-table-wrapper">
     <!-- Table data toolbar (menu icons and title) -->
-    <BaseTableToolbar :data="table"> </BaseTableToolbar>
+    <BaseTableToolbar :data="table" />
 
     <!-- Table data search field -->
     <VTextField

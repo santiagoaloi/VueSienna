@@ -13,7 +13,7 @@
       <VCardTitle class="mb-n4"> {{ title }} </VCardTitle>
 
       <VExpandTransition>
-        <VCardSubtitle v-if="subtitle.visible" class="text-teal-accent-2">
+        <VCardSubtitle v-if="subtitle.isVisible" class="text-teal-accent-2">
           {{ subtitle.text }}
         </VCardSubtitle>
       </VExpandTransition>

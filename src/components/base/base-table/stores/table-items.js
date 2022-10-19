@@ -2,21 +2,17 @@ export const useTableItems = props => {
   //TODO: reactivity transforms...
 
   const title = $ref(props.title)
+
   const searchQuery = $ref('')
 
-  const allHeaders = $computed(() =>
-    tableHeaders.flatMap(header => header.name)
-  )
+  const allHeaders = $computed(() => tableHeaders.flatMap(h => h.name))
 
   const tableHeaders = $computed(() =>
-    props.headers.filter(header =>
-      ['string', 'number'].includes(typeof header.name)
-    )
+    props.headers.filter(h => ['string', 'number'].includes(typeof h.name))
   )
+
   const tableHeadersFlat = $computed(() =>
-    tableHeaders
-      .filter(header => header.searchable)
-      .flatMap(header => header.name)
+    tableHeaders.filter(h => h.isSearchable).flatMap(h => h.name)
   )
 
   const searchTableData = $computed(() =>
@@ -24,23 +20,26 @@ export const useTableItems = props => {
       isSearchableHeadersEmpty
         ? allHeaders
         : tableHeadersFlat
-            .map(column => row[column])
+            .map(h => row[h])
             .some(v => v.toLowerCase().includes(searchQuery.toLowerCase()))
     )
   )
 
-  const visibleHeaders = $computed(() =>
-    tableHeaders.filter(header => header.visible)
+  const isVisibleHeaders = $computed(() =>
+    tableHeaders.filter(h => h.isVisible)
   )
 
   // Headers can only be strings or numbers.
-  const visibleHeadersFlat = $computed(() =>
-    tableHeaders.filter(header => header.visible).flatMap(header => header.name)
+  const isVisibleHeadersFlat = $computed(() =>
+    tableHeaders.filter(h => h.isVisible).flatMap(h => h.name)
   )
 
   const isSearchResultsEmpty = $computed(() => !searchTableData.length)
-  const isVisibleHeadersEmpty = $computed(() => !visibleHeaders.length)
+
+  const isVisibleHeadersEmpty = $computed(() => !isVisibleHeaders.length)
+
   const isSearchableHeadersEmpty = $computed(() => !tableHeadersFlat.length)
+
   const isSearchFieldDisabled = $computed(
     () => isSearchableHeadersEmpty || isVisibleHeadersEmpty
   )
@@ -50,10 +49,10 @@ export const useTableItems = props => {
     allHeaders: $$(allHeaders),
     searchQuery: $$(searchQuery),
     tableHeaders: $$(tableHeaders),
-    visibleHeaders: $$(visibleHeaders),
+    isVisibleHeaders: $$(isVisibleHeaders),
     searchTableData: $$(searchTableData),
     tableHeadersFlat: $$(tableHeadersFlat),
-    visibleHeadersFlat: $$(visibleHeadersFlat),
+    isVisibleHeadersFlat: $$(isVisibleHeadersFlat),
     isSearchResultsEmpty: $$(isSearchResultsEmpty),
     isVisibleHeadersEmpty: $$(isVisibleHeadersEmpty),
     isSearchFieldDisabled: $$(isSearchFieldDisabled),
