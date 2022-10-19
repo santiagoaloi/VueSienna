@@ -5,10 +5,10 @@
 
     <!-- Table data search field -->
     <VTextField
-      :disabled="table.isSearchFieldDisabled.value"
+      :disabled="isSearchFieldDisabled"
       prepend-inner-icon="$mdiMagnify"
       placeholder="Search..."
-      v-model="table.searchQuery.value"
+      v-model="searchQuery"
       clearable
     >
     </VTextField>
@@ -40,6 +40,8 @@ const props = defineProps({
 })
 
 const table = useTableItems(props)
+
+const { isSearchFieldDisabled, searchQuery } = toRefs(table)
 
 console.log(table)
 </script>

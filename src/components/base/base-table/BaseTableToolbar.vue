@@ -1,7 +1,7 @@
 <template>
   <VCardActions class="no-gutters">
     <VCardTitle class="no-gutters">
-      {{ data.title.value }}
+      {{ data.title }}
     </VCardTitle>
     <VSpacer />
     <BaseTableMenus v-for="menu in menus" :menu="menu" />
@@ -20,26 +20,29 @@ const props = defineProps({
   },
 })
 
+const { tableHeaders, isSearchableHeadersEmpty, isVisibleHeadersEmpty } =
+  toRefs(props.data)
+
 const menus = ref([
   {
     icon: '$mdiViewColumnOutline',
     tooltip: 'Visible columns',
     title: 'Display columns',
     subtitle: {
-      visible: props.data.isVisibleHeadersEmpty,
+      visible: isVisibleHeadersEmpty,
       text: 'Select one or more columns to show',
     },
-    data: { headers: props.data.tableHeaders, model: 'visible' },
+    data: { headers: tableHeaders, model: 'visible' },
   },
   {
     icon: '$mdiFilterVariant',
     tooltip: 'Searchable columns',
     title: 'Search columns',
     subtitle: {
-      visible: props.data.isSearchableHeadersEmpty,
+      visible: isSearchableHeadersEmpty,
       text: 'Select one ore more columns to search',
     },
-    data: { headers: props.data.tableHeaders, model: 'searchable' },
+    data: { headers: tableHeaders, model: 'searchable' },
   },
 ])
 </script>

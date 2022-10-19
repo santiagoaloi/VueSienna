@@ -2,11 +2,8 @@
   "recommendations": [
     "vue.volar",
     "sdras.vue-vscode-snippets",
-    "antfu.vite",
     "esbenp.prettier-vscode",
     "xabikos.JavaScriptSnippets",
-    "vincaslt.highlight-matching-tag",
-    "dbaeumer.vscode-eslint",
-    "formulahendry.auto-rename-tag",
+    "formulahendry.auto-rename-tag"
   ]
 }

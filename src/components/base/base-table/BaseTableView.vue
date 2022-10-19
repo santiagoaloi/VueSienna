@@ -2,15 +2,13 @@
   <VCard class="fill-height" flat color="transparent">
     <VFadeTransition>
       <VTable
-        v-if="
-          !data.isSearchResultsEmpty.value && !data.isVisibleHeadersEmpty.value
-        "
+        v-if="!isSearchResultsEmpty && !isVisibleHeadersEmpty"
         class="base-table"
         fixed-header
         height="100%"
       >
-        <BaseTableHead :headers="data.visibleHeaders" />
-        <BaseTableBody :data="data"> </BaseTableBody>
+        <BaseTableHead :headers="visibleHeaders" />
+        <BaseTableBody :data="data" />
       </VTable>
     </VFadeTransition>
 
@@ -30,4 +28,8 @@ const props = defineProps({
     default: () => [],
   },
 })
+
+const { isSearchResultsEmpty, isVisibleHeadersEmpty, visibleHeaders } = toRefs(
+  props.data
+)
 </script>

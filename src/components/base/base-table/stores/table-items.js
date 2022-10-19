@@ -1,67 +1,62 @@
 export const useTableItems = props => {
-  //TODO.
-  const title = ref(props.title)
-  const searchQuery = ref('')
+  //TODO: reactivity transforms...
 
-  const allHeaders = computed(() =>
-    tableHeaders.value.flatMap(header => header.name)
+  const title = $ref(props.title)
+  const searchQuery = $ref('')
+
+  const allHeaders = $computed(() =>
+    tableHeaders.flatMap(header => header.name)
   )
 
-  const tableHeaders = computed(() =>
+  const tableHeaders = $computed(() =>
     props.headers.filter(header =>
       ['string', 'number'].includes(typeof header.name)
     )
   )
-  const tableHeadersFlat = computed(() =>
-    tableHeaders.value
+  const tableHeadersFlat = $computed(() =>
+    tableHeaders
       .filter(header => header.searchable)
       .flatMap(header => header.name)
   )
 
-  const searchTableData = computed(() =>
+  const searchTableData = $computed(() =>
     props.items.filter(row =>
-      isSearchableHeadersEmpty.value
-        ? allHeaders.value
-        : tableHeadersFlat.value
+      isSearchableHeadersEmpty
+        ? allHeaders
+        : tableHeadersFlat
             .map(column => row[column])
-            .some(value =>
-              value.toLowerCase().includes(searchQuery.value.toLowerCase())
-            )
+            .some(v => v.toLowerCase().includes(searchQuery.toLowerCase()))
     )
   )
 
-  const visibleHeaders = computed(() =>
-    tableHeaders.value.filter(header => header.visible)
+  const visibleHeaders = $computed(() =>
+    tableHeaders.filter(header => header.visible)
   )
 
   // Headers can only be strings or numbers.
-  const visibleHeadersFlat = computed(() =>
-    tableHeaders.value
-      .filter(header => header.visible)
-      .flatMap(header => header.name)
+  const visibleHeadersFlat = $computed(() =>
+    tableHeaders.filter(header => header.visible).flatMap(header => header.name)
   )
 
-  const isSearchResultsEmpty = computed(() => !searchTableData.value.length)
-  const isVisibleHeadersEmpty = computed(() => !visibleHeaders.value.length)
-  const isSearchableHeadersEmpty = computed(
-    () => !tableHeadersFlat.value.length
-  )
-  const isSearchFieldDisabled = computed(
-    () => isSearchableHeadersEmpty.value || isVisibleHeadersEmpty.value
+  const isSearchResultsEmpty = $computed(() => !searchTableData.length)
+  const isVisibleHeadersEmpty = $computed(() => !visibleHeaders.length)
+  const isSearchableHeadersEmpty = $computed(() => !tableHeadersFlat.length)
+  const isSearchFieldDisabled = $computed(
+    () => isSearchableHeadersEmpty || isVisibleHeadersEmpty
   )
 
-  return {
+  return reactive({
     title,
-    searchQuery,
-    tableHeaders,
-    tableHeadersFlat,
-    searchTableData,
-    visibleHeaders,
-    visibleHeadersFlat,
-    allHeaders,
-    isSearchResultsEmpty,
-    isVisibleHeadersEmpty,
-    isSearchableHeadersEmpty,
-    isSearchFieldDisabled,
-  }
+    allHeaders: $$(allHeaders),
+    searchQuery: $$(searchQuery),
+    tableHeaders: $$(tableHeaders),
+    visibleHeaders: $$(visibleHeaders),
+    searchTableData: $$(searchTableData),
+    tableHeadersFlat: $$(tableHeadersFlat),
+    visibleHeadersFlat: $$(visibleHeadersFlat),
+    isSearchResultsEmpty: $$(isSearchResultsEmpty),
+    isVisibleHeadersEmpty: $$(isVisibleHeadersEmpty),
+    isSearchFieldDisabled: $$(isSearchFieldDisabled),
+    isSearchableHeadersEmpty: $$(isSearchableHeadersEmpty),
+  })
 }

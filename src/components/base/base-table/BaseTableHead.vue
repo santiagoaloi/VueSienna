@@ -1,7 +1,7 @@
 <template>
   <thead>
     <tr>
-      <th v-for="header in headers.value" class="text-left header-background">
+      <th v-for="header in headers" class="text-left header-background">
         {{ header.alias }}
       </th>
     </tr>
