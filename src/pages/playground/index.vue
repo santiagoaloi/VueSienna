@@ -20,8 +20,8 @@ const selectedProject = $ref('')
 
 watch(
   () => selectedProject,
-  newValue => {
-    router.push(`/playground/projects/${newValue}`)
+  newVal => {
+    router.push(`/playground/projects/${newVal}`)
   }
 )
 
