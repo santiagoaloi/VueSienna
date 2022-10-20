@@ -1,19 +1,17 @@
 <template>
   <VCard class="fill-height" flat color="transparent">
-    <VFadeTransition>
-      <VTable
-        v-if="!isSearchResultsEmpty && !isVisibleHeadersEmpty"
-        class="base-table"
-        fixed-header
-        height="100%"
-      >
-        <BaseTableHead :headers="isVisibleHeaders" />
-        <BaseTableBody :data="data" />
-      </VTable>
-    </VFadeTransition>
+    <VTable
+      v-if="!isSearchResultsEmpty && !isVisibleHeadersEmpty"
+      class="base-table"
+      fixed-header
+      height="100%"
+    >
+      <BaseTableHead :data="data" />
+      <BaseTableBody :data="data" />
+    </VTable>
 
     <!-- Only shows when table has no results or no columns are selected -->
-    <BaseTableNoData />
+    <BaseTableNoData v-else />
   </VCard>
 </template>
 

@@ -2,10 +2,13 @@ export const useTableItems = props => {
   const title = $ref(props.title)
 
   const searchField = $ref('')
+
+  const sortKey = $ref('')
+
   const isSearchFieldDisabled = $computed(
     () => isSearchableHeadersEmpty || isVisibleHeadersEmpty
   )
-  const isSearchResultsEmpty = $computed(() => !searchTableData.length)
+  const isSearchResultsEmpty = $computed(() => !filteredData.length)
 
   const allHeaders = $computed(() => tableHeaders.flatMap(h => h.name))
   const tableHeaders = $computed(() =>
@@ -14,37 +17,67 @@ export const useTableItems = props => {
   const searchableTableHeaders = $computed(() =>
     tableHeaders.filter(h => h.isSearchable).flatMap(h => h.name)
   )
-  const isVisibleHeaders = $computed(() =>
-    tableHeaders.filter(h => h.isVisible)
-  )
+  const visibleHeaders = $computed(() => tableHeaders.filter(h => h.isVisible))
+
   // Headers can only be strings or numbers.
-  const visibleTableHeaders = $computed(() =>
+  const visibleTableColumns = $computed(() =>
     tableHeaders.filter(h => h.isVisible).flatMap(h => h.name)
   )
-  const isVisibleHeadersEmpty = $computed(() => !isVisibleHeaders.length)
+  const isVisibleHeadersEmpty = $computed(() => !!!visibleHeaders.length)
 
   const isSearchableHeadersEmpty = $computed(
     () => !searchableTableHeaders.length
   )
 
-  const searchTableData = $computed(() =>
-    props.items.filter(row =>
+  const filteredData = $computed(() => {
+    let data = props.items
+
+    data = data.filter(row =>
       isSearchableHeadersEmpty
         ? allHeaders
         : searchableTableHeaders
             .map(h => row[h])
-            .some(v => v.toLowerCase().includes(searchField.toLowerCase()))
+            .some(v =>
+              v.toString().toLowerCase().includes(searchField.toLowerCase())
+            )
     )
+    const key = sortKey
+
+    if (key) {
+      const order = sortOrders[key]
+      data = data.slice().sort((a, b) => {
+        a = a[key]
+        b = b[key]
+        return (a === b ? 0 : a > b ? 1 : -1) * order
+      })
+    }
+
+    return data
+  })
+
+  const sortOrders = $ref(
+    visibleTableColumns.reduce((o, key) => ((o[key] = 1), o), {})
   )
 
+  function sortBy(key) {
+    console.log('hello from sortBy')
+    console.log('key ' + key)
+
+    sortKey = key
+    sortOrders[key] *= -1
+  }
+
   return reactive({
-    title,
+    title: $$(title),
+    sortBy,
+    sortKey: $$(sortKey),
+    sortOrders: $$(sortOrders),
     allHeaders: $$(allHeaders),
     searchField: $$(searchField),
     tableHeaders: $$(tableHeaders),
-    searchTableData: $$(searchTableData),
-    isVisibleHeaders: $$(isVisibleHeaders),
-    visibleTableHeaders: $$(visibleTableHeaders),
+    filteredData: $$(filteredData),
+    visibleHeaders: $$(visibleHeaders),
+    visibleTableColumns: $$(visibleTableColumns),
     isSearchResultsEmpty: $$(isSearchResultsEmpty),
     isVisibleHeadersEmpty: $$(isVisibleHeadersEmpty),
     isSearchFieldDisabled: $$(isSearchFieldDisabled),

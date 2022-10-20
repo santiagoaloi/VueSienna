@@ -1,8 +1,17 @@
 <template>
   <thead>
     <tr>
-      <th v-for="header in headers" class="text-left header-background">
-        {{ header.alias }}
+      <th
+        @click="data.sortBy(key.name)"
+        v-for="key in data.visibleHeaders"
+        class="text-left header-background"
+      >
+        {{ key.alias }}
+        <span
+          class="arrow"
+          :class="data.sortOrders[key.name] > 0 ? 'asc' : 'dsc'"
+        >
+        </span>
       </th>
     </tr>
   </thead>
@@ -14,7 +23,7 @@ defineOptions({
 })
 
 const props = defineProps({
-  headers: {
+  data: {
     type: Array,
     default: () => [],
   },

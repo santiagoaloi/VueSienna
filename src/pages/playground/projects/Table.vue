@@ -1,9 +1,6 @@
 <template>
-  <BaseTable
-    title="Search WIzards"
-    :items="wizards"
-    :headers="headers"
-  ></BaseTable>
+  <BaseTable title="Search WIzards" :items="wizards" :headers="headers">
+  </BaseTable>
 </template>
 
 <script setup>
@@ -12,25 +9,26 @@ defineOptions({
 })
 
 const wizards = $ref([
-  { name: 'Harry', lastName: 'Potter' },
-  { name: 'Lord', lastName: 'Voldemort' },
-  { name: 'Ron', lastName: 'Weasley' },
-  { name: 'Gini', lastName: 'Weasley' },
-  { name: 'Septimus', lastName: 'Weasley' },
-  { name: 'William', lastName: 'Weasley' },
-  { name: 'Percy', lastName: 'Weasley' },
-  { name: 'George', lastName: 'Weasley' },
-  { name: 'James', lastName: 'Potter' },
-  { name: 'Lily', lastName: 'Potter' },
-  { name: 'Severus', lastName: 'Snape' },
-  { name: 'Draco', lastName: 'Malfoy' },
-  { name: 'Lucius', lastName: 'Malfoy' },
-  { name: 'Hermione', lastName: 'Granger' },
-  { name: 'Albus', lastName: 'Dumbledore' },
-  { name: 'Dean', lastName: 'Thomas' },
+  { id: 1, name: 'Harry', lastName: 'Potter' },
+  { id: 2, name: 'Lord', lastName: 'Voldemort' },
+  { id: 3, name: 'Ron', lastName: 'Weasley' },
+  { id: 4, name: 'Gini', lastName: 'Weasley' },
+  { id: 5, name: 'Septimus', lastName: 'Weasley' },
+  { id: 6, name: 'William', lastName: 'Weasley' },
+  { id: 7, name: 'Percy', lastName: 'Weasley' },
+  { id: 8, name: 'George', lastName: 'Weasley' },
+  { id: 9, name: 'James', lastName: 'Potter' },
+  { id: 10, name: 'Lily', lastName: 'Potter' },
+  { id: 11, name: 'Severus', lastName: 'Snape' },
+  { id: 12, name: 'Draco', lastName: 'Malfoy' },
+  { id: 13, name: 'Lucius', lastName: 'Malfoy' },
+  { id: 14, name: 'Hermione', lastName: 'Granger' },
+  { id: 15, name: 'Albus', lastName: 'Dumbledore' },
+  { id: 16, name: 'Dean', lastName: 'Thomas' },
 ])
 
 const headers = $ref([
+  { name: 'id', alias: 'Id', isVisible: true, isSearchable: true },
   { name: 'name', alias: 'Name', isVisible: true, isSearchable: true },
   { name: 'lastName', alias: 'Last Name', isVisible: true, isSearchable: true },
 ])

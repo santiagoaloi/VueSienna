@@ -1,18 +1,7 @@
 <template>
   <VCard color="transparent" flat class="base-table-wrapper">
-    <!-- Table data toolbar (menu icons and title) -->
     <BaseTableToolbar :data="table" />
-
-    <!-- Table data search field -->
-    <VTextField
-      :disabled="isSearchFieldDisabled"
-      prepend-inner-icon="$mdiMagnify"
-      placeholder="Search..."
-      v-model="searchField"
-      clearable
-    >
-    </VTextField>
-
+    <BaseTableSearchField :data="table" />
     <BaseTableView :data="table" />
   </VCard>
 </template>
@@ -40,8 +29,6 @@ const props = defineProps({
 })
 
 const table = useTableItems(props)
-
-const { isSearchFieldDisabled, searchField } = toRefs(table)
 
 console.log(table)
 </script>
