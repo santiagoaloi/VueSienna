@@ -22,8 +22,8 @@ defineOptions({
 
 const props = defineProps({
   data: {
-    type: Array,
-    default: () => [],
+    type: [Array, Object],
+    default: () => [] || {},
   },
 })
 

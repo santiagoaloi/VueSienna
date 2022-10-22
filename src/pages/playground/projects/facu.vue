@@ -1,37 +1,46 @@
 <template>
   <v-card color="#323a44">
-    {{ product }}
     <v-card-text>
-      <v-autocomplete
-        v-model="product"
-        return-object
-        :items="products"
-        item-title="name"
-        label="Products"
-        :filter-keys="['raw.name', 'raw.brand']"
-        filter-mode="some"
-        @input="doSomething"
+      <v-btn @click="clonePeopleObjectStructured()" class="my-5">
+        Crate people clone</v-btn
       >
-      </v-autocomplete>
+      <h4 class="mb-5">Original people object</h4>
+      {{ people }}
+
+      <h4 class="my-5">Copied people object</h4>
+      {{ copiedPeople }}
+
+      <div class="mt-5">
+        <small> Change Santi</small>
+        <v-text-field v-model="people[0].name" />
+      </div>
+
+      <div class="mt-5">
+        <small> Change Balin</small>
+        <v-text-field v-model="people[1].name" />
+      </div>
     </v-card-text>
   </v-card>
 </template>
 
 <script setup>
-const product = $ref([])
-const products = ref([
-  { name: 'Macbook', brand: 'Apple', id: 1 },
-  { name: 'iPad', brand: 'Apple', id: 2 },
-  { name: 'iPhone', brand: 'Apple', id: 3 },
-  { name: 'Galaxy 1', brand: 'Samsung', id: 4 },
-  { name: 'Galaxy 2', brand: 'Samsung', id: 5 },
-  { name: 'every', brand: 'every', id: 6 },
+const people = $ref([
+  { name: 'Santi', lastName: 'Aloi' },
+  { name: 'Balin', lastName: 'Toncovich' },
 ])
 
-watch(
-  () => product,
-  (newValue, oldValue) => {
-    console.log(product)
-  }
-)
+const copiedPeople = $ref([])
+
+function clonePeopleObject() {
+  let newArray = people.map(person => {
+    return { ...person }
+  })
+
+  copiedPeople = newArray
+}
+
+function clonePeopleObjectStructured() {
+  let newArray = structuredClone(toRaw(people))
+  copiedPeople = newArray
+}
 </script>

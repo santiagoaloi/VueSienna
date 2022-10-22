@@ -1,4 +1,4 @@
-import * as use from './vite.config.imports.js'
+import * as use from './vite.config.inports.js'
 screenTop
 // https://vitejs.dev/config/
 export default use.defineConfig(async () => {

@@ -12,12 +12,12 @@ defineOptions({
 
 const props = defineProps({
   tooltip: {
-    type: Array,
-    default: () => [],
+    type: [Array, Object],
+    default: () => [] || {},
   },
   icon: {
-    type: Array,
-    default: () => [],
+    type: [Array, Object],
+    default: () => [] || {},
   },
 })
 </script>

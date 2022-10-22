@@ -15,13 +15,14 @@ defineOptions({
 
 const props = defineProps({
   data: {
-    type: Array,
-    default: () => [],
+    type: [Array, Object],
+    default: () => [] || {},
   },
 })
 
-const { tableHeaders, isSearchableHeadersEmpty, isVisibleHeadersEmpty } =
-  toRefs(props.data)
+const { headers, isSearchableHeadersEmpty, isVisibleHeadersEmpty } = toRefs(
+  props.data
+)
 
 const menus = ref([
   {
@@ -32,7 +33,7 @@ const menus = ref([
       isVisible: isVisibleHeadersEmpty,
       text: 'Select one or more columns to show',
     },
-    data: { headers: tableHeaders, model: 'isVisible' },
+    data: { headers, model: 'isVisible' },
   },
   {
     icon: '$mdiFilterVariant',
@@ -42,7 +43,7 @@ const menus = ref([
       isVisible: isSearchableHeadersEmpty,
       text: 'Select one ore more columns to search',
     },
-    data: { headers: tableHeaders, model: 'isSearchable' },
+    data: { headers, model: 'isSearchable' },
   },
 ])
 </script>

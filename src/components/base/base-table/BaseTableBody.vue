@@ -1,8 +1,8 @@
 <template>
   <tbody>
-    <tr class="fill-height" v-for="(entry, i) in data.filteredData" :key="i">
-      <td v-for="key in visibleTableColumns">
-        {{ entry[key] }}
+    <tr class="fill-height" v-for="(rowItem, i) in data.filteredData" :key="i">
+      <td v-for="header in visibleTableHeaders">
+        {{ rowItem[header] }}
       </td>
     </tr>
   </tbody>
@@ -14,10 +14,10 @@ defineOptions({
 
 const props = defineProps({
   data: {
-    type: Array,
-    default: () => [],
+    type: [Array, Object],
+    default: () => [] || {},
   },
 })
 
-const { visibleTableColumns } = toRefs(props.data)
+const { visibleTableHeaders } = toRefs(props.data)
 </script>

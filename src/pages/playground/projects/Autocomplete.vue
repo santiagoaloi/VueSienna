@@ -1,11 +1,34 @@
 <template>
-  <BaseTable title="Search Wizards" :items="wizards" :headers="headers" />
+  <VAutocomplete
+    item-title="name"
+    item-value="name"
+    :items="items"
+    v-model="select"
+    v-model:search="search"
+    cache-items
+  >
+  </VAutocomplete>
 </template>
 
 <script setup>
 defineOptions({
-  name: 'PlaygroundTable',
+  name: 'PlaygroundAutocomplete',
 })
+
+const search = $ref('')
+const select = $ref([])
+const items = $ref([])
+
+watch(
+  () => search,
+  val => {
+    val && querySelections(val)
+  }
+)
+
+function querySelections(v) {
+  items = wizards.filter(w => w.name.toLowerCase().includes(v))
+}
 
 const wizards = $ref([
   { id: 1, name: 'Harry', lastName: 'Potter' },
@@ -24,11 +47,5 @@ const wizards = $ref([
   { id: 14, name: 'Hermione', lastName: 'Granger' },
   { id: 15, name: 'Albus', lastName: 'Dumbledore' },
   { id: 16, name: 'Dean', lastName: 'Thomas' },
-])
-
-const headers = $ref([
-  { name: 'id', alias: 'Id', isVisible: true, isSearchable: true },
-  { name: 'name', alias: 'Name', isVisible: true, isSearchable: true },
-  { name: 'lastName', alias: 'Last Name', isVisible: true, isSearchable: true },
 ])
 </script>

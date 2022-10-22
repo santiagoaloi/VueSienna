@@ -39,8 +39,8 @@ defineOptions({
 
 const props = defineProps({
   menu: {
-    type: Array,
-    default: () => [],
+    type: [Array, Object],
+    default: () => [] || {},
   },
 })
 
