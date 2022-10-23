@@ -1,6 +1,14 @@
 export const useTableItems = props => {
-  let sortHeader = $ref('')
-  let searchField = $ref('')
+  // reactive
+  const sortHeader = $ref('')
+  const searchField = $ref('')
+
+  const options = $ref([
+    { name: 'compact', alias: 'Compact', val: false },
+    { name: 'headersFixed', alias: 'Fixed Headers', val: false },
+    { name: 'bordered', alias: 'Bordered', val: false },
+  ])
+
   let title = props.title
   let headers = props.headers
   let items = props.items
@@ -52,17 +60,29 @@ export const useTableItems = props => {
     return data
   })
 
-  const sortOrders = $ref(
-    visibleTableHeaders.reduce((o, header) => ((o[header] = 1), o), {})
-  )
-
   function sortBy(header) {
     sortHeader = header
     sortOrders[header] *= -1
   }
 
+  const sortOrders = $ref(
+    visibleTableHeaders.reduce(
+      (headers, header) => ((headers[header] = 1), headers),
+      {}
+    )
+  )
+
+  const tableOptions = $computed(() => {
+    return options.reduce(
+      (options, option) => ({ [option.name]: option.val, ...options }),
+      {}
+    )
+  })
+
   return reactive({
     sortBy,
+    options: $$(options),
+    tableOptions: $$(tableOptions),
     title: $$(title),
     headers: $$(headers),
     sortHeader: $$(sortHeader),

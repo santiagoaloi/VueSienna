@@ -20,30 +20,40 @@ const props = defineProps({
   },
 })
 
-const { headers, isSearchableHeadersEmpty, isVisibleHeadersEmpty } = toRefs(
-  props.data
-)
+const { headers, options, isSearchableHeadersEmpty, isVisibleHeadersEmpty } =
+  toRefs(props.data)
 
 const menus = ref([
   {
+    icon: '$mdiDotsVertical',
+    tooltip: 'Table Options',
+    title: 'Customize view',
+    subtitle: {
+      isVisible: false,
+      text: null,
+    },
+    data: { array: options, model: 'val' },
+  },
+
+  {
     icon: '$mdiViewColumnOutline',
-    tooltip: 'isVisible columns',
+    tooltip: 'Visible Columns',
     title: 'Display columns',
     subtitle: {
       isVisible: isVisibleHeadersEmpty,
       text: 'Select one or more columns to show',
     },
-    data: { headers, model: 'isVisible' },
+    data: { array: headers, model: 'isVisible' },
   },
   {
     icon: '$mdiFilterVariant',
-    tooltip: 'isSearchable columns',
+    tooltip: 'Searchable Columns',
     title: 'Search columns',
     subtitle: {
       isVisible: isSearchableHeadersEmpty,
       text: 'Select one ore more columns to search',
     },
-    data: { headers, model: 'isSearchable' },
+    data: { array: headers, model: 'isSearchable' },
   },
 ])
 </script>

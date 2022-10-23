@@ -25,18 +25,15 @@ global-font-color {
 }
 
 #nprogress .bar {
-  background: #7366ff;
-  opacity: 0.75;
+  /* background: #7366ff; */
+  background: #418974;
+  opacity: 1;
   position: fixed;
   z-index: 1031;
   top: 0;
   left: 0;
   width: 100%;
-  height: 1px;
-}
-
-.header-background {
-  background: rgb(51, 55, 60) !important;
+  height: 2px;
 }
 
 .v-input--density-compact {
@@ -45,37 +42,4 @@ global-font-color {
 
 .wizard-icon {
   font-size: 600%;
-}
-
-th {
-  cursor: pointer;
-}
-th.active {
-  color: #fff;
-}
-
-th.active .arrow {
-  opacity: 1;
-}
-
-/* Base table column arrows */
-.arrow {
-  display: inline-block;
-  vertical-align: middle;
-  width: 0;
-  height: 0;
-  margin-left: 5px;
-  opacity: 0.66;
-}
-
-.arrow.asc {
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 4px solid #fff;
-}
-
-.arrow.dsc {
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid #fff;
 }

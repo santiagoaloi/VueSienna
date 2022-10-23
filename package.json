@@ -31,6 +31,7 @@
     "vite-plugin-remove-console": "^1.1.0",
     "vite-plugin-vue-layouts": "^0.7.0",
     "vite-plugin-vuetify": "^1.0.0-alpha.12",
-    "vuetify": "3.0.0-beta.13"
+    "vue-columns-resizable-vuetify": "^1.0.3",
+    "vuetify": "3.0.0-beta.14"
   }
 }

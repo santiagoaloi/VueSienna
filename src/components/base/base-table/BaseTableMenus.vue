@@ -20,12 +20,12 @@
 
       <div class="mb-3 mt-2">
         <VCheckbox
-          v-for="header in data.headers"
+          v-for="item in data.array"
           class="ml-3"
           hide-details
           density="compact"
-          v-model="header[data.model]"
-          :label="header.alias"
+          v-model="item[data.model]"
+          :label="item.alias"
         />
       </div>
     </VCard>

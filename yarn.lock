@@ -32,6 +32,11 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.19.4.tgz#03c4339d2b8971eb3beca5252bafd9b9f79db3dc"
   integrity sha512-qpVT7gtuOLjWeDTKLkJ6sryqLliBaFpAtGeqw5cs5giLldvh+Ch0plqnUMKoVAUS6ZEueQQiZV+p5pxtPitEsA==
 
+"@babel/parser@^7.18.4":
+  version "7.19.6"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.19.6.tgz#b923430cb94f58a7eae8facbffa9efd19130e7f8"
+  integrity sha512-h1IUp81s2JYJ3mRkdxJgs4UvmSsRvDrx5ICSJbPvtWYv5i1nTBGcBpnog+89rAFMwvvru6E5NUHdBe01UeSzYA==
+
 "@babel/types@^7.18.13":
   version "7.19.4"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.19.4.tgz#0dd5c91c573a202d600490a35b33246fed8a41c7"
@@ -788,6 +793,15 @@
   dependencies:
     "@vue/compiler-core" "3.2.41"
     "@vue/shared" "3.2.41"
+
+"@vue/compiler-sfc@2.7.13":
+  version "2.7.13"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-2.7.13.tgz#818944f4a9616b752d48dac6a56bffe2db88bdff"
+  integrity sha512-zzu2rLRZlgIU+OT3Atbr7Y6PG+LW4wVQpPfNRrGDH3dM9PsrcVfa+1pKb8bW467bGM3aDOvAnsYLWVpYIv3GRg==
+  dependencies:
+    "@babel/parser" "^7.18.4"
+    postcss "^8.4.14"
+    source-map "^0.6.1"
 
 "@vue/compiler-sfc@3.2.41", "@vue/compiler-sfc@^3.2.31", "@vue/compiler-sfc@^3.2.38":
   version "3.2.41"
@@ -1746,6 +1760,11 @@ csstype@^2.6.8:
   version "2.6.21"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.21.tgz#2efb85b7cc55c80017c66a5ad7cbd931fda3a90e"
   integrity sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==
+
+csstype@^3.1.0:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
+  integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
 
 csv-parse@^5.0.4:
   version "5.3.1"
@@ -4594,7 +4613,7 @@ portfinder@^1.0.32:
     debug "^3.2.7"
     mkdirp "^0.5.6"
 
-postcss@^8.1.10, postcss@^8.4.16:
+postcss@^8.1.10, postcss@^8.4.14, postcss@^8.4.16:
   version "8.4.18"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.18.tgz#6d50046ea7d3d66a85e0e782074e7203bc7fbca2"
   integrity sha512-Wi8mWhncLJm11GATDaQKobXSNEYGUHeQLiQqDFG1qQ5UTDPTEvKw0Xt5NsTpktGTwLps3ByrWsBrG0rB8YQ9oA==
@@ -5919,6 +5938,13 @@ vue-chemistry@^0.2.2:
     "@vueuse/shared" "^4.0.4"
     vue-demi latest
 
+vue-columns-resizable-vuetify@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/vue-columns-resizable-vuetify/-/vue-columns-resizable-vuetify-1.0.3.tgz#96b2f09c417a71d28ad1ef5ae7990673a1fea590"
+  integrity sha512-LphbZP652tYHG/CHYWtX46qel1F++GX0LrZsWbclls7v2bfOytawnbXaspdAXLo/qpktfdUiRas/yLHv+mv4pg==
+  dependencies:
+    vue "^2.6.11"
+
 vue-demi@*, vue-demi@latest:
   version "0.13.11"
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.11.tgz#7d90369bdae8974d87b1973564ad390182410d99"
@@ -5931,6 +5957,14 @@ vue-router@^4.1.5:
   dependencies:
     "@vue/devtools-api" "^6.1.4"
 
+vue@^2.6.11:
+  version "2.7.13"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.7.13.tgz#e9e499cc6da46dc7941c2510193b15aa6a84a79f"
+  integrity sha512-QnM6ULTNnPmn71eUO+4hdjfBIA3H0GLsBnchnI/kS678tjI45GOUZhXd0oP/gX9isikXz1PAzSnkPspp9EUNfQ==
+  dependencies:
+    "@vue/compiler-sfc" "2.7.13"
+    csstype "^3.1.0"
+
 vue@^3.2.37, vue@^3.2.38:
   version "3.2.41"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.41.tgz#ed452b8a0f7f2b962f055c8955139c28b1c06806"
@@ -5942,10 +5976,10 @@ vue@^3.2.37, vue@^3.2.38:
     "@vue/server-renderer" "3.2.41"
     "@vue/shared" "3.2.41"
 
-vuetify@3.0.0-beta.13:
-  version "3.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.0.0-beta.13.tgz#04af3a85b3852617da9bc50263f1128cd43e83fa"
-  integrity sha512-CgDyKCIBZ0ogKUxRw3gNswx9GA6eSSp7otZcJapWJCVuon/RooQPQjf3bDuRb5ZpJ55NkX13ugjl2nq+b0U8SA==
+vuetify@3.0.0-beta.14:
+  version "3.0.0-beta.14"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.0.0-beta.14.tgz#ca1182da7b36ee98a5132e0ab53c50492ff7db59"
+  integrity sha512-7UX2rAcMPGdJ0SGAK+wUvlJTHR0KasYILhg7dV9hLyv9SfaTX4tbOQnSQVf4mXzdFB+5jDyaTs+bOYMVeoqXYg==
 
 wcwidth@^1.0.1:
   version "1.0.1"

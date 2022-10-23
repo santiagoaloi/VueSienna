@@ -4,6 +4,7 @@
     :is="size"
     style="color: #adbac7 !important; cursor: pointer"
     class="ignore-font"
+    :class="{ 'skriptag-logo-hover': large, 'skriptag-logo': !large }"
   >
     <slot name="text" />
     <span :class="{ large: large }"
@@ -36,6 +37,20 @@ const size = computed(() => {
 <style scoped>
 .large {
   font-size: 180% !important;
+}
+
+.skriptag-logo-hover {
+  filter: drop-shadow(0 0.1rem 1.8em #9397cfaa);
+}
+
+.skriptag-logo {
+  opacity: 1;
+  transition: opacity 0.25s;
+}
+
+.skriptag-logo:hover {
+  opacity: 0.8;
+  transition: opacity 0.25s;
 }
 
 .skriptag-a {

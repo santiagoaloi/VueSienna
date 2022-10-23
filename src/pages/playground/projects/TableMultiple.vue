@@ -1,36 +1,27 @@
 <template>
-  <VAutocomplete
-    item-title="name"
-    item-value="name"
-    :items="items"
-    v-model="select"
-    v-model:search="search"
-    cache-items
-  >
-  </VAutocomplete>
+  <v-row class="fill-height">
+    <v-col class="fill-height">
+      <BaseTable title="Search Wizards" :items="wizards" :headers="headers" />
+    </v-col>
+
+    <v-col class="fill-height">
+      <BaseTable title="Search Celebs" :items="celebs" :headers="headers" />
+    </v-col>
+  </v-row>
 </template>
 
 <script setup>
 defineOptions({
-  name: 'PlaygroundAutocomplete',
+  name: 'PlaygroundSplitTable',
 })
 
-let search = $ref('')
-let select = $ref([])
-let items = $ref([])
+const celebs = $ref([
+  { id: 1, name: 'Britney', lastName: 'Spears' },
+  { id: 2, name: 'Arnold', lastName: 'Schwarzenegger' },
+  { id: 3, name: 'Steve', lastName: 'Jobs' },
+])
 
-watch(
-  () => search,
-  val => {
-    val && querySelections(val)
-  }
-)
-
-function querySelections(v) {
-  items = wizards.filter(w => w.name.toLowerCase().includes(v))
-}
-
-let wizards = $ref([
+const wizards = $ref([
   { id: 1, name: 'Harry', lastName: 'Potter' },
   { id: 2, name: 'Lord', lastName: 'Voldemort' },
   { id: 3, name: 'Ron', lastName: 'Weasley' },
@@ -47,5 +38,11 @@ let wizards = $ref([
   { id: 14, name: 'Hermione', lastName: 'Granger' },
   { id: 15, name: 'Albus', lastName: 'Dumbledore' },
   { id: 16, name: 'Dean', lastName: 'Thomas' },
+])
+
+const headers = $ref([
+  { name: 'id', alias: 'Id', isVisible: true, isSearchable: true },
+  { name: 'name', alias: 'Name', isVisible: true, isSearchable: true },
+  { name: 'lastName', alias: 'Last Name', isVisible: true, isSearchable: true },
 ])
 </script>
