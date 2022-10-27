@@ -1,9 +1,5 @@
 <template>
-  <VCol
-    class="split-col-img split-col-img justify-center"
-    v-bind="{ ...config }"
-    cols="12"
-  >
+  <VCol class="split-col-img justify-center" v-bind="{ ...config }" cols="12">
     <slot />
   </VCol>
 </template>

@@ -61,8 +61,7 @@ export const useTableItems = props => {
   })
 
   function sortBy(header) {
-    sortHeader = header
-    sortOrders[header] *= -1
+    sortOrders[sortHeader] *= -1
   }
 
   const sortOrders = $ref(

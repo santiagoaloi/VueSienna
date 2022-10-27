@@ -8,5 +8,8 @@ export {
   mdiFilterVariant,
   mdiMagnify,
   mdiMenu,
+  mdiEmail,
+  mdiTwitter,
+  mdiWeb,
   mdiViewColumnOutline,
 } from '@mdi/js'

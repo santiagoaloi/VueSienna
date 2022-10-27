@@ -52,6 +52,7 @@ const shake = $ref(false)
 function login() {
   console.log('Login form submitted.')
   shake = true
+
   setTimeout(() => {
     shake = false
   }, 500)
