@@ -11,6 +11,7 @@
         class="mt-4"
         v-model="selectedWizzard"
         return-object
+        item-props="itemProps"
       >
       </VAutocomplete>
     </v-card>
@@ -29,9 +30,9 @@ const isHarryDisabled = $computed(() => {
 })
 
 const wizards = reactive([
-  { id: 1, name: "Harry", lastName: "Potter", isDisabled: true },
-  { id: 2, name: "Ron", lastName: "Weasley", isDisabled: false },
-  { id: 3, name: "Ginny", lastName: "Weasley", isDisabled: false },
+  { id: 1, name: "Harry", lastName: "Potter", itemProps: { disabled: true } },
+  { id: 2, name: "Ron", lastName: "Weasley", itemProps: { disabled: false } },
+  { id: 3, name: "Ginny", lastName: "Weasley", itemProps: { disabled: false } },
 ])
 </script>
   
