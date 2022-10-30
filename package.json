@@ -11,6 +11,7 @@
   "dependencies": {
     "sortablejs": "^1.15.0",
     "sortablejs-vue3": "^1.2.2",
+    "vite": "^3.2.1",
     "vue": "^3.2.38",
     "vue-chemistry": "^0.2.2",
     "vue-router": "^4.1.5"
@@ -26,7 +27,6 @@
     "unplugin-auto-import": "^0.11.2",
     "unplugin-vue-components": "^0.22.7",
     "unplugin-vue-macros": "^0.11.2",
-    "vite": "^3.1.8",
     "vite-plugin-pages": "^0.26.0",
     "vite-plugin-remove-console": "^1.1.0",
     "vite-plugin-vue-layouts": "^0.7.0",

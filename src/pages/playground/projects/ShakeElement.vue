@@ -37,20 +37,20 @@
 
 <script setup>
 defineOptions({
-  name: 'PlaygroundShakeLogin',
+  name: "PlaygroundShakeLogin",
 })
 
-const loginForm = reactive({
-  username: '',
-  password: '',
+let loginForm = reactive({
+  username: "",
+  password: "",
 })
 
-const { username, password } = toRefs(loginForm)
+let { username, password } = toRefs(loginForm)
 
-const shake = $ref(false)
+let shake = $ref(false)
 
 function login() {
-  console.log('Login form submitted.')
+  console.log("Login form submitted.")
   shake = true
 
   setTimeout(() => {

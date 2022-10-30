@@ -26,6 +26,7 @@
           </v-btn>
           <v-btn
             v-for="tag in filteredTags.basic"
+            :key="tag"
             class="rounded-e-xl mx-1 text-lowercase"
             size="small"
             color="#373e47"
@@ -55,6 +56,7 @@
             >
               <v-card-text
                 v-for="tag in filteredTags.extended"
+                :key="tag"
                 class="text-center"
               >
                 <h4>{{ tag }}</h4>
@@ -68,6 +70,7 @@
               size="x-small"
               color="#373e47"
               v-for="icon in socialIcons"
+              :key="icon"
               icon
             >
               <v-icon> {{ icon.name }}</v-icon>
@@ -103,33 +106,33 @@
 
 <script setup>
 defineOptions({
-  name: 'PlaygroundCollective',
+  name: "PlaygroundCollective",
 })
 
 const collective = reactive({
   tags: [
-    'javascript',
-    'material',
-    'material-components',
-    'material-design',
-    'material-theme',
-    'semantic',
-    'vue',
-    'vue-component',
-    'vue-components',
-    'vue-material',
-    'vue2',
-    'vuejs',
-    'vuejs2',
-    'vuetify',
-    'vuetifyjs',
-    'Open Source',
+    "javascript",
+    "material",
+    "material-components",
+    "material-design",
+    "material-theme",
+    "semantic",
+    "vue",
+    "vue-component",
+    "vue-components",
+    "vue-material",
+    "vue2",
+    "vuejs",
+    "vuejs2",
+    "vuetify",
+    "vuetifyjs",
+    "Open Source",
   ],
-  repo: 'https://github.com/vuetifyjs/vuetify',
+  repo: "https://github.com/vuetifyjs/vuetify",
   socialIcons: [
-    contactIcon('john@vuetify.com'),
-    twitterIcon('https://twitter.com/zeroskillz'),
-    webIcon('https://vuetifyjs.com/en/'),
+    contactIcon("john@vuetify.com"),
+    twitterIcon("https://twitter.com/zeroskillz"),
+    webIcon("https://vuetifyjs.com/en/"),
   ],
 
   get filteredTags() {
@@ -146,21 +149,21 @@ const collective = reactive({
 
 function contactIcon(email) {
   return {
-    name: '$mdiEmail',
+    name: "$mdiEmail",
     url: email,
   }
 }
 
 function twitterIcon(url) {
   return {
-    name: '$mdiTwitter',
+    name: "$mdiTwitter",
     url,
   }
 }
 
 function webIcon(url) {
   return {
-    name: '$mdiWeb',
+    name: "$mdiWeb",
     url,
   }
 }
