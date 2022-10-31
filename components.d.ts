@@ -19,7 +19,6 @@ declare module '@vue/runtime-core' {
     BaseTableToolbar: typeof import('./src/components/base/base-table/BaseTableToolbar.vue')['default']
     BaseTableView: typeof import('./src/components/base/base-table/BaseTableView.vue')['default']
     DAppBar: typeof import('./src/components/layout-default/app-bar/DAppBar.vue')['default']
-    DAppBarLogo: typeof import('./src/components/layout-default/app-bar/DAppBarLogo.vue')['default']
     DAppView: typeof import('./src/components/layout-default/app-view/DAppView.vue')['default']
     DLoginBtn: typeof import('./src/components/layout-default/app-bar/DLoginBtn.vue')['default']
     DPlaygroundBtn: typeof import('./src/components/layout-default/app-bar/DPlaygroundBtn.vue')['default']

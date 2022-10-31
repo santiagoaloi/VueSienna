@@ -10,7 +10,7 @@
     "source": "functions"
   },
   "hosting": {
-    "site": "skriptag-bank",
+    "site": "skriptag-cloud",
     "public": "dist",
     "ignore": [
       "firebase.json",

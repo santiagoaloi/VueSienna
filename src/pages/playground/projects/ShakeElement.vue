@@ -45,9 +45,9 @@ const loginForm = reactive({
   password: '',
 })
 
-const { username, password } = toRefs(loginForm)
+const { username, password } = loginForm
 
-const shake = $ref(false)
+let shake = $ref(false)
 
 function login() {
   console.log('Login form submitted.')
