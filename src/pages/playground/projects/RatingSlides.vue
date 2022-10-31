@@ -2,11 +2,7 @@
   <v-container>
     <v-sheet max-width="1100" class="mx-auto bg-transparent">
       <v-carousel v-model="model" hide-delimiters :show-arrows="false">
-        <v-carousel-item
-          v-for="(chunk, i) in reviewsChunks"
-          :key="chunk"
-          :value="i"
-        >
+        <v-carousel-item v-for="(chunk, i) in reviews" :key="chunk" :value="i">
           <v-row class="pa-8">
             <v-col md="4" cols="12" :key="i" v-for="(review, i) in chunk">
               <v-card
@@ -60,7 +56,7 @@
 
 <script setup>
 defineOptions({
-  name: "PlaygroundAutocomplete",
+  name: "PlaygroundRatingSlides",
 })
 
 const model = $ref(0)
@@ -75,41 +71,60 @@ const sliderButtons = $ref([
   {
     icon: "$mdiChevronRight",
     action() {
-      model = Math.min(model + 1, reviewsChunks.length - 1)
+      model = Math.min(model + 1, reviews.length - 1)
     },
   },
 ])
 
-const reviewers = [
-  "tesla",
-  "twitter",
-  "microsoft",
-  "apple",
-  "spotify",
-  "spaceX",
-  "nasa",
+const reviews = [
+  [
+    {
+      title: "tesla",
+      text:
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
+      raiting: 5,
+    },
+    {
+      title: "twitter",
+      text:
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
+      raiting: 3,
+    },
+    {
+      title: "apple",
+      text:
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
+      raiting: 5,
+    },
+  ],
+  [
+    {
+      title: "spotify",
+      text:
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
+      raiting: 1,
+    },
+    {
+      title: "spaceX",
+      text:
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
+      raiting: 4,
+    },
+    {
+      title: "nasa",
+      text:
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
+      raiting: 3,
+    },
+  ],
+  [
+    {
+      title: "netflix",
+      text:
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
+      raiting: 4,
+    },
+  ],
 ]
-
-const reviews = reviewers.map((reviewer) => {
-  return {
-    title: reviewer,
-    text:
-      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.",
-    raiting: Math.floor(Math.random() * 6),
-  }
-})
-
-const reviewsChunks = $computed(() => {
-  return chunkify(reviews, 3)
-})
-
-function chunkify(array, chunkSize) {
-  const result = []
-  let i = 0
-  while (i < array.length) {
-    result.push(array.slice(i, i + chunkSize))
-    i += chunkSize
-  }
-  return result
-}
 </script>
+
