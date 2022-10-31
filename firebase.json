@@ -10,16 +10,10 @@
     "source": "functions"
   },
   "hosting": {
-    "site": "skriptag-bank",
+    "site": "skriptag-cloud",
     "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "predeploy": [
-      "vite build"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "predeploy": ["vite build"],
     "rewrites": [
       {
         "source": "**",

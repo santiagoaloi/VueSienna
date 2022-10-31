@@ -2496,9 +2496,9 @@ find-up@^4.0.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
-firebase-tools@^11.11.0:
+firebase-tools@^11.15.0:
   version "11.15.0"
-  resolved "https://registry.npmjs.org/firebase-tools/-/firebase-tools-11.15.0.tgz"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-11.15.0.tgz#0e793a55e35ecd1bae86781d4d9c58f94a68ba10"
   integrity sha512-lxoMYvaBbozwGDZCegou1qyB5078BbNmbdW8cd4dDvCAF5/dCo/2MA69qhaUmC/2DhqQkk5fz3Xl+HSTOtm4eA==
   dependencies:
     "@google-cloud/pubsub" "^3.0.1"
@@ -2564,9 +2564,9 @@ firebase-tools@^11.11.0:
   optionalDependencies:
     esbuild "^0.15.7"
 
-firebase@^9.10.0:
+firebase@^9.13.0:
   version "9.13.0"
-  resolved "https://registry.npmjs.org/firebase/-/firebase-9.13.0.tgz"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-9.13.0.tgz#8f258e1b857c28e55498b788baaca56e46339c62"
   integrity sha512-xaw5DVbjuT9fbTx+ko/l828LA75zC7H2CJIdRSqMiYmYJjEuNIEb6HHFKUElKn7WmYIF62F2zXe1O8rfP9whgw==
   dependencies:
     "@firebase/analytics" "0.8.4"

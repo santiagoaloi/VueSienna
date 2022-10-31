@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-sheet max-width="1200" class="mx-auto bg-transparent">
+    <v-sheet max-width="1100" class="mx-auto bg-transparent">
       <v-carousel v-model="model" hide-delimiters :show-arrows="false">
         <v-carousel-item
           v-for="(chunk, i) in reviewsChunks"
@@ -12,7 +12,7 @@
               <v-card
                 class="d-flex justify-center align-space-between align-center flex-column py-8"
                 height="400"
-                color="rgba(	50, 58, 68, 0.5)"
+                color="rgba(50, 58, 68, 0.5)"
               >
                 <div class="mt-auto d-flex flex-column text-h4 text-capitalize">
                   {{ review.title }}
@@ -28,7 +28,7 @@
                   </v-list>
                 </div>
                 <div>
-                  <v-rating v-model="review.raiting" readonly></v-rating>
+                  <v-rating v-model="review.raiting" readonly />
                 </div>
                 <div class="mt-auto">
                   <v-btn
