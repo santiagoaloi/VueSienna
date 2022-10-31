@@ -15,4 +15,5 @@ export {
   mdiChevronRight,
   mdiRecord,
   mdiViewColumnOutline,
+  mdiBookOpenOutline,
 } from '@mdi/js';
