@@ -11,5 +11,9 @@ export {
   mdiEmail,
   mdiTwitter,
   mdiWeb,
+  mdiChevronLeft,
+  mdiChevronRight,
+  mdiRecord,
   mdiViewColumnOutline,
-} from '@mdi/js'
+  mdiBookOpenOutline,
+} from '@mdi/js';

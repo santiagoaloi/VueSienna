@@ -107,33 +107,33 @@
 
 <script setup>
 defineOptions({
-  name: 'PlaygroundCollective',
+  name: "PlaygroundCollective",
 })
 
 const collective = reactive({
   tags: [
-    'javascript',
-    'material',
-    'material-components',
-    'material-design',
-    'material-theme',
-    'semantic',
-    'vue',
-    'vue-component',
-    'vue-components',
-    'vue-material',
-    'vue2',
-    'vuejs',
-    'vuejs2',
-    'vuetify',
-    'vuetifyjs',
-    'Open Source',
+    "javascript",
+    "material",
+    "material-components",
+    "material-design",
+    "material-theme",
+    "semantic",
+    "vue",
+    "vue-component",
+    "vue-components",
+    "vue-material",
+    "vue2",
+    "vuejs",
+    "vuejs2",
+    "vuetify",
+    "vuetifyjs",
+    "Open Source",
   ],
-  repo: 'https://github.com/vuetifyjs/vuetify',
+  repo: "https://github.com/vuetifyjs/vuetify",
   socialIcons: [
-    contactIcon('john@vuetify.com'),
-    twitterIcon('https://twitter.com/zeroskillz'),
-    webIcon('https://vuetifyjs.com/en/'),
+    contactIcon("john@vuetify.com"),
+    twitterIcon("https://twitter.com/zeroskillz"),
+    webIcon("https://vuetifyjs.com/en/"),
   ],
 
   get filteredTags() {
@@ -150,21 +150,21 @@ const collective = reactive({
 
 function contactIcon(email) {
   return {
-    name: '$mdiEmail',
+    name: "$mdiEmail",
     url: email,
   }
 }
 
 function twitterIcon(url) {
   return {
-    name: '$mdiTwitter',
+    name: "$mdiTwitter",
     url,
   }
 }
 
 function webIcon(url) {
   return {
-    name: '$mdiWeb',
+    name: "$mdiWeb",
     url,
   }
 }

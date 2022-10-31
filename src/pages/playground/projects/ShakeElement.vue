@@ -40,12 +40,12 @@ defineOptions({
   name: 'PlaygroundShakeLogin',
 })
 
-const loginForm = reactive({
+let loginForm = reactive({
   username: '',
   password: '',
 })
 
-const { username, password } = loginForm
+let { username, password } = toRefs(loginForm)
 
 let shake = $ref(false)
 
