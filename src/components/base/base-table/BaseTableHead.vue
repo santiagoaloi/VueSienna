@@ -1,7 +1,7 @@
 <template>
   <thead>
     <Sortable @end="onEnd" itemKey="name" :list="visibleHeaders" tag="tr">
-      <template #item="{ element, index }">
+      <template #item="{ element }">
         <th @click="sortBy(element.name)" class="text-left header-background">
           {{ element.alias }}
           <span
@@ -16,10 +16,10 @@
 </template>
 
 <script setup>
-import { Sortable } from 'sortablejs-vue3'
+import { Sortable } from "sortablejs-vue3"
 
 defineOptions({
-  name: 'BaseTableHead',
+  name: "BaseTableHead",
 })
 
 const props = defineProps({
@@ -33,7 +33,7 @@ const { visibleHeaders, sortBy, sortOrders } = toRefs(props.data)
 
 function onEnd(e) {
   // array, from , to
-  console.log(e)
+
   moveItemInArray(props.data.headers, e.oldIndex, e.newIndex)
 }
 

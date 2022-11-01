@@ -1,7 +1,6 @@
 export const useTableItems = props => {
-  // reactive
-  const sortHeader = $ref('')
-  const searchField = $ref('')
+  let sortHeader = $ref('')
+  let searchField = $ref('')
 
   const options = $ref([
     { name: 'compact', alias: 'Compact', val: false },
@@ -10,7 +9,15 @@ export const useTableItems = props => {
   ])
 
   let title = props.title
-  let headers = props.headers
+
+  // Make headers independent per heach base-table
+  // in case same headers array  are shared across multiple tables
+  // in the same SFC.
+
+  let headers = props.headers.map(h => {
+    return { ...h }
+  })
+
   let items = props.items
 
   const isSearchFieldDisabled = $computed(
@@ -61,7 +68,8 @@ export const useTableItems = props => {
   })
 
   function sortBy(header) {
-    sortOrders[sortHeader] *= -1
+    sortHeader = header
+    sortOrders[header] *= -1
   }
 
   const sortOrders = $ref(

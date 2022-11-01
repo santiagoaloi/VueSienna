@@ -3,6 +3,7 @@ body,
 #app .v-aplication {
   background: #323a44 !important;
   color: #adbac7 !important;
+  overflow: auto !important;
 }
 
 .v-application__wrap {
@@ -26,14 +27,14 @@ global-font-color {
 
 #nprogress .bar {
   /* background: #7366ff; */
-  background: #418974;
+  background: #7b55c7;
   opacity: 1;
   position: fixed;
   z-index: 1031;
   top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 1px;
 }
 
 .v-input--density-compact {

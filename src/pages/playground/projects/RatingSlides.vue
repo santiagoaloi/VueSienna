@@ -59,9 +59,9 @@ defineOptions({
   name: "PlaygroundRatingSlides",
 })
 
-const model = $ref(0)
+let model = $ref(0)
 
-const sliderButtons = $ref([
+let sliderButtons = $ref([
   {
     icon: "$mdiChevronLeft",
     action() {
@@ -76,7 +76,7 @@ const sliderButtons = $ref([
   },
 ])
 
-const reviews = [
+let reviews = [
   [
     {
       title: "tesla",
