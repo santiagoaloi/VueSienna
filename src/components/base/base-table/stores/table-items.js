@@ -10,13 +10,17 @@ export const useTableItems = props => {
 
   let title = props.title
 
-  // Make headers independent per heach base-table
-  // in case same headers array  are shared across multiple tables
+  // Make headers independent per each base-table
+  // in case same headers array are shared across multiple tables
   // in the same SFC.
 
-  let headers = props.headers.map(h => {
-    return { ...h }
-  })
+  // Causing issues, refactor.
+
+  // let headers = props.headers.map(h => {
+  //   return { ...h }
+  // })
+
+  let headers = props.headers
 
   let items = props.items
 
@@ -30,6 +34,7 @@ export const useTableItems = props => {
   const searchableTableHeaders = $computed(() =>
     headers.filter(h => h.isSearchable).flatMap(h => h.name)
   )
+
   const visibleHeaders = $computed(() => headers.filter(h => h.isVisible))
 
   const visibleTableHeaders = $computed(() =>

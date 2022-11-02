@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="mt-auto px-3">
-                  <v-list :items="items" lines="two" bg-color="transparent">
+                  <v-list lines="two" bg-color="transparent">
                     <v-list-item>
                       <v-list-item-subtitle class="font-italic">
                         "{{ review.text }}"

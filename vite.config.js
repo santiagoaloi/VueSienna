@@ -1,6 +1,7 @@
 import * as use from './vite.config.inports.js'
-screenTop
+
 // https://vitejs.dev/config/
+
 export default use.defineConfig(async () => {
   return {
     resolve: {
@@ -23,15 +24,6 @@ export default use.defineConfig(async () => {
           replacement: use.resolve(__dirname, './src/composables'),
         },
       ],
-    },
-
-    css: {
-      scopeBehaviour: 'local',
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@import "@/styles/variables.scss";',
-        },
-      },
     },
 
     build: {

@@ -1,10 +1,10 @@
 <template>
   <VAppBar color="#22272e">
-    <div class="d-inline-block ml-10">
+    <v-container fluid class="d-flex align-center px-10">
       <SkriptagTitle></SkriptagTitle>
-    </div>
-    <VSpacer> </VSpacer>
-    <DPlaygroundBtn class="mr-2" />
-    <DLoginBtn />
+      <VSpacer> </VSpacer>
+      <DPlaygroundBtn class="mr-2" />
+      <DLoginBtn />
+    </v-container>
   </VAppBar>
 </template>

@@ -2,8 +2,13 @@
   <VContainer class="fill-height">
     <VRow class="fill-height align-center justify-center text-center">
       <VCol cols="6">
-        <h1 class="pb-5">Choose a playground below</h1>
-        <VSelect :items="projects" v-model="selectedProject" />
+        <h1 class="pb-5">Choose a playground</h1>
+        <VAutocomplete
+          :menu-props="{ 'max-height': '200' }"
+          autofocus
+          :items="projects"
+          v-model="selectedProject"
+        />
       </VCol>
     </VRow>
   </VContainer>
