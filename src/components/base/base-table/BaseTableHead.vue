@@ -2,7 +2,10 @@
   <thead>
     <Sortable @end="onEnd" itemKey="name" :list="visibleHeaders" tag="tr">
       <template #item="{ element }">
-        <th @click="sortBy(element.name)" class="text-left header-background">
+        <th
+          @click="sortBy(element.name)"
+          class="text-left table-header-background"
+        >
           {{ element.alias }}
           <span
             class="arrow"
@@ -16,10 +19,10 @@
 </template>
 
 <script setup>
-import { Sortable } from "sortablejs-vue3"
+import { Sortable } from 'sortablejs-vue3'
 
 defineOptions({
-  name: "BaseTableHead",
+  name: 'BaseTableHead',
 })
 
 const props = defineProps({

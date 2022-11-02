@@ -4,6 +4,6 @@ export const useGoTo = routeName => {
 
   return {
     isCurrent: computed(() => route.name === routeName),
-    goTo: () => router.push({ name: routeName }),
+    goTo: async () => await router.push({ name: routeName }),
   }
 }

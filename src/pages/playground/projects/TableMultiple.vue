@@ -1,5 +1,5 @@
 <template>
-  <v-row class="fill-height">
+  <v-row no-gutters class="fill-height">
     <v-col class="fill-height">
       <BaseTable title="Search Wizards" :items="wizards" :headers="headers" />
     </v-col>

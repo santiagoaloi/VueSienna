@@ -1,17 +1,17 @@
 <template>
-  <v-container class="d-flex flex-wrap align-center justify-center fill-height">
+  <v-container class="d-flex justify-center flex-wrap align-center fill-height">
     <v-card
       elevation="13"
-      class="py-8 rounded-lg mx-auto d-flex flex-column"
+      class="d-flex flex-column mx-auto py-8 rounded-lg"
       height="500"
       width="360"
       color="rgba(50, 58, 68, 0.5)"
     >
-      <div class="mt-auto text-h5 text-capitalize d-flex justify-center">
+      <div class="d-flex justify-center mt-auto text-h5 text-capitalize">
         Rating overview
       </div>
 
-      <div class="my-auto d-flex flex-column align-center">
+      <div class="d-flex align-center flex-column my-auto">
         <div class="text-capitalize">
           <div class="text-h2 mt-5">
             4.1

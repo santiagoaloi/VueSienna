@@ -1,8 +1,24 @@
 <template>
   <BaseBtn
+    :disabled="isCurrent"
+    @click="handler()"
     prepend-icon="$mdiSpaceInvaders"
-    @click="$router.push('/playground')"
+    :loading="loading"
   >
-    Playground</BaseBtn
-  >
+    Playground
+  </BaseBtn>
 </template>
+
+<script setup>
+import { useGoTo } from '@C/routerGo'
+
+const loading = $ref(false)
+
+const { isCurrent, goTo } = useGoTo('playground')
+
+const handler = async () => {
+  loading = true
+  await goTo()
+  loading = false
+}
+</script>

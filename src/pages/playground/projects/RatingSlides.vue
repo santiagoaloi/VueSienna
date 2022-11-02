@@ -93,7 +93,7 @@ let reviews = reactive([
   [
     {
       title: 'tesla',
-      text: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.',
+      text: 'The biggest achievement',
       rating: 5,
     },
     {

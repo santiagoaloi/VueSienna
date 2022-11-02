@@ -44,3 +44,7 @@ global-font-color {
 .wizard-icon {
   font-size: 600%;
 }
+
+.table-header-background {
+  background: rgba(34, 39, 46) !important;
+}

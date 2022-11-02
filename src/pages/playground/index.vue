@@ -8,6 +8,8 @@
           autofocus
           :items="projects"
           v-model="selectedProject"
+          :loading="loading"
+          :disabled="loading"
         />
       </VCol>
     </VRow>
@@ -20,12 +22,13 @@ defineOptions({
 })
 
 const router = useRouter()
-
+const loading = $ref(false)
 const selectedProject = $ref('')
 
 watch(
   () => selectedProject,
   newVal => {
+    loading = true
     router.push(`/playground/projects/${newVal}`)
   }
 )

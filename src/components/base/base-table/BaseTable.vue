@@ -44,27 +44,21 @@ const tableCompact = $computed(() => {
   return table.tableOptions.compact ? '34px' : '45px'
 })
 
-const tableBordered = computed(() => {
+const tableBordered = $computed(() => {
   return table.tableOptions.bordered
     ? `1px dotted rgba(var(--v-border-color), var(--v-border-opacity))`
     : 'inherit'
 })
 </script>
 
-<style>
-.header-background {
-  background: rgba(34, 39, 46) !important;
-}
-
+<style scoped>
 table > thead > tr > th {
   height: v-bind(tableCompact) !important;
-  /* border: v-bind(tableBordered) !important; */
 }
 
 table > thead > tbody,
 .v-table__wrapper tr > td {
   height: v-bind(tableCompact) !important;
-  /* border: v-bind(tableBordered) !important; */
 }
 
 .v-table th {
