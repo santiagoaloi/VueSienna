@@ -90,3 +90,7 @@ function login() {
   }
 }
 </style>
+<route lang="yaml">
+meta:
+  description: Demo about login validatoin error window shaking effect.
+</route>

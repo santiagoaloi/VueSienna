@@ -46,3 +46,7 @@ const headers = $ref([
   { name: 'lastName', alias: 'Last Name', isVisible: true, isSearchable: true },
 ])
 </script>
+<route lang="yaml">
+meta:
+  description: Tryout of multiple custom-made base table component.
+</route>

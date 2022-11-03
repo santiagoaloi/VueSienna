@@ -58,3 +58,8 @@ const allowedPaymentMethods = computed(
   () => customer.finance.allowedPaymentMethods
 )
 </script>
+
+<route lang="yaml">
+meta:
+  description: Playing object getters using fake finance data.
+</route>

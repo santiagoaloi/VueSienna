@@ -1,5 +1,5 @@
 <template>
-  <VApp>
+  <VApp full-height>
     <RouterView v-slot="{ Component }">
       <template v-if="Component">
         <VFadeTransition appear mode="out-in">

@@ -1,5 +1,4 @@
 import { metadataInjector } from '../config/route-settings'
-import { stringify, parse } from 'vue-chemistry/json'
 
 const useMetadataInjector = metadataInjector()
 

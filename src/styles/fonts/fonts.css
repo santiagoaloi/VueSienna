@@ -3,7 +3,7 @@
   font-style: normal;
   src: local('Product Sans'), url('ProductSans-Regular.woff') format('woff');
 }
-/* 
+
 h1:not(.ignore-font),
 h2:not(.ignore-font),
 h3,
@@ -17,7 +17,7 @@ a,
   font-family: 'Product Sans', sans-serif !important;
   color: #adbac7 !important;
 }
- */
+
 html {
   font-family: 'Product Sans', sans-serif !important;
   color: #adbac7 !important;

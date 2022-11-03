@@ -133,3 +133,7 @@ let reviews = reactive([
   ],
 ])
 </script>
+<route lang="yaml">
+meta:
+  description: Mockup rating cards slider to be used in official vuetify docs site.
+</route>

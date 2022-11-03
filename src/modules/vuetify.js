@@ -30,8 +30,17 @@ export const install = app => {
       fallback: 'en',
       messages: { en },
     },
+    // https://next.vuetifyjs.com/features/theme/
     theme: {
       defaultTheme: 'dark',
+      themes: {
+        dark: {
+          dark: true,
+          colors: {
+            primary: '#7366ff',
+          },
+        },
+      },
     },
   })
   app.use(vuetify)

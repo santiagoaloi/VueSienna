@@ -61,3 +61,7 @@
     </v-card>
   </v-container>
 </template>
+<route lang="yaml">
+meta:
+  description: Mockup rating card to be used in official vuetify docs site.
+</route>

@@ -7,6 +7,15 @@ export const defaults = {
     border: true,
     density: 'comfortable',
   },
-  VTextField: { color: 'teal', hideDetails: true, density: 'compact' },
+  VTextField: {
+    color: '#7b55c7',
+    variant: 'solo',
+    hideDetails: true,
+    density: 'compact',
+    bgColor: '#2e363e',
+  },
+  VAutocomplete: {
+    menuProps: { contentClass: 'autocomplete-list-bg-color', maxHeight: '200' },
+  },
   VTooltip: { location: 'bottom' },
 }

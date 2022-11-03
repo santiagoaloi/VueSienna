@@ -1,4 +1,7 @@
 @use 'vuetify/settings' with (
   $utilities: false,
   $color-pack: false,
+  
+  $button-disabled-opacity: 0.50,
+  $button-disabled-overlay: 0.10
 );
