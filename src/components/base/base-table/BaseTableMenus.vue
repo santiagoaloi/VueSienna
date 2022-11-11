@@ -10,12 +10,14 @@
     </template>
 
     <VCard color="#323a44" flat class="mr-n3" min-width="300" max-height="300">
-      <VCardTitle class="mb-n4"> {{ title }} </VCardTitle>
+      <VCardTitle v-text="title" class="mb-n4" />
 
       <VExpandTransition>
-        <VCardSubtitle v-if="subtitle.isVisible" class="text-teal-accent-2">
-          {{ subtitle.text }}
-        </VCardSubtitle>
+        <VCardSubtitle
+          v-text="subtitle.text"
+          v-if="subtitle.isVisible"
+          class="text-teal-accent-2"
+        />
       </VExpandTransition>
 
       <div class="mb-3 mt-2">

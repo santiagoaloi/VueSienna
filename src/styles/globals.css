@@ -4,6 +4,7 @@ body,
   background: #323a44 !important;
   color: #adbac7 !important;
   overflow: auto !important;
+  user-select: none;
 }
 
 .v-application__wrap {

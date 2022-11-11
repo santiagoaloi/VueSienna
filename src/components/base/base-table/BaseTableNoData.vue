@@ -1,8 +1,8 @@
 <template>
   <div class="base-table-no-data-wrapper">
     <span class="wizard-icon"> 🧙 </span>
-    <VCardTitle>No matches found.</VCardTitle>
-    <VCardSubtitle>Try searching something different...</VCardSubtitle>
+    <VCardTitle v-text="`No matches found.`" />
+    <VCardSubtitle v-text="`Try searching something different...`" />
   </div>
 </template>
 

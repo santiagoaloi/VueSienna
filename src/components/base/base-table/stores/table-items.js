@@ -9,6 +9,8 @@ export const useTableItems = props => {
   ])
 
   let title = props.title
+  let headers = props.headers
+  let items = props.items
 
   // Make headers independent per each base-table
   // in case same headers array are shared across multiple tables
@@ -19,10 +21,6 @@ export const useTableItems = props => {
   // let headers = props.headers.map(h => {
   //   return { ...h }
   // })
-
-  let headers = props.headers
-
-  let items = props.items
 
   const isSearchFieldDisabled = $computed(
     () => isSearchableHeadersEmpty || isVisibleHeadersEmpty

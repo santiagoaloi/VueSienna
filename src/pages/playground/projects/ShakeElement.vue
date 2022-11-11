@@ -1,12 +1,7 @@
 <template>
   <v-container fluid class="fill-height d-flex align-center">
-    <v-card
-      class="mx-auto"
-      width="500"
-      min-height="200"
-      :class="{ shake: shake }"
-    >
-      <v-card-title>Login shakable</v-card-title>
+    <v-card class="mx-auto" width="500" min-height="200" :class="{ shake }">
+      <v-card-title v-text="`Shake on wrong credentials`" />
       <v-card-text>
         <div class="mb-5">
           <code> {{ loginForm }}</code>
@@ -14,17 +9,16 @@
         <form @submit.prevent="login()">
           <v-row>
             <v-col cols="12">
-              <v-text-field v-model="username" label="Account"></v-text-field>
+              <v-text-field v-model="username" label="Account" />
             </v-col>
             <v-col>
               <v-text-field
+                label="Password"
                 type="password"
                 v-model="password"
-                label="Password"
-              ></v-text-field>
+              />
             </v-col>
           </v-row>
-
           <v-card-actions>
             <v-spacer></v-spacer>
             <BaseBtn type="submit">Login</BaseBtn>
@@ -40,12 +34,12 @@ defineOptions({
   name: 'PlaygroundShakeLogin',
 })
 
-let loginForm = reactive({
-  username: '',
-  password: '',
-})
-
-let { username, password } = toRefs(loginForm)
+const loginForm = toRefs(
+  reactive({
+    username: '',
+    password: '',
+  })
+)
 
 let shake = $ref(false)
 

@@ -16,3 +16,7 @@ export function useDebouncedRef(value, delay = 200) {
     }
   })
 }
+
+export function isObject(obj) {
+  return obj !== null && typeof obj === 'object' && !Array.isArray(obj)
+}

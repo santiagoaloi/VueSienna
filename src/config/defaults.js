@@ -8,7 +8,6 @@ export const defaults = {
     density: 'comfortable',
   },
   VTextField: {
-    color: '#7b55c7',
     variant: 'solo',
     hideDetails: true,
     density: 'compact',

@@ -34,6 +34,7 @@
           item-props="itemProps"
           ref="inputRef"
           @update:model-value="onAutocompleteSelect"
+          item-title="name"
         >
         </VAutocomplete>
       </v-container>

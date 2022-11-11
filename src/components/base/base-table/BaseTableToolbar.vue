@@ -1,8 +1,6 @@
 <template>
   <VCardActions class="no-gutters">
-    <VCardTitle class="no-gutters">
-      {{ data.title }}
-    </VCardTitle>
+    <VCardTitle v-text="`data.title`" class="no-gutters" />
     <VSpacer />
     <BaseTableMenus v-for="menu in menus" :menu="menu" />
   </VCardActions>
@@ -20,10 +18,10 @@ const props = defineProps({
   },
 })
 
-const { headers, options, isSearchableHeadersEmpty, isVisibleHeadersEmpty } =
+const { ... } =
   toRefs(props.data)
 
-const menus = ref([
+const menus = $ref([
   {
     icon: '$mdiDotsVertical',
     tooltip: 'Table Options',

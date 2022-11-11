@@ -5,8 +5,7 @@
     placeholder="Search..."
     v-model="searchField"
     clearable
-  >
-  </VTextField>
+  />
 </template>
 
 <script setup>

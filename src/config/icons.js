@@ -17,4 +17,5 @@ export {
   mdiViewColumnOutline,
   mdiBookOpenPageVariantOutline,
   mdiStar,
+  mdiMenuDownOutline,
 } from '@mdi/js'

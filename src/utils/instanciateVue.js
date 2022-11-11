@@ -1,28 +1,35 @@
 import rootApp from '@/App.vue'
-import { useAuthStore } from '@S/authenticationStore'
 import { log } from 'vue-chemistry/console'
+import { useAuthStore } from '@S/authenticationStore'
 
-let app
+let appMounted
+
+const setStoreUser = user => (useAuthStore().user = user)
+
+function mount(user) {
+  appMounted = createApp(rootApp)
+
+  // install all plugin modules.
+  autoImportModules(appMounted)
+
+  // Set firebase user (jf any) saved in indexedDB in browser.
+  setStoreUser(user)
+
+  // Mount Vue after auth and modules are done.
+  appMounted.mount('#app')
+
+  log('Vue application mounted.')
+}
 
 export const Vue = user => {
-  const setStoreUser = user => (useAuthStore().user = user)
+  //Instanciate Vue only once.
 
-  if (!app) {
-    app = createApp(rootApp)
-
-    log('creating app')
-
-    // install all plugin modules.
-    autoImportModules(app)
-
-    // Set firebase user (jf any) saved in indexedDB in browser.
-    setStoreUser(user)
-
-    // Mount Vue after auth and modules are done.
-    app.mount('#app')
+  if (!appMounted) {
+    mount(user)
     return
   }
 
-  // Set user state only after Vue is instanciated.
+  // If a new user authenticates
+  // set the new user object to state.
   setStoreUser(user)
 }

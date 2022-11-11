@@ -16,12 +16,12 @@ export const useAuthStore = defineStore('authentication', {
   },
 
   actions: {
-    // async saveCustomer(customer) {
-    //   // Add a new document in collection "cities"
-    //   await setDoc(doc(db, 'customers', 'newCustomer'), {
-    //     ...JSON.parse(JSON.stringify(customer)),
-    //   })
-    // },
+    async saveCustomer(customer) {
+      // Add a new document in collection "cities"
+      await setDoc(doc(db, 'customers', 'newCustomer'), {
+        ...JSON.parse(JSON.stringify(customer)),
+      })
+    },
 
     async addUserToUsersCollectionGgoogle(user) {
       console.log(user)

@@ -8,12 +8,19 @@
 
     <v-card
       border
-      class="mx-auto mb-10"
+      class="mx-auto mb-10 rounded-b-xl"
       min-height="250"
       width="70vw"
       style="margin-top: -600px"
       elevation="14"
     >
+      <VTextField
+        prepend-inner-icon="$mdiMagnify"
+        placeholder="Search..."
+        clearable
+        autofocus
+      >
+      </VTextField>
       <v-list link lines="two" :items="projects" item-props>
         <template v-slot:subtitle="{ subtitle }">
           <div v-html="subtitle"></div>
@@ -29,7 +36,6 @@ defineOptions({
 })
 
 const router = useRouter()
-
 const allRoutes = router.getRoutes()
 
 const routes = allRoutes.filter(

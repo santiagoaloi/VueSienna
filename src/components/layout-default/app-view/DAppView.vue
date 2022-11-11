@@ -3,9 +3,7 @@
     <RouterView v-slot="{ Component }">
       <template v-if="Component">
         <VFadeTransition mode="out-in">
-          <Suspense>
-            <component :is="Component"></component>
-          </Suspense>
+          <component :is="Component"></component>
         </VFadeTransition>
       </template>
     </RouterView>
