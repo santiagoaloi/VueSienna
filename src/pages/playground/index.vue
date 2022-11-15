@@ -25,19 +25,23 @@
         style="backdrop-filter: saturate(50%) blur(8px)"
       />
 
-      <v-list
-        bg-color="rgba(20, 20, 20, 0.9)"
-        lines="two"
-        :items="sortedProjects"
-        item-props
-      >
-        <template v-slot:title="{ title }">
-          <div class="text-capitalize" v-html="title"></div>
-        </template>
-
-        <template v-slot:subtitle="{ subtitle }">
-          <div v-html="subtitle"></div>
-        </template>
+      <v-list bg-color="rgba(20, 20, 20, 0.9)" lines="two" item-props>
+        <v-lazy
+          :options="{
+            threshold: 0.5,
+          }"
+          min-height="300"
+          transition="fade-transition"
+        >
+          <v-list-item :key="item.title" v-for="item in projects">
+            <v-list-item-title>
+              <div class="text-capitalize" v-html="item.title"></div>
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              <div class="text-capitalize" v-html="item.subtitle"></div>
+            </v-list-item-subtitle>
+          </v-list-item>
+        </v-lazy>
       </v-list>
     </v-card>
   </div>
@@ -57,26 +61,28 @@ const routes = allRoutes.filter(
   r => r.name?.includes('playground') && r.name !== 'playground'
 )
 
-const regex = /(\w+)$/
-const path = 'playground/projects/'
+const projects = routes
+  .flatMap(({ name, meta }) => {
+    const regex = /(\w+)$/
+    const path = 'playground/projects/'
+    let fileName = name.match(regex)[1]
 
-const projects = routes.flatMap(({ name, meta }) => [
-  {
-    prependIcon: '$mdiSpaceInvaders',
-    title: name.match(regex)[1],
-    get to() {
-      return `${path + this.title}`
-    },
-    subtitle: meta.description
-      ? `<span class="text-deep-purple-accent-1">Ali Connors</span> &mdash; ${meta.description}`
-      : 'No description available',
-  },
-])
-
-const sortedProjects = computed(() => {
-  // Sortt titles alphabetically.
-  return projects.sort(() => -1)
-})
+    return [
+      {
+        prependIcon: '$mdiSpaceInvaders',
+        // Metadata custom name or extract SFC name.
+        title: meta.title || fileName,
+        get to() {
+          return `${path + fileName}`
+        },
+        subtitle: meta.description
+          ? `<span class="text-deep-purple-accent-1">Ali Connors</span> &mdash; ${meta.description}`
+          : 'No description available',
+      },
+    ]
+  })
+  //Sort titles alphabetically.
+  .sort(() => -1)
 </script>
 <style>
 .search-field .v-field {

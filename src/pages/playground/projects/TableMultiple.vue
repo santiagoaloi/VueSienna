@@ -48,5 +48,6 @@ const headers = $ref([
 </script>
 <route lang="yaml">
 meta:
+  title: 'Base table (multiple)'
   description: Tryout of multiple custom-made base table component.
 </route>

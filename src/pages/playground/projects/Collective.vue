@@ -213,5 +213,6 @@ const { tagsExtendedLength, filteredTags, socialIcons, repo } = collective
 </style>
 <route lang="yaml">
 meta:
-  description: Mockup requested by John Leider about open collective page.
+  title: Collective layout mockup
+  description: Requested by John Leider.
 </route>

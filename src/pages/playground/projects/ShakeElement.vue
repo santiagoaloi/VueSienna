@@ -86,5 +86,6 @@ function login() {
 </style>
 <route lang="yaml">
 meta:
-  description: Demo about login validatoin error window shaking effect.
+  title: Shake window
+  description: Shake window on wrong auth credentials validation.
 </route>

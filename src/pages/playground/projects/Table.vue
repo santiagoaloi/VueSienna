@@ -34,5 +34,6 @@ const headers = $ref([
 </script>
 <route lang="yaml">
 meta:
+  title: 'Base table'
   description: Tryout of custom-made base table component.
 </route>

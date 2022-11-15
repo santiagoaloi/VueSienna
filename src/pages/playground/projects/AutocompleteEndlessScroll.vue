@@ -5,27 +5,17 @@
         <v-col cols="8">
           <v-autocomplete
             v-model:search="search"
-            placeholder="SELECCIONAR PRODUCTO"
-            :items="items"
-            :filter-keys="['raw.name', 'raw.lastName']"
-            return-object
-            filter-mode="some"
-            no-data-text="Sin resultados"
-            density="compact"
+            :items="filteredItems"
+            item-title="name"
             filled
             cache-items
-            hide-details
-            hide-no-data
             :menu-props="{
-              closeOnContentClick: true,
-              maxHeight: 400,
-              openOnClick: false,
+              maxHeight: 200,
             }"
-            ref="inputRef"
           >
             <template v-slot:append-item>
               <div class="text-teal pa-4" v-intersect="onIntersect">
-                Cargando mas productos...
+                Loading...
               </div>
             </template>
           </v-autocomplete>
@@ -36,12 +26,37 @@
 </template>
 
 <script setup>
+let items = reactive([
+  { id: 1, name: 'Harry', lastName: 'Potter', itemProps: { disabled: true } },
+  { id: 2, name: 'Ron', lastName: 'Weasley', itemProps: { disabled: false } },
+  { id: 3, name: 'Ginny', lastName: 'Weasley', itemProps: { disabled: false } },
+
+  {
+    id: 4,
+    name: 'Lord',
+    lastName: 'Voldemort',
+    itemProps: { disabled: false },
+  },
+  {
+    id: 5,
+    name: 'Severus',
+    lastName: 'Snape',
+    itemProps: { disabled: false },
+  },
+  {
+    id: 6,
+    name: 'Albus',
+    lastName: 'Dumbledore',
+    itemProps: { disabled: false },
+  },
+])
+
 // Autocomplete infinite scroll logic.
 
 const search = $ref('')
 
 // Define batch stepper number.
-const batchScrollStepper = $ref(20)
+const batchScrollStepper = $ref(2)
 
 //Next branch to iterate
 const nextBatch = $ref(null)
@@ -65,15 +80,6 @@ const totalItems = $computed(() => items.length)
 // Indicates if we are still on the first default batch step.
 const isFirstBatch = $computed(() => batchScrollStepper === currentBatchStep)
 
-// Search item names or fallback to currentBatchStep.
-const filteredItems = $computed(() => {
-  let found = items.filter(item =>
-    item.title.toString().toLowerCase().includes(search.toLowerCase())
-  )
-
-  return found.slice(0, currentBatchStep)
-})
-
 function resetCurrentBatchStep() {
   currentBatchStep = batchScrollStepper
 }
@@ -87,6 +93,15 @@ function onIntersect() {
   return items.slice(0, nextBatch)
 }
 
+// Search item names or fallback to currentBatchStep.
+const filteredItems = $computed(() => {
+  let found = items.filter(item =>
+    item.name.toString().toLowerCase().includes(search.toLowerCase())
+  )
+
+  return found.slice(0, currentBatchStep)
+})
+
 watch(
   () => search,
   (newValue, oldValue) => {
@@ -94,3 +109,8 @@ watch(
   }
 )
 </script>
+<route lang="yaml">
+meta:
+  title: Autocomplete - lazy loading scroll
+  description: Lazy loading concept.
+</route>

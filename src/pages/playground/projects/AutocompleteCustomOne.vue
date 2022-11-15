@@ -109,5 +109,6 @@ const currentBatchStep = ref(batchScrollStepper.value)
 </script>
 <route lang="yaml">
 meta:
+  title: Autocomplete (Santi)
   description: Autocomplete demo on how to disable list items and clear field after item selection.
 </route>

@@ -47,6 +47,25 @@ let wizards = reactive([
   { id: 1, name: 'Harry', lastName: 'Potter', itemProps: { disabled: true } },
   { id: 2, name: 'Ron', lastName: 'Weasley', itemProps: { disabled: false } },
   { id: 3, name: 'Ginny', lastName: 'Weasley', itemProps: { disabled: false } },
+
+  {
+    id: 4,
+    name: 'Lord',
+    lastName: 'Voldemort',
+    itemProps: { disabled: false },
+  },
+  {
+    id: 5,
+    name: 'Severus',
+    lastName: 'Snape',
+    itemProps: { disabled: false },
+  },
+  {
+    id: 6,
+    name: 'Albus',
+    lastName: 'Dumbledore',
+    itemProps: { disabled: false },
+  },
 ])
 
 let inputRef = $ref(null)
@@ -71,6 +90,6 @@ const { disabled } = toRefs(wizards[0].itemProps)
 
 <route lang="yaml">
 meta:
-  title: 'Autocomplete - Clear on Select'
+  title: Autocomplete - Clear on Select
   description: Autocomplete demo on how to disable list items and clear field after item selection.
 </route>

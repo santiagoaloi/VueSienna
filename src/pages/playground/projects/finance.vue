@@ -61,5 +61,6 @@ const allowedPaymentMethods = computed(
 
 <route lang="yaml">
 meta:
-  description: Playing object getters using fake finance data.
+  title: Payment Menthods - Finance
+  description: Playing  with getters with fake finance data.
 </route>

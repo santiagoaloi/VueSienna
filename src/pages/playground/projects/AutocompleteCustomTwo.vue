@@ -54,41 +54,39 @@
         </div>
       </span>
 
-      <v-sheet id="field" class="bg-red" height="500">
-        <v-menu location-strategy="connected" attach="#field">
-          <template v-slot:activator="{ props }">
-            <v-text-field
-              v-model="search"
-              color.trim="primary"
-              v-bind="props"
-              ref="textFieldRef"
-              :placeholder="placeholder"
-              :append-inner-icon="
-                isActive ? '$mdiMenuUpOutline' : '$mdiMenuDownOutline'
-              "
-              @update:focused="test()"
-            >
-            </v-text-field>
-          </template>
-          <v-list
-            height="200"
-            v-model:selected="selectedItem"
-            @click:select="clickOnSelect"
-            @update:selected="getSelectedItem()"
+      <v-menu>
+        <template v-slot:activator="{ props, isActive }">
+          <v-text-field
+            v-model="search"
+            color.trim="primary"
+            v-bind="props"
+            ref="textFieldRef"
+            :placeholder="placeholder"
+            :append-inner-icon="
+              isActive ? '$mdiMenuUpOutline' : '$mdiMenuDownOutline'
+            "
+          />
+        </template>
+
+        <v-list
+          v-model:selected="selectedItem"
+          @click:select="clickOnSelect"
+          @update:selected="getSelectedItem()"
+        >
+          <v-list-item
+            v-for="(item, index) in filteredItems"
+            :key="index"
+            :value="item"
           >
-            <template v-for="(item, index) in filteredItems" :key="index">
-              <v-list-item :value="item">
-                <v-list-item-title>{{
-                  itemToString(item, itemText, 'hasDefault')
-                }}</v-list-item-title>
-                <v-list-item-subtitle>{{
-                  itemToString(item, itemSubtitle)
-                }}</v-list-item-subtitle>
-              </v-list-item>
-            </template>
-          </v-list>
-        </v-menu>
-      </v-sheet>
+            <v-list-item-title>{{
+              itemToString(item, itemText, 'hasDefault')
+            }}</v-list-item-title>
+            <v-list-item-subtitle>{{
+              itemToString(item, itemSubtitle)
+            }}</v-list-item-subtitle>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-card-text>
   </v-card>
 </template>
@@ -96,8 +94,7 @@
 import { isObject } from '@/utils/methods'
 
 const textFieldRef = ref(null)
-const isActive = ref(false)
-const icon = ref('')
+
 const items = ref([
   { name: 'Macbook', brand: 'Apple', id: 1 },
   { name: 'iPad', brand: 'Apple', id: 2, disable: true },
@@ -223,8 +220,9 @@ function clickOnSelect() {
   isFocusOnSelect.value ? textFieldRef.value.focus() : ''
   // isCloseOnSelect.value ?
 }
-
-function test() {
-  console.log(textFieldRef.value)
-}
 </script>
+<route lang="yaml">
+meta:
+  title: Autocomplete (Facu)
+  description: Autocomplete demo on how to disable list items and clear field after item selection.
+</route>
