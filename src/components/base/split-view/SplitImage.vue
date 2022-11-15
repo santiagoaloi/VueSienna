@@ -1,5 +1,5 @@
 <template>
-  <VImg cover width="100%" :src="src"> <slot /></VImg>
+  <VImg cover :src="src"> <slot /></VImg>
 </template>
 
 <script setup>

@@ -13,15 +13,28 @@
       width="70vw"
       style="margin-top: -600px"
       elevation="14"
+      color="transparent"
     >
       <VTextField
         prepend-inner-icon="$mdiMagnify"
         placeholder="Search..."
         clearable
         autofocus
+        class="search-field"
+        bgColor="transparent"
+        style="backdrop-filter: saturate(50%) blur(8px)"
+      />
+
+      <v-list
+        bg-color="rgba(20, 20, 20, 0.9)"
+        lines="two"
+        :items="sortedProjects"
+        item-props
       >
-      </VTextField>
-      <v-list link lines="two" :items="projects" item-props>
+        <template v-slot:title="{ title }">
+          <div class="text-capitalize" v-html="title"></div>
+        </template>
+
         <template v-slot:subtitle="{ subtitle }">
           <div v-html="subtitle"></div>
         </template>
@@ -38,26 +51,35 @@ defineOptions({
 const router = useRouter()
 const allRoutes = router.getRoutes()
 
+// List all routes in @/pages/playground/*
+// exclude this SFC.
 const routes = allRoutes.filter(
   r => r.name?.includes('playground') && r.name !== 'playground'
 )
 
 const regex = /(\w+)$/
+const path = 'playground/projects/'
 
 const projects = routes.flatMap(({ name, meta }) => [
-  { type: 'divider', inset: true },
   {
     prependIcon: '$mdiSpaceInvaders',
     title: name.match(regex)[1],
     get to() {
-      return `playground/projects/${this.title}`
+      return `${path + this.title}`
     },
     subtitle: meta.description
-      ? `<span class="text-cyan-accent-3">Ali Connors</span> &mdash; ${meta.description}`
+      ? `<span class="text-deep-purple-accent-1">Ali Connors</span> &mdash; ${meta.description}`
       : 'No description available',
   },
 ])
 
-projects[0].type = 'subheader'
-projects[0].title = 'All playground projects'
+const sortedProjects = computed(() => {
+  // Sortt titles alphabetically.
+  return projects.sort(() => -1)
+})
 </script>
+<style>
+.search-field .v-field {
+  border-radius: 0px;
+}
+</style>

@@ -18,7 +18,7 @@ const props = defineProps({
   },
 })
 
-const { ... } =
+const { isVisibleHeadersEmpty, isSearchableHeadersEmpty, headers, options } =
   toRefs(props.data)
 
 const menus = $ref([

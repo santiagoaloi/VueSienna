@@ -71,5 +71,6 @@ const { disabled } = toRefs(wizards[0].itemProps)
 
 <route lang="yaml">
 meta:
+  title: 'Autocomplete - Clear on Select'
   description: Autocomplete demo on how to disable list items and clear field after item selection.
 </route>

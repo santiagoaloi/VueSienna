@@ -13,10 +13,10 @@
 <script setup>
 import { useAuthStore } from '@S/authenticationStore'
 
-const loading = $ref(false)
-const auth = useAuthStore()
+let loading = $ref(false)
+let auth = useAuthStore()
 
-const handler = async () => {
+let handler = async () => {
   loading = true
   await auth.logout()
   loading = false

@@ -12,11 +12,11 @@
 <script setup>
 import { useGoTo } from '@C/routerGo'
 
-const loading = $ref(false)
+let loading = $ref(false)
 
-const { isCurrent, goTo } = useGoTo('playground')
+let { isCurrent, goTo } = useGoTo('playground')
 
-const handler = async () => {
+let handler = async () => {
   loading = true
   await goTo()
   loading = false

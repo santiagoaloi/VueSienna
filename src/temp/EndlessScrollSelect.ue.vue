@@ -36,8 +36,6 @@
 </template>
 
 <script setup>
-
-const
 // Autocomplete infinite scroll logic.
 
 const search = ref('')
