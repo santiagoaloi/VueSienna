@@ -95,6 +95,8 @@ export default use.defineConfig({
     use.pages({
       // dirs: [{ dir: 'src/pages', baseRoute: '' }],
 
+      exclude: ['**/data/**'],
+
       // Metadata injection is done @/utils/autoGenerateRoutes.
       // onRoutesGenerated: use.injectMetadata,
 

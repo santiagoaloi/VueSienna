@@ -4,8 +4,8 @@ import { defaults } from '@/config/defaults'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import folder from '@/icons/icon.vue'
 
-// Translations provided by Vuetify
-import { en } from 'vuetify/locale'
+// // Translations provided by Vuetify
+// import { en } from 'vuetify/locale'
 
 const aliasesCustom = {
   ...aliases,
@@ -25,11 +25,11 @@ export const install = app => {
       },
     },
     defaults,
-    locale: {
-      locale: 'en',
-      fallback: 'en',
-      messages: { en },
-    },
+    // locale: {
+    //   locale: 'en',
+    //   fallback: 'en',
+    //   messages: { en },
+    // },
     // https://next.vuetifyjs.com/features/theme/
     theme: {
       defaultTheme: 'dark',

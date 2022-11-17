@@ -225,4 +225,5 @@ function clickOnSelect() {
 meta:
   title: Autocomplete (Facu)
   description: Autocomplete demo on how to disable list items and clear field after item selection.
+  icon: '$mdiFormDropdown'
 </route>

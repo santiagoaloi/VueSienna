@@ -5,52 +5,56 @@
       color="transparent"
       class="d-flex flex-column bg-transparent"
     >
-      <v-img class="fill-height" src="/hero.svg" cover>
+      <v-img
+        class="fill-height"
+        src="/hero.svg"
+        style="overflow: visible"
+        cover
+      >
         <div
           :class="{ 'fill-height': projects.length }"
           class="d-flex flex-column mx-auto"
         >
-          <div class="text-h3 pa-15 align-center justify-center d-flex">
-            Playground projects
-          </div>
+          <h5 class="text-h3 pa-15 align-center justify-center d-flex">
+            <span>
+              {{ visibleProjects }} of {{ projects.length }} {{ `posts shown` }}
+            </span>
+          </h5>
 
           <v-card
             border
-            class="d-flex flex-column mx-auto rounded-b-xl mb-10"
+            class="d-flex flex-column mx-auto rounded-b-xl mb-10 fill-height"
             width="70vw"
             elevation="14"
-            color="rgba(30, 30, 30, 0.8)"
-            style="backdrop-filter: blur(9px)"
+            color="rgba(30, 30, 30, 0.5)"
+            style="backdrop-filter: saturate(50%) blur(8px)"
+            min-height="200"
           >
             <VTextField
+              class="d-flex flex-column"
               prepend-inner-icon="$mdiMagnify"
               placeholder="Search..."
               clearable
               autofocus
               bgColor="transparent"
-              class="search-field"
             />
 
-            <div class="d-flex justify-end mr-5 pa-2">
-              <small>
-                {{ visibleProjects }} of {{ projects.length }}
-                {{ `projects loaded` }}
-              </small>
-            </div>
+            <v-list v-if="projects.length" bg-color="transparent">
+              <v-list-item :key="project.title" v-for="project in projects">
+                <v-lazy
+                  v-model="project.isActive"
+                  :options="{
+                    threshold: 0.5,
+                  }"
+                  class="fill-height d-flex"
+                >
+                  <v-list-item>
+                    <template v-slot:prepend="{ isActive }">
+                      <v-list-item-action start>
+                        <v-checkbox-btn></v-checkbox-btn>
+                      </v-list-item-action>
+                    </template>
 
-            <v-list bg-color="transparent" lines="two" v-if="projects.length">
-              <v-list-item
-                :to="project.to"
-                v-for="project in projects"
-                :key="project.title"
-              >
-                <template v-if="project.isActive" v-slot:prepend>
-                  <v-list-item-action start>
-                    <v-icon>{{ project.icon }}</v-icon>
-                  </v-list-item-action>
-                </template>
-                <v-lazy v-model="project.isActive" class="fill-height">
-                  <div v-if="project.isActive">
                     <v-list-item-title>
                       <div class="text-capitalize" v-html="project.title"></div>
                     </v-list-item-title>
@@ -60,7 +64,7 @@
                         v-html="project.subtitle"
                       ></div>
                     </v-list-item-subtitle>
-                  </div>
+                  </v-list-item>
                 </v-lazy>
               </v-list-item>
             </v-list>
@@ -73,11 +77,12 @@
 
 <script setup>
 defineOptions({
-  name: 'Playground',
+  name: 'PlaygroundLazyScroll',
 })
 
 const router = useRouter()
 const allRoutes = router.getRoutes()
+
 const { mdAndUp } = useDisplay()
 
 // List all routes in @/pages/playground/*
@@ -90,7 +95,7 @@ let visibleProjects = $computed(() => {
   return projects.filter(project => project.isActive).length
 })
 
-const projects = reactive(
+let projects = reactive(
   routes
     .flatMap(({ name, meta }) => {
       const regex = /(\w+)$/
@@ -99,8 +104,7 @@ const projects = reactive(
 
       return [
         {
-          icon: meta.icon || '$mdiSpaceInvaders',
-
+          prependIcon: '$mdiSpaceInvaders',
           // Metadata custom name or extract SFC name.
           title: meta.title || fileName,
           get to() {
@@ -112,7 +116,14 @@ const projects = reactive(
         },
       ]
     })
+    // .filter(project => project.isActive)
     //Sort titles alphabetically.
     .sort(() => -1)
 )
 </script>
+<route lang="yaml">
+meta:
+  title: Lazy scroll (list - playground files)
+  description: Tryout of lazy loading cards.
+  icon: $mdiFormatLineWeight
+</route>

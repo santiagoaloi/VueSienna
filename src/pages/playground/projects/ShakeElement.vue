@@ -88,4 +88,5 @@ function login() {
 meta:
   title: Shake window
   description: Shake window on wrong auth credentials validation.
+  icon: '$mdiWindowMaximize'
 </route>

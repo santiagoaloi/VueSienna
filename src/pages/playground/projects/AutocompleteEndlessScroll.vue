@@ -113,4 +113,5 @@ watch(
 meta:
   title: Autocomplete - lazy loading scroll
   description: Lazy loading concept.
+  icon: '$mdiFormDropdown'
 </route>

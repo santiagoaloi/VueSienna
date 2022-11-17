@@ -137,4 +137,5 @@ let reviews = reactive([
 meta:
   title: Rating component 2 (slides)
   description: Mockup rating cards slider to be used in official vuetify docs site.
+  icon: $mdiStar
 </route>

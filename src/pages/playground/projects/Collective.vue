@@ -215,4 +215,5 @@ const { tagsExtendedLength, filteredTags, socialIcons, repo } = collective
 meta:
   title: Collective layout mockup
   description: Requested by John Leider.
+  icon: '$mdiCircleOutline'
 </route>

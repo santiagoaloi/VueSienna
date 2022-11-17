@@ -18,4 +18,11 @@ export {
   mdiBookOpenPageVariantOutline,
   mdiStar,
   mdiMenuDownOutline,
+  mdiTable,
+  mdiWindowMaximize,
+  mdiFormDropdown,
+  mdiCircleOutline,
+  mdiFormatLineWeight,
+  mdiCardOutline,
+  mdiCurrencyUsd,
 } from '@mdi/js'

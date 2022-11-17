@@ -50,4 +50,5 @@ const headers = $ref([
 meta:
   title: 'Base table (multiple)'
   description: Tryout of multiple custom-made base table component.
+  icon: '$mdiTable'
 </route>

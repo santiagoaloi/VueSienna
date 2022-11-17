@@ -63,4 +63,5 @@ const allowedPaymentMethods = computed(
 meta:
   title: Payment Menthods - Finance
   description: Playing  with getters with fake finance data.
+  icon: $mdiCurrencyUsd
 </route>

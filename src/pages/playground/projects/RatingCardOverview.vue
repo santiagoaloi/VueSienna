@@ -65,4 +65,5 @@
 meta:
   title: Rating component 1 (card)
   description: Mockup rating card to be used in official vuetify docs site.
+  icon: $mdiStar
 </route>
