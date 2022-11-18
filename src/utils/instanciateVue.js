@@ -1,6 +1,11 @@
 import rootApp from '@/App.vue'
 import { log } from 'vue-chemistry/console'
+
+// State Managemenet
 import { useAuthStore } from '@S/authenticationStore'
+
+// Styling
+import '@/styles'
 
 // needed while using local/custom fonts.
 // github.com/stafyniaksacha/vite-plugin-fonts
