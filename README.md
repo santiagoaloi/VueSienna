@@ -70,7 +70,7 @@ export const install = app => {
 
 ## Pre-packed
 
-### UI Frameworks
+### Frameworks
 
 - [Vue 3](https://vuejs.org/) - Progressive JavaScript Framework
 - [Vuetify 3](https://next.vuetifyjs.com/en/) - Material Design Framework
