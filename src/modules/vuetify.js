@@ -1,36 +1,27 @@
-import 'vuetify/lib/styles/main.sass'
-import * as icons from '@/config/icons'
+// Global defaults
 import { defaults } from '@/config/defaults'
-import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
-import folder from '@/icons/icon.vue'
 
-// // Translations provided by Vuetify
-// import { en } from 'vuetify/locale'
+// Icons
+import { mdi } from 'vuetify/iconsets/mdi-svg'
+import * as icons from '@/config/icons'
 
-const aliasesCustom = {
-  ...aliases,
-  folder,
-}
+// Imports
+import { createVuetify } from 'vuetify'
+
+import 'vuetify/styles'
 
 export const install = app => {
   const vuetify = createVuetify({
+    defaults,
     icons: {
       defaultSet: 'mdi',
       aliases: {
-        ...aliasesCustom,
         ...icons,
       },
       sets: {
         mdi,
       },
     },
-    defaults,
-    // locale: {
-    //   locale: 'en',
-    //   fallback: 'en',
-    //   messages: { en },
-    // },
-    // https://next.vuetifyjs.com/features/theme/
     theme: {
       defaultTheme: 'dark',
       themes: {

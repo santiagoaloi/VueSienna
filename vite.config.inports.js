@@ -8,6 +8,7 @@ import vueMacros from 'unplugin-vue-macros/vite'
 import autoImport from 'unplugin-auto-import/vite'
 import components from 'unplugin-vue-components/vite'
 import removeConsole from 'vite-plugin-remove-console'
+import viteFonts from 'vite-plugin-fonts'
 
 import { default as injectMetadata } from './src/utils/autoInjectRouteMeta'
 
@@ -22,5 +23,6 @@ export {
   components,
   removeConsole,
   vuetify,
+  viteFonts,
   injectMetadata,
 }

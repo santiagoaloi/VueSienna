@@ -31,6 +31,7 @@
     "unplugin-auto-import": "^0.11.2",
     "unplugin-vue-components": "^0.22.7",
     "unplugin-vue-macros": "^0.11.2",
+    "vite-plugin-fonts": "^0.6.0",
     "vite-plugin-pages": "^0.26.0",
     "vite-plugin-remove-console": "^1.1.0",
     "vite-plugin-vue-layouts": "^0.7.0",

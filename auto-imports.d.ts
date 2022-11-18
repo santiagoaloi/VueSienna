@@ -9,8 +9,10 @@ declare global {
   const $shallowRef: typeof import('vue/macros')['$shallowRef']
   const $toRef: typeof import('vue/macros')['$toRef']
   const EffectScope: typeof import('vue')['EffectScope']
+  const GoogleAuthProvider: typeof import('firebase/auth')['GoogleAuthProvider']
   const Vue: typeof import('./src/utils/instanciateVue.js')['Vue']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
+  const auth: typeof import('@/firebase')['auth']
   const autoImportModules: typeof import('./src/utils/autoImportModules.js')['default']
   const autoInjectRouteMeta: typeof import('./src/utils/autoInjectRouteMeta.js')['default']
   const computed: typeof import('vue')['computed']
@@ -20,13 +22,17 @@ declare global {
   const createVuetify: typeof import('vuetify')['createVuetify']
   const createWebHistory: typeof import('vue-router')['createWebHistory']
   const customRef: typeof import('vue')['customRef']
+  const db: typeof import('@/firebase')['db']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
   const defineStore: typeof import('pinia')['defineStore']
+  const doc: typeof import('firebase/firestore')['doc']
   const effectScope: typeof import('vue')['effectScope']
+  const functions: typeof import('@/firebase')['functions']
   const getActivePinia: typeof import('pinia')['getActivePinia']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
+  const getDoc: typeof import('firebase/firestore')['getDoc']
   const h: typeof import('vue')['h']
   const inject: typeof import('vue')['inject']
   const isObject: typeof import('./src/utils/methods.js')['isObject']
@@ -62,10 +68,13 @@ declare global {
   const resolveDirective: typeof import('vue')['resolveDirective']
   const rowPreset: typeof import('./src/presets/useRowPreset.js')['rowPreset']
   const setActivePinia: typeof import('pinia')['setActivePinia']
+  const setDoc: typeof import('firebase/firestore')['setDoc']
   const setMapStoreSuffix: typeof import('pinia')['setMapStoreSuffix']
   const shallowReactive: typeof import('vue')['shallowReactive']
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
+  const signInWithPopup: typeof import('firebase/auth')['signInWithPopup']
+  const signOut: typeof import('firebase/auth')['signOut']
   const storeToRefs: typeof import('pinia')['storeToRefs']
   const toRaw: typeof import('vue')['toRaw']
   const toRef: typeof import('vue')['toRef']
@@ -98,8 +107,10 @@ declare module 'vue' {
     readonly $shallowRef: UnwrapRef<typeof import('vue/macros')['$shallowRef']>
     readonly $toRef: UnwrapRef<typeof import('vue/macros')['$toRef']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly GoogleAuthProvider: UnwrapRef<typeof import('firebase/auth')['GoogleAuthProvider']>
     readonly Vue: UnwrapRef<typeof import('./src/utils/instanciateVue.js')['Vue']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
+    readonly auth: UnwrapRef<typeof import('@/firebase')['auth']>
     readonly autoImportModules: UnwrapRef<typeof import('./src/utils/autoImportModules.js')['default']>
     readonly autoInjectRouteMeta: UnwrapRef<typeof import('./src/utils/autoInjectRouteMeta.js')['default']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
@@ -109,13 +120,17 @@ declare module 'vue' {
     readonly createVuetify: UnwrapRef<typeof import('vuetify')['createVuetify']>
     readonly createWebHistory: UnwrapRef<typeof import('vue-router')['createWebHistory']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
+    readonly db: UnwrapRef<typeof import('@/firebase')['db']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
+    readonly doc: UnwrapRef<typeof import('firebase/firestore')['doc']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly functions: UnwrapRef<typeof import('@/firebase')['functions']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly getDoc: UnwrapRef<typeof import('firebase/firestore')['getDoc']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isObject: UnwrapRef<typeof import('./src/utils/methods.js')['isObject']>
@@ -151,10 +166,13 @@ declare module 'vue' {
     readonly resolveDirective: UnwrapRef<typeof import('vue')['resolveDirective']>
     readonly rowPreset: UnwrapRef<typeof import('./src/presets/useRowPreset.js')['rowPreset']>
     readonly setActivePinia: UnwrapRef<typeof import('pinia')['setActivePinia']>
+    readonly setDoc: UnwrapRef<typeof import('firebase/firestore')['setDoc']>
     readonly setMapStoreSuffix: UnwrapRef<typeof import('pinia')['setMapStoreSuffix']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
+    readonly signInWithPopup: UnwrapRef<typeof import('firebase/auth')['signInWithPopup']>
+    readonly signOut: UnwrapRef<typeof import('firebase/auth')['signOut']>
     readonly storeToRefs: UnwrapRef<typeof import('pinia')['storeToRefs']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>

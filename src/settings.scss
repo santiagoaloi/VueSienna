@@ -1,7 +1,15 @@
-@use 'vuetify/settings' with (
-  $utilities: false,
-  $color-pack: false,
-  
-  $button-disabled-opacity: 0.50,
-  $button-disabled-overlay: 0.10
-);
+$defaultFont: 'Product Sans', sans-serif;
+
+@use 'vuetify/settings' with ($utilities: false,
+    $color-pack: false,
+
+    //Buttons
+    $button-disabled-opacity: 0.5,
+    $button-disabled-overlay: 0.1,
+
+    //Tabs
+    $tab-slider-size: 5px,
+
+    $body-font-family: $defaultFont,
+    $heading-font-family: $defaultFont,
+)

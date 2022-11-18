@@ -2,6 +2,10 @@ import rootApp from '@/App.vue'
 import { log } from 'vue-chemistry/console'
 import { useAuthStore } from '@S/authenticationStore'
 
+// needed while using local/custom fonts.
+// github.com/stafyniaksacha/vite-plugin-fonts
+import 'virtual:fonts.css'
+
 let appMounted
 
 const setStoreUser = user => (useAuthStore().user = user)

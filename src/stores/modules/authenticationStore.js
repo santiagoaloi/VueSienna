@@ -1,6 +1,3 @@
-import { doc, getDoc, setDoc } from 'firebase/firestore'
-import { signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth'
-import { auth, db } from '@/firebase'
 import NProgress from 'nprogress'
 
 export const useAuthStore = defineStore('authentication', {
