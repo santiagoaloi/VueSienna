@@ -72,7 +72,8 @@ export const install = app => {
 
 ### UI Frameworks
 
-- [Vuetify 3, Beta](https://next.vuetifyjs.com/en/) - Material Design Framework
+- [Vue 3](https://vuejs.org/) - Progressive JavaScript Framework
+- [Vuetify 3](https://next.vuetifyjs.com/en/) - Material Design Framework
 
 ## Recommended IDE Setup
 
