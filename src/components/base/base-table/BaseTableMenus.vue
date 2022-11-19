@@ -39,12 +39,12 @@ defineOptions({
   name: 'BaseTableToolbarMenus',
 })
 
-const props = defineProps({
+let props = defineProps({
   menu: {
     type: [Array, Object],
     default: () => [] || {},
   },
 })
 
-const { title, icon, tooltip, data, subtitle } = toRefs(props.menu)
+let { title, icon, tooltip, data, subtitle } = toRefs(props.menu)
 </script>

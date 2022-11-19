@@ -4,7 +4,7 @@
   </VCol>
 </template>
 <script setup>
-const props = defineProps({
+let props = defineProps({
   right: {
     type: Boolean,
     default: false,
@@ -16,9 +16,9 @@ const props = defineProps({
   },
 })
 
-const { smAndDown } = useDisplay()
+let { smAndDown } = useDisplay()
 
-const config = reactive({
+let config = reactive({
   colOrder: computed(() => {
     return !props.right || !smAndDown ? '12' : '-1'
   }),

@@ -11,17 +11,17 @@ defineOptions({
   name: 'BaseTableToolbar',
 })
 
-const props = defineProps({
+let props = defineProps({
   data: {
     type: [Array, Object],
     default: () => [] || {},
   },
 })
 
-const { isVisibleHeadersEmpty, isSearchableHeadersEmpty, headers, options } =
+let { isVisibleHeadersEmpty, isSearchableHeadersEmpty, headers, options } =
   toRefs(props.data)
 
-const menus = $ref([
+let menus = $ref([
   {
     icon: '$mdiDotsVertical',
     tooltip: 'Table Options',

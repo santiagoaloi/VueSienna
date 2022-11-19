@@ -13,17 +13,17 @@
 import { useAuthStore } from '@S/authenticationStore'
 import { useGoTo } from '@C/routerGo'
 
-const loading = $ref(false)
+let loading = $ref(false)
 
-const auth = useAuthStore()
+let auth = useAuthStore()
 
-const { isCurrent, goTo } = useGoTo('login')
+let { isCurrent, goTo } = useGoTo('login')
 
-const userName = computed(() =>
+let userName = computed(() =>
   auth.userName ? `Logout ${auth.userName}` : 'Login'
 )
 
-const handler = async () => {
+let handler = async () => {
   loading = true
   auth.isLoggedIn ? await auth.logout() : await goTo()
   loading = false

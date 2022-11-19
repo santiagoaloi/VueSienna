@@ -12,12 +12,12 @@ defineOptions({
   name: 'BaseTableView',
 })
 
-const props = defineProps({
+let props = defineProps({
   data: {
     type: [Array, Object],
     default: () => [] || {},
   },
 })
 
-const { visibleTableHeaders } = toRefs(props.data)
+let { visibleTableHeaders } = toRefs(props.data)
 </script>

@@ -76,13 +76,13 @@ defineOptions({
   name: 'Playground',
 })
 
-const router = useRouter()
-const allRoutes = router.getRoutes()
-const { mdAndUp } = useDisplay()
+let router = useRouter()
+let allRoutes = router.getRoutes()
+let { mdAndUp } = useDisplay()
 
 // List all routes in @/pages/playground/*
 // exclude this SFC.
-const routes = allRoutes.filter(
+let routes = allRoutes.filter(
   r => r.name?.includes('playground') && r.name !== 'playground'
 )
 
@@ -90,11 +90,11 @@ let visibleProjects = $computed(() => {
   return projects.filter(project => project.isActive).length
 })
 
-const projects = reactive(
+let projects = reactive(
   routes
     .flatMap(({ name, meta }) => {
-      const regex = /(\w+)$/
-      const path = 'playground/projects/'
+      let regex = /(\w+)$/
+      let path = 'playground/projects/'
       let fileName = name.match(regex)[1]
 
       return [

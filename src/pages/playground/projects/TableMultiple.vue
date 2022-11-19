@@ -15,13 +15,13 @@ defineOptions({
   name: 'PlaygroundSplitTable',
 })
 
-const celebs = $ref([
+let celebs = $ref([
   { id: 1, name: 'Britney', lastName: 'Spears' },
   { id: 2, name: 'Arnold', lastName: 'Schwarzenegger' },
   { id: 3, name: 'Steve', lastName: 'Jobs' },
 ])
 
-const wizards = $ref([
+let wizards = $ref([
   { id: 1, name: 'Harry', lastName: 'Potter' },
   { id: 2, name: 'Lord', lastName: 'Voldemort' },
   { id: 3, name: 'Ron', lastName: 'Weasley' },
@@ -40,7 +40,7 @@ const wizards = $ref([
   { id: 16, name: 'Dean', lastName: 'Thomas' },
 ])
 
-const headers = $ref([
+let headers = $ref([
   { name: 'id', alias: 'Id', isVisible: true, isSearchable: true },
   { name: 'name', alias: 'Name', isVisible: true, isSearchable: true },
   { name: 'lastName', alias: 'Last Name', isVisible: true, isSearchable: true },

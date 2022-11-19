@@ -19,9 +19,9 @@
 import { useAuthStore } from '@S/authenticationStore'
 import { LoginButton } from './instances'
 
-const auth = useAuthStore()
+let auth = useAuthStore()
 
-const buttons = $ref([
+let buttons = $ref([
   new LoginButton({
     name: 'Google',
     icon: '$mdiGoogle',

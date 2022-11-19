@@ -42,10 +42,10 @@
 <script setup>
 import { useAuthStore } from '@/stores/modules/authenticationStore'
 
-const auth = useAuthStore()
-const terms = $ref(false)
+let auth = useAuthStore()
+let terms = $ref(false)
 
-const services = $ref([
+let services = $ref([
   {
     title: 'Credit Card',
     value: 'overview',
@@ -78,7 +78,7 @@ const services = $ref([
 let newCustomer = $ref(null)
 
 class Customer {
-  constructor(
+  letructor(
     firstName = '',
     lastName = '',
     services = { cards: [new CreditCard()] }
@@ -92,7 +92,7 @@ class Customer {
 }
 
 class CreditCard {
-  constructor(provider = 'Visa', limit = 5000, balance = 0) {
+  letructor(provider = 'Visa', limit = 5000, balance = 0) {
     Object.assign(this, {
       provider,
       limit,

@@ -1,5 +1,5 @@
 <template>
-  <v-container class="d-flex justify-center flex-wrap align-center fill-height">
+  <v-container class="d-flex align-center justify-center flex-wrap fill-height">
     <v-card
       elevation="13"
       class="d-flex flex-column mx-auto py-8 rounded-lg"
@@ -20,7 +20,7 @@
         </div>
 
         <div>
-          <v-rating
+          <VRating
             :model-value="4.5"
             half-increments
             readonly

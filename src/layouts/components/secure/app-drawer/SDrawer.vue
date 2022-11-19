@@ -53,6 +53,6 @@
 import { useAppStore } from '@S/appStore'
 import { useAuthStore } from '@S/authenticationStore'
 
-const app = useAppStore()
-const auth = useAuthStore()
+let app = useAppStore()
+let auth = useAuthStore()
 </script>

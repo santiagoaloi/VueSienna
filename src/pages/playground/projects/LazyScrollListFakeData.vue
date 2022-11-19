@@ -74,7 +74,7 @@
 
 <script setup>
 import { items } from './data/lazy-scroll-data'
-const { mdAndUp } = useDisplay()
+let { mdAndUp } = useDisplay()
 
 let visibleItems = $computed(() => {
   return items.filter(project => project.isActive).length

@@ -13,12 +13,12 @@ defineOptions({
   name: 'BaseTableSearchField',
 })
 
-const props = defineProps({
+let props = defineProps({
   data: {
     type: [Array, Object],
     default: () => [] || {},
   },
 })
 
-const { isSearchFieldDisabled, searchField } = toRefs(props.data)
+let { isSearchFieldDisabled, searchField } = toRefs(props.data)
 </script>

@@ -110,7 +110,7 @@ defineOptions({
   name: 'PlaygroundCollective',
 })
 
-const collective = reactive({
+let collective = reactive({
   tags: [
     'javascript',
     'material',
@@ -169,7 +169,7 @@ function webIcon(url) {
   }
 }
 
-const { tagsExtendedLength, filteredTags, socialIcons, repo } = collective
+let { tagsExtendedLength, filteredTags, socialIcons, repo } = collective
 </script>
 
 <style>

@@ -38,8 +38,8 @@ defineOptions({
   name: 'PlaygroundCustomAutocomplete',
 })
 
-const product = ref({ name: 'nuevo producto' })
-const items = ref([
+let product = ref({ name: 'nuevo producto' })
+let items = ref([
   { name: 'Macbook', brand: 'Apple', id: 1 },
   { name: 'iPad', brand: 'Apple', id: 2, disable: true },
   { name: 'Galaxy 5', brand: 'Samsung', id: 3 },
@@ -49,32 +49,32 @@ const items = ref([
   // 1, 2, 3,
 ])
 
-const itemTitle = ref()
-const itemText = ref('')
-const itemValue = ref('')
+let itemTitle = ref()
+let itemText = ref('')
+let itemValue = ref('')
 
-const selectedItem = ref([])
-const search = ref('')
+let selectedItem = ref([])
+let search = ref('')
 
-const searchableKeys = ref(['id'])
+let searchableKeys = ref(['id'])
 
-const isSearcheableKeysEmpty = computed(() => {
+let isSearcheableKeysEmpty = computed(() => {
   return !!!searchableKeys.value.length
 })
-const isReturnObject = ref(false)
+let isReturnObject = ref(false)
 
-const filteredItems = computed(() => {
+let filteredItems = computed(() => {
   let itemsFound = items.value.filter(obj => {
-    const allKeys = Object.values(obj)
+    let allKeys = Object.values(obj)
 
-    const getSelectedKeyValue = Object.entries(obj).map(([key, value]) => {
+    let getSelectedKeyValue = Object.entries(obj).map(([key, value]) => {
       if (searchableKeys.value.includes(key)) {
         console.log(value)
         return [value]
       }
     })
 
-    const keys = isSearcheableKeysEmpty.value ? allKeys : getSelectedKeyValue
+    let keys = isSearcheableKeysEmpty.value ? allKeys : getSelectedKeyValue
 
     return keys.some(value =>
       value.toString().toLowerCase().includes(search.value.toLowerCase())
@@ -99,13 +99,13 @@ function getSelectedItem() {
 
 // Define batch stepper number.
 
-const batchScrollStepper = ref(20)
+let batchScrollStepper = ref(20)
 
 //Next branch to iterate
-const nextBatch = ref(null)
+let nextBatch = ref(null)
 
 // Current batch size, default is batchScrollStepper value.
-const currentBatchStep = ref(batchScrollStepper.value)
+let currentBatchStep = ref(batchScrollStepper.value)
 </script>
 <route lang="yaml">
 meta:

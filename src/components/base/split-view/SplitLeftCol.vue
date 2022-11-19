@@ -14,5 +14,5 @@ defineProps({
   },
 })
 
-const { mdAndDown } = useDisplay()
+let { mdAndDown } = useDisplay()
 </script>

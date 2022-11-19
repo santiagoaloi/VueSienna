@@ -17,7 +17,7 @@ defineOptions({
 })
 
 //  globals
-const props = defineProps({
+let props = defineProps({
   items: {
     type: Array,
     default: () => [],
@@ -38,13 +38,13 @@ const props = defineProps({
 })
 
 // composables & stores
-const table = useTableItems(props)
+let table = useTableItems(props)
 
-const tableCompact = $computed(() => {
+let tableCompact = $computed(() => {
   return table.tableOptions.compact ? '34px' : '45px'
 })
 
-const tableBordered = $computed(() => {
+let tableBordered = $computed(() => {
   return table.tableOptions.bordered
     ? `1px dotted rgba(var(--v-border-color), var(--v-border-opacity))`
     : 'inherit'

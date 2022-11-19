@@ -38,35 +38,35 @@
 <script setup>
 // Autocomplete infinite scroll logic.
 
-const search = $ref('')
+let search = $ref('')
 
 // Define batch stepper number.
-const batchScrollStepper = $ref(20)
+let batchScrollStepper = $ref(20)
 
 //Next branch to iterate
-const nextBatch = $ref(null)
+let nextBatch = $ref(null)
 
 // Current batch size, default is batchScrollStepper value.
-const currentBatchStep = $ref(batchScrollStepper)
+let currentBatchStep = $ref(batchScrollStepper)
 
 // Calculate max batches available.
-const maxIterableBatches = $computed(() =>
+let maxIterableBatches = $computed(() =>
   Math.ceil(totalItems / batchScrollStepper)
 )
 
 // Indicates if the last batch has been loaded.
-const lastBatchReached = $computed(
+let lastBatchReached = $computed(
   () => maxIterableBatches.length >= currentBatchStep
 )
 
 // Total items
-const totalItems = $computed(() => items.length)
+let totalItems = $computed(() => items.length)
 
 // Indicates if we are still on the first default batch step.
-const isFirstBatch = $computed(() => batchScrollStepper === currentBatchStep)
+let isFirstBatch = $computed(() => batchScrollStepper === currentBatchStep)
 
 // Search item names or fallback to currentBatchStep.
-const filteredItems = $computed(() => {
+let filteredItems = $computed(() => {
   let found = items.filter(item =>
     item.title.toString().toLowerCase().includes(search.toLowerCase())
   )

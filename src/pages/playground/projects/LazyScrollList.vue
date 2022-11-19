@@ -80,14 +80,14 @@ defineOptions({
   name: 'PlaygroundLazyScroll',
 })
 
-const router = useRouter()
-const allRoutes = router.getRoutes()
+let router = useRouter()
+let allRoutes = router.getRoutes()
 
-const { mdAndUp } = useDisplay()
+let { mdAndUp } = useDisplay()
 
 // List all routes in @/pages/playground/*
 // exclude this SFC.
-const routes = allRoutes.filter(
+let routes = allRoutes.filter(
   r => r.name?.includes('playground') && r.name !== 'playground'
 )
 
@@ -98,8 +98,8 @@ let visibleProjects = $computed(() => {
 let projects = reactive(
   routes
     .flatMap(({ name, meta }) => {
-      const regex = /(\w+)$/
-      const path = 'playground/projects/'
+      let regex = /(\w+)$/
+      let path = 'playground/projects/'
       let fileName = name.match(regex)[1]
 
       return [

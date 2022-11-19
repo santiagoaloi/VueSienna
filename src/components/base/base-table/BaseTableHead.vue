@@ -25,14 +25,14 @@ defineOptions({
   name: 'BaseTableHead',
 })
 
-const props = defineProps({
+let props = defineProps({
   data: {
     type: Array,
     default: () => [],
   },
 })
 
-const { visibleHeaders, sortBy, sortOrders } = toRefs(props.data)
+let { visibleHeaders, sortBy, sortOrders } = toRefs(props.data)
 
 function onEnd(e) {
   // array, from , to
@@ -40,8 +40,8 @@ function onEnd(e) {
   moveItemInArray(props.data.headers, e.oldIndex, e.newIndex)
 }
 
-const moveItemInArray = (array, from, to) => {
-  const item = array.splice(from, 1)[0]
+let moveItemInArray = (array, from, to) => {
+  let item = array.splice(from, 1)[0]
   array.splice(to, 0, item)
 }
 </script>

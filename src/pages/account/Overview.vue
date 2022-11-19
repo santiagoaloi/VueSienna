@@ -36,7 +36,7 @@
 <script setup>
 import { useAuthStore } from '@/stores/modules/authenticationStore'
 
-const auth = useAuthStore()
+let auth = useAuthStore()
 </script>
 <route lang="yaml">
 meta:

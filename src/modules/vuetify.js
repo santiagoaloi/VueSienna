@@ -1,25 +1,26 @@
 // Global defaults
+import { createVuetify } from 'vuetify'
+
 import { defaults } from '@/config/defaults'
 
 // Icons
-import { mdi } from 'vuetify/iconsets/mdi-svg'
 import * as icons from '@/config/icons'
+import { aliases, mdi as mdiSvg } from 'vuetify/iconsets/mdi-svg'
 
-// Imports
-import { createVuetify } from 'vuetify'
-
+// Styles
 import 'vuetify/styles'
 
 export const install = app => {
   const vuetify = createVuetify({
     defaults,
     icons: {
-      defaultSet: 'mdi',
+      defaultSet: 'mdiSvg',
       aliases: {
         ...icons,
+        ...aliases,
       },
       sets: {
-        mdi,
+        mdiSvg,
       },
     },
     theme: {

@@ -17,13 +17,14 @@ defineOptions({
   name: 'BaseTableView',
 })
 
-const props = defineProps({
+let props = defineProps({
   data: {
     type: [Array, Object],
     default: () => [] || {},
   },
 })
 
-const { isSearchResultsEmpty, isVisibleHeadersEmpty, isVisibleHeaders } =
-  toRefs(props.data)
+let { isSearchResultsEmpty, isVisibleHeadersEmpty, isVisibleHeaders } = toRefs(
+  props.data
+)
 </script>

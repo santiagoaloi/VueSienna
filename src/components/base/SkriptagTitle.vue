@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-const props = defineProps({
+let props = defineProps({
   small: {
     type: Boolean,
     default: true,
@@ -29,7 +29,7 @@ const props = defineProps({
   },
 })
 
-const size = computed(() => {
+let size = computed(() => {
   if (props.small) return 'h2'
 })
 </script>

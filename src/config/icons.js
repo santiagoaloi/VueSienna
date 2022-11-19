@@ -17,6 +17,7 @@ export {
   mdiViewColumnOutline,
   mdiBookOpenPageVariantOutline,
   mdiStar,
+  mdiStarOutline,
   mdiMenuDownOutline,
   mdiTable,
   mdiWindowMaximize,

@@ -93,9 +93,9 @@
 <script setup>
 import { isObject } from '@/utils/methods'
 
-const textFieldRef = ref(null)
+let textFieldRef = ref(null)
 
-const items = ref([
+let items = ref([
   { name: 'Macbook', brand: 'Apple', id: 1 },
   { name: 'iPad', brand: 'Apple', id: 2, disable: true },
   { name: 'Galaxy 5', brand: 'Samsung', id: 3 },
@@ -107,58 +107,58 @@ const items = ref([
   3,
 ])
 
-const placeholder = computed(() => {
+let placeholder = computed(() => {
   if (selectedItem.value.length) {
     return itemToString(selectedItem.value[0], itemTitle.value, 'hasDefault')
   }
   return 'Seleccionar'
 })
 
-const itemValue = ref('')
-const itemTitle = ref('')
-const itemText = ref('')
-const itemSubtitle = ref('')
+let itemValue = ref('')
+let itemTitle = ref('')
+let itemText = ref('')
+let itemSubtitle = ref('')
 
-const isReturnObject = ref(false)
-const focusOnSelect = ref(false)
-const clearSearchOnSelect = ref(true)
-const closeOnSelect = ref(false)
+let isReturnObject = ref(false)
+let focusOnSelect = ref(false)
+let clearSearchOnSelect = ref(true)
+let closeOnSelect = ref(false)
 
-const selectedItem = ref([])
-const search = ref('')
+let selectedItem = ref([])
+let search = ref('')
 
-const searchableKeys = ref([])
+let searchableKeys = ref([])
 
-const isSearcheableKeysEmpty = computed(() => {
+let isSearcheableKeysEmpty = computed(() => {
   return !!!searchableKeys.value.length
 })
 
-const isClearSearchOnSelect = computed(() => {
+let isClearSearchOnSelect = computed(() => {
   return !!clearSearchOnSelect.value
 })
 
-const isFocusOnSelect = computed(() => {
+let isFocusOnSelect = computed(() => {
   return !!focusOnSelect.value
 })
 
-const isCloseOnSelect = computed(() => {
+let isCloseOnSelect = computed(() => {
   return !!closeOnSelect.value
 })
 
 // Search product names or fallback to currentBatchStep.
-const filteredItems = computed(() => {
+let filteredItems = computed(() => {
   let itemsFound = items.value.filter(item => {
     if (isObject(item)) {
-      const allKeys = Object.values(item)
+      let allKeys = Object.values(item)
 
-      const getSelectedKeyValue = [item].reduce((acc, curr) => {
+      let getSelectedKeyValue = [item].reduce((acc, curr) => {
         let result = searchableKeys.value.map(key => {
           return curr[key]
         })
         return result
       }, [])
 
-      const keys = isSearcheableKeysEmpty.value ? allKeys : getSelectedKeyValue
+      let keys = isSearcheableKeysEmpty.value ? allKeys : getSelectedKeyValue
 
       return keys
         ? keys.some(value =>
@@ -207,13 +207,13 @@ function getSelectedItem() {
 
 // Define batch stepper number.
 
-const batchScrollStepper = ref(20)
+let batchScrollStepper = ref(20)
 
 //Next branch to iterate
-const nextBatch = ref(null)
+let nextBatch = ref(null)
 
 // Current batch size, default is batchScrollStepper value.
-const currentBatchStep = ref(batchScrollStepper.value)
+let currentBatchStep = ref(batchScrollStepper.value)
 
 function clickOnSelect() {
   isClearSearchOnSelect.value ? (search.value = '') : ''

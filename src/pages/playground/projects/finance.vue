@@ -15,13 +15,13 @@ defineOptions({
   name: 'Playground',
 })
 
-const paymentMethods = reactive([
+let paymentMethods = reactive([
   { uid: 1, method: 'cash' },
   { uid: 2, method: 'credit-card' },
   { uid: 3, method: 'checking-account' },
 ])
 
-const customer = reactive({
+let customer = reactive({
   uid: 1,
   firstName: 'Santi',
   lastName: 'Aloi',
@@ -42,10 +42,10 @@ const customer = reactive({
 })
 
 function buildPaymentMethods(ctx) {
-  const { limitReached } = ctx.checkingAccount
+  let { limitReached } = ctx.checkingAccount
 
   //Flat payment-methods into just method names.
-  const methods = paymentMethods.flatMap(m => m.method)
+  let methods = paymentMethods.flatMap(m => m.method)
 
   //Check if credit limit is reached and remove that payment-method.
   if (limitReached) {
@@ -54,7 +54,7 @@ function buildPaymentMethods(ctx) {
   return [...methods]
 }
 
-const allowedPaymentMethods = computed(
+let allowedPaymentMethods = computed(
   () => customer.finance.allowedPaymentMethods
 )
 </script>

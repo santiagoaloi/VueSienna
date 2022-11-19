@@ -85,7 +85,7 @@ let isHarryDisabled = $computed(() => {
   return wizards[0].itemProps.disabled
 })
 
-const { disabled } = toRefs(wizards[0].itemProps)
+let { disabled } = toRefs(wizards[0].itemProps)
 </script>
 
 <route lang="yaml">

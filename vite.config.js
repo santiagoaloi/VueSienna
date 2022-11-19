@@ -30,13 +30,20 @@ export default use.defineConfig({
     rollupOptions: {
       output: {
         compact: true,
-        manualChunks: {
-          'firebase-auth': ['firebase/auth'],
-          'firebase-firestore': ['firebase/firestore'],
-          'firebase-functions': ['firebase/functions'],
-          'firebase-storage': ['firebase/storage'],
-          'firebase-app': ['firebase/app'],
-        },
+        //   manualChunks: {
+        //     //Vue
+        //     vue: ['vue-router', 'vue', 'pinia'],
+
+        //     //Vuetify
+        //     vuetify: ['vuetify', 'vuetify/components', 'vuetify/directives'],
+
+        //     // 🔥 Firebase
+        //     'firebase-auth': ['firebase/auth'],
+        //     'firebase-firestore': ['firebase/firestore'],
+        //     'firebase-functions': ['firebase/functions'],
+        //     'firebase-storage': ['firebase/storage'],
+        //     'firebase-app': ['firebase/app'],
+        //   },
       },
     },
   },
@@ -96,7 +103,7 @@ export default use.defineConfig({
           '@/firebase': ['auth', 'db', 'functions'],
         },
       ],
-      dirs: ['src/utils/*', 'src/presets/*', 'src/composables/*'],
+      dirs: ['src/utils/**', 'src/presets/**', 'src/composables/*'],
       vueTemplate: true,
       dts: true,
     }),
@@ -106,6 +113,12 @@ export default use.defineConfig({
 
     // https://github.com/antfu/unplugin-vue-components
     use.components({
+      dirs: [
+        //Base reusable components
+        'src/components',
+        //Layout individual components (default, secure, etc...)
+        'src/layouts/components/**',
+      ],
       extensions: ['vue'],
       dts: true,
       deep: true,
@@ -113,13 +126,14 @@ export default use.defineConfig({
 
     // https://github.com/hannoeru/vite-plugin-pages
     use.pages({
-      // dirs: [{ dir: 'src/pages', baseRoute: '' }],
+      // dirs: [
+      //   { dir: 'src/pages', baseRoute: '' },
+      // ],
 
       exclude: ['**/data/**'],
 
       // Metadata injection is done @/utils/autoGenerateRoutes.
       // onRoutesGenerated: use.injectMetadata,
-
       importMode(filepath, options) {
         for (const page of options.dirs) {
           if (
@@ -137,31 +151,18 @@ export default use.defineConfig({
       styles: { configFile: 'src/settings.scss' },
     }),
 
+    // https://github.com/stafyniaksacha/vite-plugin-fonts
     use.viteFonts({
       // Custom fonts.
       custom: {
-        /**
-         * Fonts families lists
-         */
         families: [
           {
-            /**
-             * Name of the font family.
-             */
             name: 'Product Sans',
-            /**
-             * Local name of the font. Used to add `src: local()` to `@font-rule`.
-             */
             local: 'Product Sans',
-            /**
-             * Regex(es) of font files to import. The names of the files will
-             * predicate the `font-style` and `font-weight` values of the `@font-rule`'s.
-             */
             src: './src/styles/fonts/*.woff',
           },
         ],
       },
-      preload: true,
     }),
   ],
 })

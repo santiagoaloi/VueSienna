@@ -86,7 +86,6 @@ declare global {
   const useCssVars: typeof import('vue')['useCssVars']
   const useDebouncedRef: typeof import('./src/utils/methods.js')['useDebouncedRef']
   const useDisplay: typeof import('vuetify')['useDisplay']
-  const useGoTo: typeof import('./src/composables/routerGo.js')['useGoTo']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
   const useSlots: typeof import('vue')['useSlots']
@@ -184,7 +183,6 @@ declare module 'vue' {
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useDebouncedRef: UnwrapRef<typeof import('./src/utils/methods.js')['useDebouncedRef']>
     readonly useDisplay: UnwrapRef<typeof import('vuetify')['useDisplay']>
-    readonly useGoTo: UnwrapRef<typeof import('./src/composables/routerGo.js')['useGoTo']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>

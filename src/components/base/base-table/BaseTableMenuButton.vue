@@ -10,7 +10,7 @@ defineOptions({
   name: 'BaseTableMenuButton',
 })
 
-const props = defineProps({
+let props = defineProps({
   tooltip: {
     type: [Array, Object],
     default: () => [] || {},

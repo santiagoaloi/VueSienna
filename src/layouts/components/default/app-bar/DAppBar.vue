@@ -57,7 +57,7 @@ export default {
 
   methods: {
     addItem(item) {
-      const removed = this.items.splice(0, 1)
+      let removed = this.items.splice(0, 1)
 
       this.items.push(...this.more.splice(this.more.indexOf(item), 1))
       this.more.push(...removed)
