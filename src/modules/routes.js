@@ -13,14 +13,14 @@ router.beforeEach(async (to, from, next) => {
 
   const isAuth = await getUserState()
   const atLoginAndAuthenticated = to.matched.some(
-    r => r.name === 'login' && isAuth
+    r => r.path === '/login' && isAuth
   )
   const requiresAuth = to.matched.some(r => r.meta.requiresAuth)
 
   // If the route requires the user to be authenticated and it is not,
   // route to the login page.
   if (requiresAuth && !isAuth) {
-    next({ name: 'login' })
+    next({ path: '/login' })
     return
   }
 
@@ -38,4 +38,6 @@ router.afterEach(() => NProgress.done())
 
 const install = app => app.use(router)
 
+// Exporting router so Pinia can import it
+// allowing the useage of router in store modules.
 export { install, router }

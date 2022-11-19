@@ -115,8 +115,3 @@ function saveAccount() {
   auth.saveAccount(newCustomer)
 }
 </script>
-<route lang="yaml">
-meta:
-  layout: secure
-  requiresAuth: true
-</route>

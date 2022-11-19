@@ -38,8 +38,3 @@ import { useAuthStore } from '@/stores/modules/authenticationStore'
 
 let auth = useAuthStore()
 </script>
-<route lang="yaml">
-meta:
-  layout: secure
-  requiresAuth: true
-</route>

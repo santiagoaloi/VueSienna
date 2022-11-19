@@ -142,11 +142,18 @@ export default use.defineConfig({
         },
 
         // 🔗 http://skriptag.com/SomePage
-        // @/pages/[anyFolder]/somePage.vue
+        // @/pages/secure/[anyFolder]/somePage.vue
         {
-          dir: 'src/pages/**/**',
+          dir: 'src/pages/*',
           baseRoute: '/',
         },
+
+        // 🔗 http://skriptag.com/SomePag
+        // @/pages/[anyFolder]/somePage.vue
+        // {
+        //   dir: 'src/pages/**/**/',
+        //   baseRoute: '/',
+        // },
 
         // 🔗 http://skriptag.com/playground
         {
@@ -166,7 +173,7 @@ export default use.defineConfig({
       extensions: ['vue'],
 
       // Metadata injection is done @/utils/autoGenerateRoutes.
-      // onRoutesGenerated: use.injectMetadata,
+      onRoutesGenerated: use.injectMetadata,
       importMode(filepath, options) {
         for (const page of options.dirs) {
           if (
