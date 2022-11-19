@@ -127,9 +127,6 @@ export default use.defineConfig({
         'src/pages/**',
       ],
 
-      // Transform path before resolving
-      importPathTransform: v => v,
-
       extensions: ['vue'],
       dts: true,
       deep: true,
@@ -139,7 +136,17 @@ export default use.defineConfig({
     use.pages({
       dirs: [
         // 🔗 http://skriptag.com/
-        { dir: 'src/pages', baseRoute: '/' },
+        {
+          dir: 'src/pages',
+          baseRoute: '/',
+        },
+
+        // 🔗 http://skriptag.com/SomePage
+        // @/pages/[anyFolder]/somePage.vue
+        {
+          dir: 'src/pages/**/**',
+          baseRoute: '/',
+        },
 
         // 🔗 http://skriptag.com/playground
         {
@@ -155,7 +162,7 @@ export default use.defineConfig({
         },
       ],
 
-      // Only vue SFC allowed, exclude any other format from becoming a route.
+      // Only vue SFCs allowed, exclude any other extension from becoming a route.
       extensions: ['vue'],
 
       // Metadata injection is done @/utils/autoGenerateRoutes.
