@@ -17,7 +17,7 @@
 
 <script setup>
 import { useAuthStore } from '@S/authenticationStore'
-import { LoginButton } from './instances'
+import { LoginButton } from '../scripts/instances'
 
 let auth = useAuthStore()
 

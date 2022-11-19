@@ -104,7 +104,12 @@ export default use.defineConfig({
           '@/firebase': ['auth', 'db', 'functions'],
         },
       ],
-      dirs: ['src/utils/**', 'src/presets/**', 'src/composables/*'],
+      dirs: [
+        'src/utils/**',
+        'src/presets/**',
+        'src/composables/*',
+        'src/composables/*',
+      ],
       vueTemplate: true,
       dts: true,
     }),
@@ -142,18 +147,12 @@ export default use.defineConfig({
         },
 
         // 🔗 http://skriptag.com/SomePage
-        // @/pages/secure/[anyFolder]/somePage.vue
+        // @/pages/secure/[ignoredFolder]/somePage.vue
+        // @/pages/secure/[ignoredFolder]/[someFolder]/somePage.vue
         {
           dir: 'src/pages/*',
           baseRoute: '/',
         },
-
-        // 🔗 http://skriptag.com/SomePag
-        // @/pages/[anyFolder]/somePage.vue
-        // {
-        //   dir: 'src/pages/**/**/',
-        //   baseRoute: '/',
-        // },
 
         // 🔗 http://skriptag.com/playground
         {
@@ -168,6 +167,8 @@ export default use.defineConfig({
           baseRoute: '/playground',
         },
       ],
+
+      exclude: ['**/components/*'],
 
       // Only vue SFCs allowed, exclude any other extension from becoming a route.
       extensions: ['vue'],
