@@ -4,7 +4,7 @@
 
 <script setup>
 defineOptions({
-  name: 'PlaygroundTable',
+  name: 'playgroundTable',
 })
 
 let wizards = $ref([

@@ -49,7 +49,7 @@ export default {
     items: [
       { name: 'Skriptag', to: '/' },
 
-      { name: 'Playground', to: '/Playground' },
+      { name: 'playground', to: '/playground' },
       { name: 'Login', to: '/Login' },
     ],
     more: [{ name: 'Console', to: '' }],

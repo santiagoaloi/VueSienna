@@ -77,7 +77,7 @@
 
 <script setup>
 defineOptions({
-  name: 'PlaygroundLazyScroll',
+  name: 'playgroundLazyScroll',
 })
 
 let router = useRouter()

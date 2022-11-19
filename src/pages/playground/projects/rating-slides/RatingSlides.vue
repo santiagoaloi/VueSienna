@@ -67,7 +67,7 @@
 
 <script setup>
 defineOptions({
-  name: 'PlaygroundRatingSlides',
+  name: 'playgroundRatingSlides',
 })
 
 let readOnly = $ref(true)

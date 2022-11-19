@@ -35,7 +35,7 @@
 import { isObject } from '@U/methods'
 
 defineOptions({
-  name: 'PlaygroundCustomAutocomplete',
+  name: 'playgroundCustomAutocomplete',
 })
 
 let product = ref({ name: 'nuevo producto' })

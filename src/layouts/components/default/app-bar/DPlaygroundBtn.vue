@@ -5,7 +5,7 @@
     prepend-icon="$mdiSpaceInvaders"
     :loading="loading"
   >
-    Playground
+    playground
   </BaseBtn>
 </template>
 

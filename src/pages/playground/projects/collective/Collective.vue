@@ -107,7 +107,7 @@
 
 <script setup>
 defineOptions({
-  name: 'PlaygroundCollective',
+  name: 'playgroundCollective',
 })
 
 let collective = reactive({

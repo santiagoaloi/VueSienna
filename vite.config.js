@@ -79,6 +79,7 @@ export default use.defineConfig({
     use.vueMacros(),
 
     // https://github.com/antfu/unplugin-auto-import
+    // Autoimport dependencies inside SFCs or JS.
     use.autoImport({
       imports: [
         'vue',
@@ -112,13 +113,23 @@ export default use.defineConfig({
     use.layouts(),
 
     // https://github.com/antfu/unplugin-vue-components
+    // Autoimport Vue SFCs.
     use.components({
       dirs: [
         //Base reusable components
         'src/components',
+
         //Layout individual components (default, secure, etc...)
         'src/layouts/components/**',
+
+        //Any SFCs inside page views. (careful with name collisions)
+        // name duplication will cause ignoring those imports.
+        'src/pages/**',
       ],
+
+      // Transform path before resolving
+      importPathTransform: v => v,
+
       extensions: ['vue'],
       dts: true,
       deep: true,
@@ -126,11 +137,26 @@ export default use.defineConfig({
 
     // https://github.com/hannoeru/vite-plugin-pages
     use.pages({
-      // dirs: [
-      //   { dir: 'src/pages', baseRoute: '' },
-      // ],
+      dirs: [
+        // 🔗 http://skriptag.com/
+        { dir: 'src/pages', baseRoute: '/' },
 
-      exclude: ['**/data/**'],
+        // 🔗 http://skriptag.com/playground
+        {
+          dir: 'src/pages/playground/playground-landing',
+          baseRoute: '/',
+        },
+
+        // 🔗 http://skriptag.com/playground/someProject
+        // @/pages/playground/projects/[anyFolder]/someProject.vue
+        {
+          dir: 'src/pages/playground/projects/**',
+          baseRoute: '/playground',
+        },
+      ],
+
+      // Only vue SFC allowed, exclude any other format from becoming a route.
+      extensions: ['vue'],
 
       // Metadata injection is done @/utils/autoGenerateRoutes.
       // onRoutesGenerated: use.injectMetadata,

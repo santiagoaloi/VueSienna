@@ -12,7 +12,7 @@
 
 <script setup>
 defineOptions({
-  name: 'Playground',
+  name: 'playground',
 })
 
 let paymentMethods = reactive([

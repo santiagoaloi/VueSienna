@@ -12,7 +12,7 @@
 
 <script setup>
 defineOptions({
-  name: 'PlaygroundSplitTable',
+  name: 'playgroundSplitTable',
 })
 
 let celebs = $ref([

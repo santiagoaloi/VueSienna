@@ -31,7 +31,7 @@
 
 <script setup>
 defineOptions({
-  name: 'PlaygroundShakeLogin',
+  name: 'playgroundShakeLogin',
 })
 
 let loginForm = toRefs(
