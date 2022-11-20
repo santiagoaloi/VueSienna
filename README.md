@@ -1,4 +1,4 @@
-# Vue 3 + Vite + Vuetify
+# Vue 3 + Vite + Vuetify 3
 
 ## Features
 
@@ -40,7 +40,6 @@ import { Vue } from '@U/instanciateVue'
 auth.onAuthStateChanged(async user => {
   Vue(user)
 })
-
 ```
 
 ### autoImportPlugins.js example
@@ -48,7 +47,6 @@ auth.onAuthStateChanged(async user => {
 ```js
 const modules = import.meta.globEager('@M/*.js')
 export default app => Object.values(modules).map(m => m.install(app))
-
 ```
 
 ### Plugin module example
@@ -110,7 +108,3 @@ Yarn dev
 ```ts
 Yarn build:preview
 ```
-
-### Highlights
-
-- Installed "vue": "3.2.37" to avoid "beta vue reactivity transform" potential future braking changes.
