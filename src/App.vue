@@ -1,11 +1,11 @@
 <template>
-  <VApp full-height>
-    <RouterView v-slot="{ Component }">
+  <v-app>
+    <router-view v-slot="{ Component }">
       <template v-if="Component">
-        <VFadeTransition appear mode="out-in">
+        <v-fade-transition appear mode="out-in">
           <component :is="Component" />
-        </VFadeTransition>
+        </v-fade-transition>
       </template>
-    </RouterView>
-  </VApp>
+    </router-view>
+  </v-app>
 </template>

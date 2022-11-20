@@ -14,4 +14,6 @@
 defineOptions({
   name: 'playgroundWrapper',
 })
+
+const { mdAndUp } = useDisplay()
 </script>

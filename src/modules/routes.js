@@ -41,5 +41,5 @@ router.afterEach(() => NProgress.done())
 const install = app => app.use(router)
 
 // Exporting router so Pinia can import it
-// allowing the useage of router in store modules.
+// 👉 allowing router in store modules.
 export { install, router }

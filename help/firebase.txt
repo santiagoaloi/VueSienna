@@ -1,0 +1,2 @@
+## Use preview channels to test and share changes before going live
+firebase hosting:channel:deploy preview_name

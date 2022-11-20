@@ -1,7 +1,6 @@
 import * as use from './vite.config.inports.js'
 
 // https://vitejs.dev/config/
-
 export default use.defineConfig({
   resolve: {
     alias: [
@@ -121,13 +120,13 @@ export default use.defineConfig({
     // Autoimport Vue SFCs.
     use.components({
       dirs: [
-        //Base reusable components
+        // Base reusable components
         'src/@core/components',
 
-        //Layout individual components (default, secure, etc...)
+        // Layout individual components (default, secure, etc...)
         'src/layouts/components/**',
 
-        //Any SFCs inside page views. (careful with name collisions)
+        // Any SFCs inside page views. (careful with name collisions)
         // name duplication will cause ignoring those imports.
         'src/pages/**',
       ],
@@ -173,7 +172,7 @@ export default use.defineConfig({
       // Only vue SFCs allowed, exclude any other extension from becoming a route.
       extensions: ['vue'],
 
-      // Metadata injection is done @/utils/autoGenerateRoutes.
+      // Metadata injection is done 👉 @/utils/autoGenerateRoutes.js.
       onRoutesGenerated: use.injectMetadata,
       importMode(filepath, options) {
         for (const page of options.dirs) {
@@ -198,6 +197,7 @@ export default use.defineConfig({
           {
             name: 'Product Sans',
             local: 'Product Sans',
+            // 👉 ProductSans-Regular.woff
             src: './src/styles/fonts/*.woff',
           },
         ],

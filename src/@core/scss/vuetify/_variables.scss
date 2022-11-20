@@ -1,7 +1,8 @@
 $defaultFont: 'Product Sans', sans-serif;
 
-@use 'vuetify/settings' with (
+@forward 'vuetify/settings' with (
     
+// Tabs
 $tab-slider-size: 6px,
 
 // Buttons

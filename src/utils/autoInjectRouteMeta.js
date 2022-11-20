@@ -11,7 +11,7 @@ export default routes => {
     for (const rule of useMetadataInjector) {
       const { keywords, meta: injectNewMeta } = rule
 
-      //Match any keyword defined.
+      // Match any keyword defined in config.
       // Use every instead of some if you need exact matches.
 
       if (keywords.some(keyword => component.includes(keyword))) {

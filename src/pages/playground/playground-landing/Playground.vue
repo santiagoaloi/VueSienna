@@ -1,6 +1,6 @@
 <template>
   <PlaygroundWrapper>
-    <v-img class="fill-height" src="/hero.svg" cover>
+    <v-img src="/hero.svg" cover>
       <PlaygroundList />
     </v-img>
   </PlaygroundWrapper>
