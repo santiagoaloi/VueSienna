@@ -30,20 +30,18 @@ export default use.defineConfig({
     rollupOptions: {
       output: {
         compact: true,
-        //   manualChunks: {
-        //     //Vue
-        //     vue: ['vue-router', 'vue', 'pinia'],
-
-        //     //Vuetify
-        //     vuetify: ['vuetify', 'vuetify/components', 'vuetify/directives'],
-
-        //     // 🔥 Firebase
-        //     'firebase-auth': ['firebase/auth'],
-        //     'firebase-firestore': ['firebase/firestore'],
-        //     'firebase-functions': ['firebase/functions'],
-        //     'firebase-storage': ['firebase/storage'],
-        //     'firebase-app': ['firebase/app'],
-        //   },
+        manualChunks: {
+          //Vue
+          // vue: ['vue-router', 'vue', 'pinia'],
+          // //Vuetify
+          // vuetify: ['vuetify', 'vuetify/components', 'vuetify/directives'],
+          // // 🔥 Firebase
+          // 'firebase-auth': ['firebase/auth'],
+          // 'firebase-firestore': ['firebase/firestore'],
+          // 'firebase-functions': ['firebase/functions'],
+          // 'firebase-storage': ['firebase/storage'],
+          // 'firebase-app': ['firebase/app'],
+        },
       },
     },
   },
@@ -186,9 +184,8 @@ export default use.defineConfig({
         return 'async'
       },
     }),
-
     use.vuetify({
-      autoImport: true,
+      styles: { configFile: 'src/@core/scss/vuetify/variables.scss' },
     }),
 
     // https://github.com/stafyniaksacha/vite-plugin-fonts

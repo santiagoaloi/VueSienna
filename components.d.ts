@@ -9,7 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     '[...all]': typeof import('./src/pages/[...all].vue')['default']
     Autocomplete: typeof import('./src/pages/playground/projects/autocomplete/Autocomplete.vue')['default']
-    AutocompleteCustomOne: typeof import('./src/pages/playground/projects/autocomplete-custom-one/AutocompleteCustomOne.vue')['default']
+    AutoCompleteCustomOne: typeof import('./src/pages/playground/projects/autocomplete-custom-one/AutoCompleteCustomOne.vue')['default']
     AutocompleteCustomTwo: typeof import('./src/pages/playground/projects/autocomplete-custom-two/AutocompleteCustomTwo.vue')['default']
     AutocompleteEndlessScroll: typeof import('./src/pages/playground/projects/autocomplete-endless-scroll/AutocompleteEndlessScroll.vue')['default']
     BaseBtn: typeof import('./src/@core/components/base/BaseBtn.vue')['default']
@@ -35,7 +35,6 @@ declare module '@vue/runtime-core' {
     GradientTitle: typeof import('./src/@core/components/base/GradientTitle.vue')['default']
     HomeLanding: typeof import('./src/@core/components/Home/HomeLanding.vue')['default']
     HomeSubtitle: typeof import('./src/@core/components/Home/HomeSubtitle.vue')['default']
-    'Index.vue': typeof import('./src/pages/playground/projects/autocomplete-custom-one/index.vue.vue')['default']
     LazyScrollCards: typeof import('./src/pages/playground/projects/lazy-scroll-cards/LazyScrollCards.vue')['default']
     LazyScrollList: typeof import('./src/pages/playground/projects/lazy-scroll-list/LazyScrollList.vue')['default']
     LazyScrollListFakeData: typeof import('./src/pages/playground/projects/lazy-scroll-list-fake-data/LazyScrollListFakeData.vue')['default']

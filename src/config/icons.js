@@ -26,4 +26,5 @@ export {
   mdiFormatLineWeight,
   mdiCardOutline,
   mdiCurrencyUsd,
+  mdiMenuDown,
 } from '@mdi/js'

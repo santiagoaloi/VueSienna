@@ -1,12 +1,12 @@
 <template>
-  <BaseBtn
+  <base-btn
     :disabled="isCurrent"
     @click="handler()"
     prepend-icon="$mdiSpaceInvaders"
     :loading="loading"
   >
     playground
-  </BaseBtn>
+  </base-btn>
 </template>
 
 <script setup>

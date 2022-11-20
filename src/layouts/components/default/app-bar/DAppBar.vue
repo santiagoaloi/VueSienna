@@ -1,8 +1,10 @@
 <template>
   <v-app-bar height="72" color="#22272e" elevation="14">
     <v-container fluid class="d-flex align-center px-10">
-      <SkriptagTitle />
-      <v-spacer></v-spacer>
+      <skriptag-title />
+
+      <v-spacer />
+
       <v-tabs height="65" v-model="currentItem">
         <v-tab
           v-for="item in items"
@@ -23,7 +25,7 @@
               v-bind="props"
             >
               more
-              <v-icon end> mdi-menu-down </v-icon>
+              <v-icon end> $mdiMenuDown </v-icon>
             </v-btn>
           </template>
 

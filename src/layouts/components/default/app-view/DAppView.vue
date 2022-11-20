@@ -1,11 +1,11 @@
 <template>
-  <VMain scrollable>
-    <RouterView v-slot="{ Component }">
+  <v-main scrollable>
+    <router-view v-slot="{ Component }">
       <template v-if="Component">
-        <VFadeTransition mode="out-in">
+        <v-fade-transition mode="out-in">
           <component :is="Component"></component>
-        </VFadeTransition>
+        </v-fade-transition>
       </template>
-    </RouterView>
-  </VMain>
+    </router-view>
+  </v-main>
 </template>

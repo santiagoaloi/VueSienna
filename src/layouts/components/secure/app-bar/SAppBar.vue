@@ -1,9 +1,9 @@
 <template>
-  <VAppBar color="#22272e">
+  <v-app-bar color="#22272e">
     <v-container fluid class="d-flex align-center px-10">
-      <SkriptagTitle />
-      <VSpacer />
-      <SLoginBtn />
+      <scriptag-title />
+      <v-spacer />
+      <s-login-btn />
     </v-container>
-  </VAppBar>
+  </v-app-bar>
 </template>

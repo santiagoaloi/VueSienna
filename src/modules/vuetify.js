@@ -7,6 +7,10 @@ import { defaults } from '@/config/defaults'
 import * as icons from '@/config/icons'
 import { aliases, mdi as mdiSvg } from 'vuetify/iconsets/mdi-svg'
 
+// Styles
+import '@/@core/scss/vuetify/index.scss'
+import 'vuetify/styles'
+
 export const install = app => {
   const vuetify = createVuetify({
     defaults,

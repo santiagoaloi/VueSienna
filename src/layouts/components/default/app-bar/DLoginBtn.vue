@@ -1,12 +1,12 @@
 <template>
-  <BaseBtn
+  <base-btn
     prepend-icon="$mdiAccount"
     :disabled="isCurrent"
     :loading="loading"
     @click="handler()"
   >
     {{ userName }}
-  </BaseBtn>
+  </base-btn>
 </template>
 
 <script setup>

@@ -1,4 +1,4 @@
-@forward 'vuetify';
+@use 'vuetify';
 
 .split-col-img {
 @extend .d-lg-flex, .d-none, .fill-height 
@@ -17,5 +17,5 @@
 };
 
 .base-table {
-    @extend .no-gutters , .fill-height , .bg-transparent !optional
+    @extend .no-gutters , .fill-height , .bg-transparent 
 };

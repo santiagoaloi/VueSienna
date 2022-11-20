@@ -1,5 +1,5 @@
 <template>
-  <VNavigationDrawer
+  <v-navigation-drawer
     width="280"
     permanent
     color="#22272e"
@@ -11,13 +11,13 @@
     position="fixed"
     hide-overlay
   >
-    <VList>
-      <VListItem
+    <v-list>
+      <v-list-item
         :prepend-avatar="auth.userAvatar"
         :title="auth.userName"
         :subtitle="auth.userEmail"
-      ></VListItem>
-    </VList>
+      />
+    </v-list>
 
     <VDivider />
 
@@ -47,7 +47,7 @@
       nav
     >
     </VList>
-  </VNavigationDrawer>
+  </v-navigation-drawer>
 </template>
 <script setup>
 import { useAppStore } from '@S/appStore'

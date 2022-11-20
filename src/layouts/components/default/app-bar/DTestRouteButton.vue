@@ -1,3 +1,3 @@
 <template>
-  <BaseBtn @click="$router.push('/basic')"> Go to basic</BaseBtn>
+  <base-btn @click="$router.push('/basic')"> Go to basic</base-btn>
 </template>

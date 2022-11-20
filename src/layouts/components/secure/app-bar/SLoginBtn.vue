@@ -1,5 +1,5 @@
 <template>
-  <BaseBtn
+  <base-btn
     prepend-icon="$mdiAccount"
     :disabled="isCurrent"
     :loading="loading"
@@ -7,7 +7,7 @@
     v-if="auth.userName"
   >
     Logout {{ auth.userName }}
-  </BaseBtn>
+  </base-btn>
 </template>
 
 <script setup>
