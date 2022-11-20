@@ -53,6 +53,7 @@ export default use.defineConfig({
     entries: ['./src/**/*.vue'],
   },
 
+  // Server ports and behavior.
   server: {
     port: 8000,
   },
@@ -63,7 +64,6 @@ export default use.defineConfig({
 
   define: {
     'process.env': {},
-    __VUE_OPTIONS_API__: true,
     __VUE_PROD_DEVTOOLS__: false,
   },
 
@@ -122,7 +122,7 @@ export default use.defineConfig({
     use.components({
       dirs: [
         //Base reusable components
-        'src/components',
+        'src/@core/components',
 
         //Layout individual components (default, secure, etc...)
         'src/layouts/components/**',
@@ -189,7 +189,6 @@ export default use.defineConfig({
 
     use.vuetify({
       autoImport: true,
-      styles: { configFile: 'src/settings.scss' },
     }),
 
     // https://github.com/stafyniaksacha/vite-plugin-fonts

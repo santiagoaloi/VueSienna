@@ -73,7 +73,7 @@
 </template>
 
 <script setup>
-import { items } from '../scripts/lazy-scroll-data'
+import { items } from './scripts/lazy-scroll-data'
 let { mdAndUp } = useDisplay()
 
 let visibleItems = $computed(() => {

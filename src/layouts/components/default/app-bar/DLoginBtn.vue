@@ -11,7 +11,7 @@
 
 <script setup>
 import { useAuthStore } from '@S/authenticationStore'
-import { useGoTo } from '@C/routerGo'
+import { useGoTo } from '@/@core/composables/routerGo'
 
 let loading = $ref(false)
 

@@ -1,2 +1,2 @@
-import './scss/theme.scss'
+import './scss/vuetify.scss'
 import './globals.css'

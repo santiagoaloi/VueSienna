@@ -5,7 +5,7 @@
       "@/*": ["src/*"],
       "@S/*": ["src/stores/modules/*"],
       "@M/*": ["src/modules/*"],
-      "@C/*": ["src/composables/*"],
+      "@C/*": ["src/@core/composables/*"],
       "@U/*": ["src/utils/*"]
     }
   },

@@ -1,0 +1,21 @@
+@forward 'vuetify';
+
+.split-col-img {
+@extend .d-lg-flex, .d-none, .fill-height 
+};
+
+.no-gutters {
+    @extend .pa-0, .ma-0 
+};
+
+.base-table-no-data-wrapper {
+    @extend .d-flex, .flex-column, .fill-height , .align-center, .justify-center 
+};
+
+.base-table-wrapper {
+    @extend .d-flex, .flex-column, .fill-height, .px-11 
+};
+
+.base-table {
+    @extend .no-gutters , .fill-height , .bg-transparent !optional
+};

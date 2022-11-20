@@ -1,0 +1,23 @@
+$defaultFont: 'Product Sans', sans-serif;
+
+@use 'vuetify/settings' with (
+    
+// Buttons
+$button-disabled-opacity: 0.5,
+$button-disabled-overlay: 0.1,
+
+// Tabs
+$tab-slider-size: 5px,
+
+// Fonts
+$body-font-family: $defaultFont,
+$heading-font-family: $defaultFont,
+
+);
+
+
+// ℹ️ Not using shortcus will require to forward 
+// vuetfiy styles, uncomment the line below.
+// @forward 'vuetify';
+
+@import './shortcuts.scss';
