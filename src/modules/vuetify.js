@@ -1,13 +1,14 @@
 // Global defaults
 import { createVuetify } from 'vuetify'
 
-import { defaults } from '@/config/defaults'
+// Default configurations
+import { defaults } from '@/config/vuetify/defaults'
 
 // Icons
-import * as icons from '@/config/icons'
+import * as icons from '@/config/vuetify/icons'
 import { aliases, mdi as mdiSvg } from 'vuetify/iconsets/mdi-svg'
 
-// Styles
+// Styling
 import '@/@core/scss/vuetify/index.scss'
 import 'vuetify/styles'
 

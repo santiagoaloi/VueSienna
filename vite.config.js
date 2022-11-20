@@ -32,15 +32,17 @@ export default use.defineConfig({
         compact: true,
         manualChunks: {
           //Vue
-          // vue: ['vue-router', 'vue', 'pinia'],
-          // //Vuetify
-          // vuetify: ['vuetify', 'vuetify/components', 'vuetify/directives'],
-          // // 🔥 Firebase
-          // 'firebase-auth': ['firebase/auth'],
-          // 'firebase-firestore': ['firebase/firestore'],
-          // 'firebase-functions': ['firebase/functions'],
-          // 'firebase-storage': ['firebase/storage'],
-          // 'firebase-app': ['firebase/app'],
+          vue: ['vue-router', 'vue', 'pinia'],
+
+          //Vuetify
+          vuetify: ['vuetify', 'vuetify/components', 'vuetify/directives'],
+
+          // 🔥 Firebase
+          'firebase-auth': ['firebase/auth'],
+          'firebase-firestore': ['firebase/firestore'],
+          'firebase-functions': ['firebase/functions'],
+          'firebase-storage': ['firebase/storage'],
+          'firebase-app': ['firebase/app'],
         },
       },
     },
@@ -99,7 +101,7 @@ export default use.defineConfig({
           // 🔥 Firebase
           'firebase/firestore': ['doc', 'getDoc', 'setDoc'],
           'firebase/auth': ['GoogleAuthProvider', 'signInWithPopup', 'signOut'],
-          '@/firebase': ['auth', 'db', 'functions'],
+          '@/firebase': ['auth', 'db', 'functions', 'getUserState'],
         },
       ],
       dirs: [

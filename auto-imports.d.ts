@@ -33,6 +33,7 @@ declare global {
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const getDoc: typeof import('firebase/firestore')['getDoc']
+  const getUserState: typeof import('@/firebase')['getUserState']
   const h: typeof import('vue')['h']
   const inject: typeof import('vue')['inject']
   const isObject: typeof import('./src/utils/methods.js')['isObject']
@@ -130,6 +131,7 @@ declare module 'vue' {
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly getDoc: UnwrapRef<typeof import('firebase/firestore')['getDoc']>
+    readonly getUserState: UnwrapRef<typeof import('@/firebase')['getUserState']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isObject: UnwrapRef<typeof import('./src/utils/methods.js')['isObject']>

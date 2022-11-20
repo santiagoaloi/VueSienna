@@ -1,6 +1,8 @@
 import generatedRoutes from '~pages'
-import { getUserState } from '@/firebase'
 import { setupLayouts } from 'virtual:generated-layouts'
+
+// Progress bar on top of the page.
+// Customize styles in @/styles/_progress-bar.css
 import NProgress from 'nprogress'
 
 const router = createRouter({
