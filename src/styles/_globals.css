@@ -1,3 +1,7 @@
 .wizard-icon {
   font-size: 600%;
 }
+
+/* a[href] {
+  color: rgb(var(--v-theme-primary));
+} */

@@ -7,7 +7,7 @@ export default use.defineConfig({
       { find: '@', replacement: use.resolve(__dirname, './src') },
       {
         find: '@S',
-        replacement: use.resolve(__dirname, './src/stores/modules'),
+        replacement: use.resolve(__dirname, './src/stores/'),
       },
       {
         find: '@M',

@@ -94,15 +94,22 @@ export const install = app => {
   - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - Vue 3 `<script setup>` IDE support
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-### Deploy and run
+## Project Setup
 
-```ts
+```sh
 Yarn install
-Yarn dev
 ```
 
-### Build and preview
+### Compile and Hot-Reload for Development
 
-```ts
-Yarn build:preview
+```sh
+yarn dev
 ```
+
+### Compile and Minify for Production
+
+```sh
+yarn build
+```
+
+### Deploy and run

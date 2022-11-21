@@ -35,6 +35,9 @@ export const install = app => {
           colors: {
             primary: '#7366ff',
           },
+          variables: {
+            'border-color': '#f0077b',
+          },
         },
       },
     },

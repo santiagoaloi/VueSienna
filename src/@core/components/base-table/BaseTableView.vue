@@ -1,7 +1,7 @@
 <template>
   <VCard class="fill-height bg-transparent" flat>
     <template v-if="!isSearchResultsEmpty && !isVisibleHeadersEmpty">
-      <VTable class="base-table" fixed-header height="100%">
+      <VTable hover class="base-table" fixed-header height="100%">
         <BaseTableHead :data="data" />
         <BaseTableBody :data="data" />
       </VTable>

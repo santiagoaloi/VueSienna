@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@S/*": ["src/stores/modules/*"],
+      "@S/*": ["src/stores/*"],
       "@M/*": ["src/modules/*"],
       "@C/*": ["src/@core/composables/*"],
       "@U/*": ["src/utils/*"]
