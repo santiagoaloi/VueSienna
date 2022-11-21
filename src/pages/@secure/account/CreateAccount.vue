@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { useAuthStore } from '@/stores/modules/authenticationStore'
+import { useAuthStore } from '@/stores/authenticationStore'
 
 let auth = useAuthStore()
 let terms = $ref(false)

@@ -1,23 +1,23 @@
 <template>
-  <v-app-bar height="72" color="#22272e" elevation="14">
-    <v-container fluid class="d-flex align-center px-10">
-      <skriptag-title />
+  <VAppBar height="72" color="#22272e" elevation="14">
+    <VContainer fluid class="d-flex align-center px-10">
+      <SkriptagTitle />
 
-      <v-spacer />
+      <VSpacer />
 
-      <v-tabs height="65" v-model="currentItem">
-        <v-tab
+      <VTabs height="65" v-model="currentItem">
+        <VTab
           v-for="item in items"
           :key="item.name"
           :value="'tab-' + item.name"
           :to="item.to"
         >
           {{ item.name }}
-        </v-tab>
+        </VTab>
 
-        <v-menu v-if="more.length">
+        <VMenu v-if="more.length">
           <template v-slot:activator="{ props }">
-            <v-btn
+            <VBtn
               variant="plain"
               rounded="0"
               class="align-self-center mr-4"
@@ -26,23 +26,23 @@
             >
               more
               <v-icon end> $mdiMenuDown </v-icon>
-            </v-btn>
+            </VBtn>
           </template>
 
-          <v-list class="bg-grey-lighten-3">
-            <v-list-item
+          <VList class="bg-grey-lighten-3">
+            <VListItem
               v-for="item in more"
               :key="item"
               @click="addItem(item)"
               :to="item.to"
             >
               {{ item.name }}
-            </v-list-item>
-          </v-list>
-        </v-menu>
-      </v-tabs>
-    </v-container>
-  </v-app-bar>
+            </VListItem>
+          </VList>
+        </VMenu>
+      </VTabs>
+    </VContainer>
+  </VAppBar>
 </template>
 <script>
 export default {

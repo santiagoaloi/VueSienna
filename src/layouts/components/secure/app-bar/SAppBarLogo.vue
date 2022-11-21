@@ -1,13 +1,13 @@
 <template>
   <div class="d-inline-block">
-    <router-link to="/">
-      <v-img
+    <RouterLink to="/">
+      <VImg
         :transition="false"
         src="avatar.png"
         height="45"
         width="45"
         class="ml-10 shrink"
       />
-    </router-link>
+    </RouterLink>
   </div>
 </template>

@@ -8,8 +8,10 @@ import { defaults } from '@/config/vuetify/defaults'
 import * as icons from '@/config/vuetify/icons'
 import { aliases, mdi as mdiSvg } from 'vuetify/iconsets/mdi-svg'
 
-// Styling
+// Dont import @/@core/scss/vuetify/_variables.scss
+// as it is imported by vuetify plugin in vite.config.js
 import '@/@core/scss/vuetify/index.scss'
+
 import 'vuetify/styles'
 
 export const install = app => {

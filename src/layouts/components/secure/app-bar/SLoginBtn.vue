@@ -1,5 +1,5 @@
 <template>
-  <base-btn
+  <BaseBtn
     prepend-icon="$mdiAccount"
     :disabled="isCurrent"
     :loading="loading"
@@ -7,11 +7,11 @@
     v-if="auth.userName"
   >
     Logout {{ auth.userName }}
-  </base-btn>
+  </BaseBtn>
 </template>
 
 <script setup>
-import { useAuthStore } from '@S/authenticationStore'
+import { useAuthStore } from '@/stores/authenticationStore'
 
 let loading = $ref(false)
 let auth = useAuthStore()

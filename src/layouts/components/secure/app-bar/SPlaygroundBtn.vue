@@ -1,3 +1,3 @@
 <template>
-  <base-btn @click="$router.push('/playground')"> Go to playground</base-btn>
+  <BaseBtn @click="$router.push('/playground')"> Go to playground</BaseBtn>
 </template>

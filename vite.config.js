@@ -141,8 +141,8 @@ export default use.defineConfig({
       dirs: [
         // 🔗 http://skriptag.com/
         {
-          dir: 'src/pages',
-          baseRoute: '/',
+          dir: 'src/pages/homepage/*',
+          baseRoute: '',
         },
 
         // 🔗 http://skriptag.com/SomePage
@@ -150,13 +150,13 @@ export default use.defineConfig({
         // @/pages/secure/[ignoredFolder]/[someFolder]/somePage.vue
         {
           dir: 'src/pages/*',
-          baseRoute: '/',
+          baseRoute: '',
         },
 
         // 🔗 http://skriptag.com/playground
         {
           dir: 'src/pages/playground/playground-landing',
-          baseRoute: '/',
+          baseRoute: '',
         },
 
         // 🔗 http://skriptag.com/playground/someProject
@@ -167,7 +167,8 @@ export default use.defineConfig({
         },
       ],
 
-      exclude: ['**/components/*'],
+      // @/pages/playground/projects/[components]/someProject.vue
+      exclude: ['**/components/**'],
 
       // Only vue SFCs allowed, exclude any other extension from becoming a route.
       extensions: ['vue'],

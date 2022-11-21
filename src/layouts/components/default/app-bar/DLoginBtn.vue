@@ -1,16 +1,16 @@
 <template>
-  <base-btn
+  <BaseBtn
     prepend-icon="$mdiAccount"
     :disabled="isCurrent"
     :loading="loading"
     @click="handler()"
   >
     {{ userName }}
-  </base-btn>
+  </BaseBtn>
 </template>
 
 <script setup>
-import { useAuthStore } from '@S/authenticationStore'
+import { useAuthStore } from '@/stores/authenticationStore'
 import { useGoTo } from '@/@core/composables/routerGo'
 
 let loading = $ref(false)

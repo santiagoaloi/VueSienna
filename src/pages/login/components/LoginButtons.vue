@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { useAuthStore } from '@S/authenticationStore'
+import { useAuthStore } from '@/stores/authenticationStore'
 import { LoginButton } from '../scripts/instances'
 
 let auth = useAuthStore()

@@ -2,7 +2,7 @@ import rootApp from '@/App.vue'
 import { log } from 'vue-chemistry/console'
 
 // State Managemenet
-import { useAuthStore } from '@S/authenticationStore'
+import { useAuthStore } from '@/stores/authenticationStore'
 
 // Styling
 import '@/styles'

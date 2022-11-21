@@ -50,8 +50,8 @@
   </v-navigation-drawer>
 </template>
 <script setup>
-import { useAppStore } from '@S/appStore'
-import { useAuthStore } from '@S/authenticationStore'
+import { useAppStore } from '@/stores/appStore'
+import { useAuthStore } from '@/stores/authenticationStore'
 
 let app = useAppStore()
 let auth = useAuthStore()

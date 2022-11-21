@@ -1,19 +1,15 @@
 <template>
-  <v-main scrollable>
+  <VMain scrollable>
     <RouterView v-slot="{ Component }">
       <template v-if="Component">
-        <v-fade-transition leave-absolute>
+        <VFadeTransition leave-absolute>
           <KeepAlive>
             <Suspense>
-              <!-- main content -->
               <component :is="Component"></component>
-
-              <!-- loading state -->
-              <template #fallback> Loading... </template>
             </Suspense>
           </KeepAlive>
-        </v-fade-transition>
+        </VFadeTransition>
       </template>
     </RouterView>
-  </v-main>
+  </VMain>
 </template>

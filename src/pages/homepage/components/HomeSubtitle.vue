@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-import { settings } from './propertiesSubtitle'
+import { settings } from './scripts/properties-subtitle'
 </script>
