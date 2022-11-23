@@ -5,17 +5,17 @@
 
       <VSpacer />
 
-      <VTabs height="65" v-model="currentItem">
+      <VTabs slider-color="primary" height="65" v-model="currentItem">
         <VTab
-          v-for="item in items"
-          :key="item.name"
-          :value="'tab-' + item.name"
-          :to="item.to"
+          v-for="tab in tabs"
+          :key="tab.name"
+          :value="'tab-' + tab.name"
+          :to="tab.to"
         >
-          {{ item.name }}
+          {{ tab.name }}
         </VTab>
 
-        <VMenu v-if="more.length">
+        <VMenu v-if="tabMenu.length">
           <template v-slot:activator="{ props }">
             <VBtn
               variant="plain"
@@ -31,12 +31,12 @@
 
           <VList class="bg-grey-lighten-3">
             <VListItem
-              v-for="item in more"
-              :key="item"
-              @click="addItem(item)"
-              :to="item.to"
+              v-for="menuItem in tabMenu"
+              :key="menuItem"
+              @click="addItem(menuItem)"
+              :to="menuItem.to"
             >
-              {{ item.name }}
+              {{ menuItem.name }}
             </VListItem>
           </VList>
         </VMenu>
@@ -44,30 +44,25 @@
     </VContainer>
   </VAppBar>
 </template>
-<script>
-export default {
-  data: () => ({
-    currentItem: 'tab-Web',
-    items: [
-      { name: 'Skriptag', to: '/' },
+<script setup>
+let currentItem = $ref('tab-Skriptag')
 
-      { name: 'playground', to: '/playground' },
-      { name: 'Login', to: '/Login' },
-    ],
-    more: [{ name: 'Console', to: '' }],
-  }),
+let tabs = reactive([
+  { name: 'Skriptag', to: '/', disabled: true },
 
-  methods: {
-    addItem(item) {
-      let removed = this.items.splice(0, 1)
+  { name: 'playground', to: '/playground', disabled: false },
+  { name: 'Login', to: '/Login', disabled: false },
+])
 
-      this.items.push(...this.more.splice(this.more.indexOf(item), 1))
-      this.more.push(...removed)
+let tabMenu = reactive([{ name: 'Console', to: '' }])
 
-      this.$nextTick(() => {
-        this.currentItem = 'tab-' + item.name
-      })
-    },
-  },
+function addItem(item) {
+  let removed = tabs.splice(0, 1)
+  tabs.push(...tabMenu.splice(tabMenu.indexOf(item), 1))
+  tabMenu.push(...removed)
+
+  nextTick(() => {
+    currentItem = 'tab-' + item.name
+  })
 }
 </script>
