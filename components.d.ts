@@ -8,6 +8,12 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     '[...all]': typeof import('./src/pages/homepage/[...all].vue')['default']
+    AuthProviderEmail: typeof import('./src/pages/login/components/AuthProviderEmail.vue')['default']
+    AuthProviderEmailBtn: typeof import('./src/pages/login/components/AuthProviderEmailBtn.vue')['default']
+    AuthProviderEmaill: typeof import('./src/pages/login/components/AuthProviderEmaill.vue')['default']
+    AuthProviders: typeof import('./src/pages/login/components/AuthProviders.vue')['default']
+    AuthProvidersBtn: typeof import('./src/pages/login/components/AuthProvidersBtn.vue')['default']
+    AuthProvidersButtons: typeof import('./src/pages/login/components/AuthProvidersButtons.vue')['default']
     Autocomplete: typeof import('./src/pages/playground/projects/autocomplete/Autocomplete.vue')['default']
     AutoCompleteCustomOne: typeof import('./src/pages/playground/projects/autocomplete-custom-one/AutoCompleteCustomOne.vue')['default']
     AutocompleteCustomTwo: typeof import('./src/pages/playground/projects/autocomplete-custom-two/AutocompleteCustomTwo.vue')['default']
@@ -24,7 +30,6 @@ declare module '@vue/runtime-core' {
     BaseTableToolbar: typeof import('./src/@core/components/base-table/BaseTableToolbar.vue')['default']
     BaseTableView: typeof import('./src/@core/components/base-table/BaseTableView.vue')['default']
     Collective: typeof import('./src/pages/playground/projects/collective/Collective.vue')['default']
-    copy: typeof import('./src/pages/playground/playground-landing/components/PlaygroundList copy.vue')['default']
     CreateAccount: typeof import('./src/pages/@secure/account/CreateAccount.vue')['default']
     DAppBar: typeof import('./src/layouts/components/default/app-bar/DAppBar.vue')['default']
     DAppView: typeof import('./src/layouts/components/default/app-view/DAppView.vue')['default']
@@ -35,7 +40,6 @@ declare module '@vue/runtime-core' {
     FourLanding: typeof import('./src/pages/homepage/components/FourLanding.vue')['default']
     GradientTitle: typeof import('./src/@core/components/GradientTitle.vue')['default']
     HomeLanding: typeof import('./src/pages/homepage/components/HomeLanding.vue')['default']
-    HomeSkriptagGithub: typeof import('./src/pages/homepage/components/HomeSkriptagGithub.vue')['default']
     HomeSubtitle: typeof import('./src/pages/homepage/components/HomeSubtitle.vue')['default']
     LazyScrollCards: typeof import('./src/pages/playground/projects/lazy-scroll-cards/LazyScrollCards.vue')['default']
     LazyScrollList: typeof import('./src/pages/playground/projects/lazy-scroll-list/LazyScrollList.vue')['default']

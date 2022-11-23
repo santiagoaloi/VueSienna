@@ -111,5 +111,3 @@ yarn dev
 ```sh
 yarn build
 ```
-
-### Deploy and run

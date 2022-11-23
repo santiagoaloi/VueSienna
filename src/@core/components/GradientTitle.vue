@@ -10,7 +10,6 @@
   background-image: -webkit-linear-gradient(225deg, #9898df 0%, #adbac7 73%);
   background-clip: text;
   -webkit-background-clip: text;
-  text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
   font-size: 75px;

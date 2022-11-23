@@ -36,7 +36,6 @@ let { visibleHeaders, sortBy, sortOrders } = toRefs(props.data)
 
 function onEnd(e) {
   // array, from , to
-
   moveItemInArray(props.data.headers, e.oldIndex, e.newIndex)
 }
 
