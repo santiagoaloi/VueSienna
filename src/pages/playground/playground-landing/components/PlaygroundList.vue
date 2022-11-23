@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{ 'fill-height': searchablePropjects.length }"
+    :class="{ 'fill-height': filteredProjects.length }"
     class="d-flex flex-column mx-auto"
   >
     <PlaygroundTitle />
@@ -25,7 +25,7 @@
 
       <!-- <div class="d-flex justify-end mr-5 pa-2">
         <small>
-          {{ visibleProjects }} of {{ searchablePropjects.length }}
+          {{ visibleProjects }} of {{ filteredProjects.length }}
           {{ `projects loaded` }}
         </small>
       </div> -->
@@ -33,7 +33,7 @@
       <v-list bg-color="transparent" lines="two">
         <v-list-item
           :to="project.to"
-          v-for="project in searchablePropjects"
+          v-for="project in filteredProjects"
           :key="project.title"
         >
           <template v-slot:prepend>
@@ -62,13 +62,8 @@ defineOptions({
   name: 'playgroundList',
 })
 
-let router = useRouter()
-let allRoutes = router.getRoutes()
-
-let playground = usePlaygroundStore(allRoutes)
+let playground = usePlaygroundStore()
 
 // Getters
-const { searchField, searchablePropjects, visibleProjects } = toRefs(
-  playground()
-)
+const { searchField, filteredProjects } = toRefs(playground)
 </script>
