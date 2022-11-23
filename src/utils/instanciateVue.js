@@ -4,6 +4,9 @@ import { log } from 'vue-chemistry/console'
 // State Managemenet
 import { useAuthStore } from '@/stores/authenticationStore'
 
+// Plugins
+import '@/plugins'
+
 // Styling
 import '@/styles'
 
