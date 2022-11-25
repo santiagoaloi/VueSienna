@@ -1,4 +1,5 @@
 import { router } from '@M/routes'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 export const install = app => {
   const pinia = createPinia()
@@ -9,4 +10,5 @@ export const install = app => {
   })
 
   app.use(pinia)
+  pinia.use(piniaPluginPersistedstate)
 }
