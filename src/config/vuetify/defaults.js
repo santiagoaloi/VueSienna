@@ -12,7 +12,7 @@ export const defaults = {
     variant: 'solo',
     hideDetails: true,
     density: 'compact',
-    bgColor: '#2e363e',
+    bgColor: 'text-field-background',
   },
   VAutocomplete: {
     menuProps: { contentClass: 'autocomplete-list-bg-color', maxHeight: '200' },

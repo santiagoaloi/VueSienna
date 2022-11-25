@@ -1,6 +1,5 @@
 // Global defaults
 import { createVuetify } from 'vuetify'
-import appBarground from '@/asets/app-bg.svg'
 
 // Default configurations
 import { defaults } from '@/config/vuetify/defaults'
@@ -33,7 +32,8 @@ export const install = app => {
         dark: {
           dark: true,
           colors: {
-            primary: '#7366ff',
+            primary: '#7b55c7',
+            surface: '#22272e',
             'appbar-background': '#22272e',
           },
           variables: {
@@ -49,7 +49,8 @@ export const install = app => {
         light: {
           dark: true,
           colors: {
-            primary: '#7366ff',
+            primary: '#7b55c7',
+            surface: '#e8eaed',
             'appbar-background': '#22272e',
           },
           variables: {
