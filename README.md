@@ -16,7 +16,7 @@
 
 - 🔥 [Google Firebase for authentication](https://firebase.google.com/)
 
-- 🔆 Dark / Light theme swith with persistance
+- 🔆 Dark / Light theme switch with persistance
 
 ## CSS shortcuts
 
