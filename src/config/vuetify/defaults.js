@@ -6,6 +6,7 @@ export const defaults = {
     flat: true,
     border: true,
     density: 'comfortable',
+    color: 'appbar-background',
   },
   VTextField: {
     variant: 'solo',
