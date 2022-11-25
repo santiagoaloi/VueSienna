@@ -2,9 +2,10 @@
   <VCard color="transparent" flat class="base-table-wrapper">
     <BaseTableToolbar :data="table" />
     <BaseTableSearchField :data="table" />
+    <VDivider />
     <BaseTableView :data="table" />
     <v-card-actions class="my-2">
-      <BaseBtn>hello</BaseBtn>
+      <BaseBtn>test</BaseBtn>
     </v-card-actions>
   </VCard>
 </template>

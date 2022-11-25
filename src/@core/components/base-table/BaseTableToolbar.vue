@@ -1,6 +1,6 @@
 <template>
   <VCardActions class="no-gutters">
-    <VCardTitle v-text="`data.title`" class="no-gutters" />
+    <VCardTitle v-text="`${data.title}`" class="no-gutters" />
     <VSpacer />
     <BaseTableMenus v-for="menu in menus" :menu="menu" />
   </VCardActions>
