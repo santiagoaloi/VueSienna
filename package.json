@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "pinia-plugin-persistedstate": "^2.4.0",
     "sortablejs": "^1.15.0",
     "sortablejs-vue3": "^1.2.2",
     "vue": "^3.2.38",
