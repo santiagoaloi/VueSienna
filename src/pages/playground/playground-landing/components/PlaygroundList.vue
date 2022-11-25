@@ -3,26 +3,40 @@
     :class="{ 'fill-height': filteredProjects.length }"
     class="d-flex flex-column mx-auto"
   >
-    <PlaygroundTitle />
-
     <v-card
-      border
-      class="d-flex flex-column mx-auto rounded-b-xl mb-10"
+      class="d-flex flex-column mx-auto rounded-lg my-10"
       width="70vw"
       elevation="14"
-      color="rgba(30, 30, 30, 0.7)"
-      style="backdrop-filter: blur(2px)"
+      style="backdrop-filter: saturate(50%) blur(8px)"
     >
+      <!-- <v-card color="grey-lighten-4" flat height="200px" rounded="0">
+        <v-toolbar extended>
+          <PlaygroundTitle />
+        </v-toolbar>
+      </v-card> -->
+
+      <v-toolbar color="#322F3F">
+        <v-toolbar-title class="text-grey">
+          Playground Projects
+        </v-toolbar-title>
+
+        <v-spacer></v-spacer>
+
+        <v-btn size="small" icon>
+          <v-icon>$mdiFilterVariant</v-icon>
+        </v-btn>
+      </v-toolbar>
+
       <VTextField
         prepend-inner-icon="$mdiMagnify"
         placeholder="Search..."
         clearable
         autofocus
         bgColor="transparent"
-        class="search-field"
         v-model="searchField"
       />
 
+      <!-- <VDivider class="mx-7" /> -->
       <div class="d-flex justify-end mr-5 pa-2">
         <small>
           {{ filteredProjects.length }}

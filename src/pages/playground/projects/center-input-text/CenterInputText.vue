@@ -8,13 +8,10 @@
           color="primary"
           label="Center input text"
         />
+
         <VTextField
-          variant="outlined"
-          :class="{ 'input-text-center': centerInputText }"
-          class="mb-5"
-        />
-        <VTextField
-          variant="solo"
+          variant="filled"
+          autofocus
           :class="{ 'input-text-center': centerInputText }"
         />
       </VContainer>

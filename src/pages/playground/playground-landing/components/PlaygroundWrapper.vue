@@ -3,7 +3,7 @@
     <div
       :class="{ 'fill-height': mdAndUp }"
       color="transparent"
-      class="d-flex flex-column bg-transparent"
+      class="d-flex flex-column"
     >
       <slot />
     </div>
