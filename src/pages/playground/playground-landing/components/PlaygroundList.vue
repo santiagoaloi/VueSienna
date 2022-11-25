@@ -10,8 +10,8 @@
       class="d-flex flex-column mx-auto rounded-b-xl mb-10"
       width="70vw"
       elevation="14"
-      color="rgba(30, 30, 30, 0.8)"
-      style="backdrop-filter: blur(9px)"
+      color="rgba(30, 30, 30, 0.7)"
+      style="backdrop-filter: blur(2px)"
     >
       <VTextField
         prepend-inner-icon="$mdiMagnify"
@@ -23,12 +23,12 @@
         v-model="searchField"
       />
 
-      <!-- <div class="d-flex justify-end mr-5 pa-2">
+      <div class="d-flex justify-end mr-5 pa-2">
         <small>
-          {{ visibleProjects }} of {{ filteredProjects.length }}
-          {{ `projects loaded` }}
+          {{ filteredProjects.length }}
+          {{ `projects found.` }}
         </small>
-      </div> -->
+      </div>
 
       <v-list bg-color="transparent" lines="two">
         <v-list-item
