@@ -5,11 +5,16 @@
 - ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite 3](https://github.com/vitejs/vite) - born with fastness
 - 🗂 [File based routing](./src/pages)
 - 📦 [Components auto importing](./src/components)
-- 🍍 [State Management via Pinia](https://pinia.vuejs.org/)
 - 📑 [Layout system](./src/layouts)
+- 📥 [APIs auto importing](https://github.com/antfu/unplugin-auto-import) - use Composition API and others directly
+
+- 🍍 [State Management via Pinia](https://pinia.vuejs.org/)
+- 💾 [Pinia Persisted State](https://github.com/prazdevs/pinia-plugin-persistedstate/)
+
 - 🔥 Use the [new `<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
 - 🤙🏻 [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) enabled
-- 📥 [APIs auto importing](https://github.com/antfu/unplugin-auto-import) - use Composition API and others directly
+
+- 🔆 Dark / Light theme swith with persistance
 
 ## CSS shortcuts
 
