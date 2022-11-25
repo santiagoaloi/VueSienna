@@ -27,4 +27,6 @@ export {
   mdiCardOutline,
   mdiCurrencyUsd,
   mdiMenuDown,
+  mdiMoonWaxingCrescent,
+  mdiWhiteBalanceSunny,
 } from '@mdi/js'
