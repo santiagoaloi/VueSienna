@@ -11,8 +11,10 @@
 - 🍍 [State Management via Pinia](https://pinia.vuejs.org/)
 - 💾 [Pinia Persisted State](https://github.com/prazdevs/pinia-plugin-persistedstate/)
 
-- 🔥 Use the [new `<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
+- 🤙🏻 Use the [new `<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
 - 🤙🏻 [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) enabled
+
+- 🔥 [Google Firebase for authentication](https://firebase.google.com/)
 
 - 🔆 Dark / Light theme swith with persistance
 
