@@ -1,15 +1,15 @@
 <template>
   <VMain scrollable>
-    <RouterView v-slot="{ Component }">
+    <router-view v-slot="{ Component }">
       <template v-if="Component">
         <VFadeTransition leave-absolute>
-          <KeepAlive>
-            <Suspense>
+          <keep-alive>
+            <suspense>
               <component :is="Component"></component>
-            </Suspense>
-          </KeepAlive>
+            </suspense>
+          </keep-alive>
         </VFadeTransition>
       </template>
-    </RouterView>
+    </router-view>
   </VMain>
 </template>
