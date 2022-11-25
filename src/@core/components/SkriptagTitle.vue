@@ -2,13 +2,17 @@
   <component
     @click="$router.push('/')"
     :is="size"
-    style="color: #adbac7 !important; cursor: pointer"
-    class="ignore-font"
-    :class="{ 'skriptag-logo-hover': large, 'skriptag-logo': !large }"
+    :class="{
+      'skriptag-logo-hover': large,
+      'text-white': !large,
+      'skriptag-logo': !large,
+    }"
   >
     <slot name="text" />
     <span :class="{ large: large }"
-      >Skript<span class="skriptag-a">â</span>g</span
+      >Skript<span :class="{ 'skriptag-a': large, 'skriptag-a-appbar': !large }"
+        >â</span
+      >g</span
     >
   </component>
 </template>
@@ -29,6 +33,10 @@ let props = defineProps({
   },
 })
 
+const titleColor = computed(() => {
+  return 'rgba(var(--v-app-skriptag-title))'
+})
+
 let size = computed(() => {
   if (props.small) return 'h2'
 })
@@ -36,7 +44,11 @@ let size = computed(() => {
 
 <style scoped>
 .large {
-  font-size: 180% !important;
+  font-size: 350% !important;
+}
+
+.skriptag-title {
+  color: rgba(var(--v-app-skriptag-title));
 }
 
 .skriptag-logo-hover {
@@ -54,8 +66,22 @@ let size = computed(() => {
 }
 
 .skriptag-a {
-  color: #aaaaaa;
-  background-image: -webkit-linear-gradient(90deg, #adbac7 65%, #57bb9f 56%);
+  background-image: -webkit-linear-gradient(
+    90deg,
+    rgba(var(--v-app-typography)) 65%,
+    #57bb9f 56%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skriptag-a-appbar {
+  background-image: -webkit-linear-gradient(
+    90deg,
+    rgba(255, 255, 255) 65%,
+    #57bb9f 56%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

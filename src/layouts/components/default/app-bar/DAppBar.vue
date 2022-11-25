@@ -1,10 +1,24 @@
 <template>
-  <VAppBar height="72" color="#22272e" elevation="14">
-    <VContainer fluid class="d-flex align-center px-10">
+  <VAppBar height="72">
+    <VContainer fluid class="d-flex align-center px-10 fill-height">
       <SkriptagTitle />
 
       <VSpacer />
 
+      <div class="d-flex fill-height align-center justify-center mr-10">
+        <VSwitch
+          true-icon="$mdiMoonWaxingCrescent"
+          false-icon="$mdiWhiteBalanceSunny"
+          inset
+          class="d-flex text-white"
+          hide-details
+          :ripple="false"
+          color="#6B6975"
+          true-value="dark"
+          false-value="light"
+          v-model="currentTheme"
+        />
+      </div>
       <VTabs slider-color="primary" height="65" v-model="currentItem">
         <VTab
           v-for="tab in tabs"
@@ -45,6 +59,13 @@
   </VAppBar>
 </template>
 <script setup>
+import { useAppStore } from '@S/appStore'
+
+// Theme logic
+const { currentTheme } = toRefs(useAppStore())
+
+// Navigation-Bar Logic
+
 let currentItem = $ref('tab-Skriptag')
 
 let tabs = reactive([

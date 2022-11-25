@@ -1,11 +1,16 @@
 <template>
-  <v-app>
+  <VApp :theme="currentTheme">
     <router-view v-slot="{ Component }">
       <template v-if="Component">
-        <v-fade-transition appear mode="out-in">
+        <VFadeTransition mode="out-in">
           <component :is="Component" />
-        </v-fade-transition>
+        </VFadeTransition>
       </template>
     </router-view>
-  </v-app>
+  </VApp>
 </template>
+
+<script setup>
+import { useAppStore } from '@S/appStore'
+const { currentTheme } = toRefs(useAppStore())
+</script>
