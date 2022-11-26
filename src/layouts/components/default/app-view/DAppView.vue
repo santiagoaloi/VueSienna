@@ -5,7 +5,7 @@
         <VFadeTransition leave-absolute>
           <keep-alive>
             <suspense>
-              <component :is="Component"></component>
+              <component :is="Component" />
             </suspense>
           </keep-alive>
         </VFadeTransition>
