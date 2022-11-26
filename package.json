@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vite --open",
     "dev:disable-firebase": "vite -mode disable-firebase --open",
-    "build": "vite build",
+    "build": "vite build --mode production",
     "build:github": "vite build --mode github --base=/VueSienna/ && gh-pages -d dist",
     "build:preview": "vite build && vite preview --open",
     "preview": "vite preview"

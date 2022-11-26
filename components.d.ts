@@ -10,7 +10,6 @@ declare module '@vue/runtime-core' {
     '[...all]': typeof import('./src/pages/homepage/[...all].vue')['default']
     AuthProviderEmail: typeof import('./src/pages/login/components/AuthProviderEmail.vue')['default']
     AuthProviders: typeof import('./src/pages/login/components/AuthProviders.vue')['default']
-    Autocomplete: typeof import('./src/pages/playground/projects/autocomplete copy/Autocomplete.vue')['default']
     AutoCompleteCustomOne: typeof import('./src/pages/playground/projects/autocomplete-custom-one/AutoCompleteCustomOne.vue')['default']
     AutocompleteCustomTwo: typeof import('./src/pages/playground/projects/autocomplete-custom-two/AutocompleteCustomTwo.vue')['default']
     AutocompleteEndlessScroll: typeof import('./src/pages/playground/projects/autocomplete-endless-scroll/AutocompleteEndlessScroll.vue')['default']
