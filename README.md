@@ -1,8 +1,8 @@
 # Vue 3 + Vite + Vuetify 3 + Firebase 9
 
-### Customize configuration
+### Github pages
 
-See [Live version: ](https://santiagoaloi.github.io/VueSienna/).
+[Open Live preview ](https://santiagoaloi.github.io/VueSienna/).
 
 ## Features
 
