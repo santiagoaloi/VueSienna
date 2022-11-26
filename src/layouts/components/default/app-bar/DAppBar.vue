@@ -1,7 +1,7 @@
 <template>
   <VAppBar height="72">
     <VContainer fluid class="d-flex align-center px-10 fill-height">
-      <SkriptagTitle />
+      <SkriptagTitle appbar link />
 
       <VSpacer />
 

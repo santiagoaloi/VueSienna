@@ -2,12 +2,10 @@
   <v-navigation-drawer
     width="280"
     permanent
-    color="#22272e"
     bottom
     temporary
     id="settings-drawer"
     v-model="app.drawer"
-    disable-route-watcher
     position="fixed"
     hide-overlay
   >
@@ -27,7 +25,7 @@
         {
           title: 'Overview',
           value: 'overview',
-          to: '/dashboard/overview',
+          to: '/account/overview',
           prependIcon: 'mdi-bank',
         },
         {

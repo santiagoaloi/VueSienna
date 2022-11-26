@@ -1,7 +1,7 @@
 <template>
   <HomeLanding>
     <SkriptagGithub />
-    <SkriptagTitle large class="mb-2" />
+    <SkriptagTitle glow large class="mb-2" />
     <GradientTitle v-html="`Make the best app you've ever made.`" />
     <HomeSubtitle>
       Get consultancy , learn coding, download free and premium application
