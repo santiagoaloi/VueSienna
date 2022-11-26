@@ -6,20 +6,20 @@ export default use.defineConfig({
     alias: [
       { find: '@', replacement: use.resolve(__dirname, './src') },
       {
-        find: '@S',
-        replacement: use.resolve(__dirname, './src/stores/'),
+        find: '@U',
+        replacement: use.resolve(__dirname, './src/utils'),
       },
       {
         find: '@M',
         replacement: use.resolve(__dirname, './src/modules'),
       },
       {
-        find: '@U',
-        replacement: use.resolve(__dirname, './src/utils'),
+        find: '@S',
+        replacement: use.resolve(__dirname, './src/stores/'),
       },
       {
         find: '@C',
-        replacement: use.resolve(__dirname, './src/composables'),
+        replacement: use.resolve(__dirname, './src/@core/composables'),
       },
     ],
   },
@@ -37,11 +37,11 @@ export default use.defineConfig({
           vuetify: ['vuetify', 'vuetify/components', 'vuetify/directives'],
 
           // 🔥 Firebase
+          'firebase-app': ['firebase/app'],
           'firebase-auth': ['firebase/auth'],
+          'firebase-storage': ['firebase/storage'],
           'firebase-firestore': ['firebase/firestore'],
           'firebase-functions': ['firebase/functions'],
-          'firebase-storage': ['firebase/storage'],
-          'firebase-app': ['firebase/app'],
         },
       },
     },
@@ -70,9 +70,6 @@ export default use.defineConfig({
     use.vue({
       reactivityTransform: true,
     }),
-
-    // https://github.com/xiaoxian521/vite-plugin-remove-console
-    use.removeConsole(),
 
     // https://github.com/sxzz/unplugin-vue-macros
     use.vueMacros(),
@@ -113,9 +110,6 @@ export default use.defineConfig({
       dts: true,
     }),
 
-    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-    use.layouts(),
-
     // https://github.com/antfu/unplugin-vue-components
     // Autoimport Vue SFCs.
     use.components({
@@ -135,6 +129,12 @@ export default use.defineConfig({
       dts: true,
       deep: true,
     }),
+
+    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
+    use.layouts(),
+
+    // https://github.com/xiaoxian521/vite-plugin-remove-console
+    use.removeConsole(),
 
     // https://github.com/hannoeru/vite-plugin-pages
     use.pages({
