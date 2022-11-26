@@ -1,5 +1,6 @@
 <template>
   <VApp :theme="currentTheme">
+    <DAppBar />
     <router-view v-slot="{ Component }">
       <template v-if="Component">
         <VFadeTransition mode="out-in">
