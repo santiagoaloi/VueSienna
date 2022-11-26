@@ -1,6 +1,3 @@
 <template>
-  <section>
-    <DAppBar />
-    <DAppView />
-  </section>
+  <DAppView />
 </template>

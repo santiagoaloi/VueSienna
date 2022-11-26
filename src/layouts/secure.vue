@@ -1,7 +1,6 @@
 <template>
   <section>
-    <s-app-bar />
-    <s-drawer />
-    <s-app-view />
+    <SDrawer />
+    <SApp-view />
   </section>
 </template>
