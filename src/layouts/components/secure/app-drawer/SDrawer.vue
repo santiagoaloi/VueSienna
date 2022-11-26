@@ -29,16 +29,10 @@
           prependIcon: 'mdi-bank',
         },
         {
-          title: 'Accounts',
-          value: 'Accounts',
-          to: '/dashboard/accounts',
+          title: 'Overview 2',
+          value: 'Overview 2',
+          to: '/account/overviewtwo',
           prependIcon: 'mdi-book-open-page-variant-outline',
-        },
-        {
-          title: 'Cards',
-          value: 'Cards',
-          to: '/dashboard/cards',
-          prependIcon: 'mdi-credit-card-outline',
         },
       ]"
       density="compact"
