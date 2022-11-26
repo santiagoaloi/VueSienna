@@ -1,4 +1,4 @@
-export class LoginButton {
+export class AuthProviderLoginButton {
   constructor({
     name = 'changeMe',
     icon = '$mdiLink',

@@ -39,7 +39,7 @@
               v-bind="props"
             >
               more
-              <v-icon end> $mdiMenuDown </v-icon>
+              <VIcon end> $mdiMenuDown </VIcon>
             </VBtn>
           </template>
 

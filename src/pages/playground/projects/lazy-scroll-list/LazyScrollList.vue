@@ -5,12 +5,7 @@
       color="transparent"
       class="d-flex flex-column bg-transparent"
     >
-      <v-img
-        class="fill-height"
-        src="/hero.svg"
-        style="overflow: visible"
-        cover
-      >
+      <VImg class="fill-height" src="hero.svg" style="overflow: visible" cover>
         <div
           :class="{ 'fill-height': projects.length }"
           class="d-flex flex-column mx-auto"
@@ -21,7 +16,7 @@
             </span>
           </h5>
 
-          <v-card
+          <VCard
             border
             class="d-flex flex-column mx-auto rounded-b-xl mb-10 fill-height"
             width="70vw"
@@ -39,38 +34,35 @@
               bgColor="transparent"
             />
 
-            <v-list v-if="projects.length" bg-color="transparent">
-              <v-list-item :key="project.title" v-for="project in projects">
-                <v-lazy
+            <VList v-if="projects.length" bg-color="transparent">
+              <VListItem :key="project.title" v-for="project in projects">
+                <VLazy
                   v-model="project.isActive"
                   :options="{
                     threshold: 0.5,
                   }"
                   class="fill-height d-flex"
                 >
-                  <v-list-item>
+                  <VListItem>
                     <template v-slot:prepend="{ isActive }">
-                      <v-list-item-action start>
-                        <v-checkbox-btn></v-checkbox-btn>
-                      </v-list-item-action>
+                      <VListItem-action start>
+                        <VCheckboxBtn />
+                      </VListItem-action>
                     </template>
 
-                    <v-list-item-title>
-                      <div class="text-capitalize" v-html="project.title"></div>
-                    </v-list-item-title>
-                    <v-list-item-subtitle>
-                      <div
-                        class="text-capitalize"
-                        v-html="project.subtitle"
-                      ></div>
-                    </v-list-item-subtitle>
-                  </v-list-item>
-                </v-lazy>
-              </v-list-item>
-            </v-list>
-          </v-card>
+                    <VListItemTitle>
+                      <div class="text-capitalize" v-html="project.title" />
+                    </VListItemTitle>
+                    <VListItem-subtitle>
+                      <div class="text-capitalize" v-html="project.subtitle" />
+                    </VListItem-subtitle>
+                  </VListItem>
+                </VLazy>
+              </VListItem>
+            </VList>
+          </VCard>
         </div>
-      </v-img>
+      </VImg>
     </div>
   </div>
 </template>

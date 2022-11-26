@@ -1,32 +1,28 @@
 <template>
-  <v-container fluid class="fill-height d-flex align-center">
-    <v-card class="mx-auto" width="500" min-height="200" :class="{ shake }">
-      <v-card-title v-text="`Shake on wrong credentials`" />
-      <v-card-text>
+  <VContainer fluid class="fill-height d-flex align-center">
+    <VCard class="mx-auto" width="500" min-height="200" :class="{ shake }">
+      <VCardTitle v-text="`Shake on wrong credentials`" />
+      <VCardText>
         <div class="mb-5">
           <code> {{ loginForm }}</code>
         </div>
         <form @submit.prevent="login()">
-          <v-row>
-            <v-col cols="12">
-              <v-text-field v-model="username" label="Account" />
-            </v-col>
-            <v-col>
-              <v-text-field
-                label="Password"
-                type="password"
-                v-model="password"
-              />
-            </v-col>
-          </v-row>
-          <v-card-actions>
-            <v-spacer></v-spacer>
+          <VRow>
+            <VCol cols="12">
+              <VTextField v-model="username" label="Account" />
+            </VCol>
+            <VCol>
+              <VTextField label="Password" type="password" v-model="password" />
+            </VCol>
+          </VRow>
+          <VCardActions>
+            <VSpacer />
             <BaseBtn type="submit">Login</BaseBtn>
-          </v-card-actions>
+          </VCardActions>
         </form>
-      </v-card-text>
-    </v-card>
-  </v-container>
+      </VCardText>
+    </VCard>
+  </VContainer>
 </template>
 
 <script setup>

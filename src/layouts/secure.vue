@@ -1,6 +1,6 @@
 <template>
-  <section>
+  <section id="SecureLayout">
     <SDrawer />
-    <SApp-view />
+    <SAppView />
   </section>
 </template>

@@ -1,9 +1,12 @@
+/*  
+https://www.npmjs.com/package/vue-nprogress
+*/
+
 #nprogress {
   pointer-events: none;
 }
 
 #nprogress .bar {
-  /* background: #7366ff; */
   background: #7b55c7;
   opacity: 1;
   position: fixed;

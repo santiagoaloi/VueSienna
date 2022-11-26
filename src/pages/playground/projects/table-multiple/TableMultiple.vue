@@ -1,13 +1,13 @@
 <template>
-  <v-row no-gutters class="fill-height">
-    <v-col class="fill-height">
+  <VRow no-gutters class="fill-height">
+    <VCol class="fill-height">
       <BaseTable title="Search Wizards" :items="wizards" :headers="headers" />
-    </v-col>
+    </VCol>
 
-    <v-col class="fill-height">
+    <VCol class="fill-height">
       <BaseTable title="Search Celebs" :items="celebs" :headers="headers" />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>
 
 <script setup>

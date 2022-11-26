@@ -1,17 +1,17 @@
 <template>
-  <v-container>
-    <v-sheet max-width="1100" class="mx-auto bg-transparent">
-      <v-switch
+  <VContainer>
+    <VSheet max-width="1100" class="mx-auto bg-transparent">
+      <VSwitch
         v-model="readOnly"
         class="ml-9 mb-n8"
         color="#747bff"
         label="Read-only ratings"
       />
-      <v-carousel v-model="model" hide-delimiters :show-arrows="false">
-        <v-carousel-item v-for="(chunk, i) in reviews" :key="chunk" :value="i">
-          <v-row class="pa-8">
-            <v-col md="4" cols="12" :key="i" v-for="(review, i) in chunk">
-              <v-card
+      <VCarousel v-model="model" hide-delimiters :show-arrows="false">
+        <VCarouselItem v-for="(chunk, i) in reviews" :key="chunk" :value="i">
+          <VRow class="pa-8">
+            <VCol md="4" cols="12" :key="i" v-for="(review, i) in chunk">
+              <VCard
                 elevation="13"
                 class="d-flex justify-center align-center flex-column py-8 rounded-lg"
                 height="400"
@@ -22,47 +22,47 @@
                 </div>
 
                 <div class="mt-auto px-3">
-                  <v-list lines="two" bg-color="transparent">
-                    <v-list-item>
-                      <v-list-item-subtitle class="font-italic">
+                  <VList lines="two" bg-color="transparent">
+                    <VListItem>
+                      <VListItem-subtitle class="font-italic">
                         "{{ review.text }}"
-                      </v-list-item-subtitle>
-                    </v-list-item>
-                  </v-list>
+                      </VListItem-subtitle>
+                    </VListItem>
+                  </VList>
                 </div>
                 <div>
-                  <v-rating
+                  <VRating
                     color="yellow-darken-3"
                     v-model="review.rating"
                     :readonly="readOnly"
                   />
                 </div>
                 <div class="mt-auto">
-                  <v-btn
+                  <VBtn
                     class="text-capitalize"
                     variant="text"
                     prepend-icon="$mdiBookOpenPageVariantOutline"
                     color="grey"
-                    >See story</v-btn
+                    >See story</VBtn
                   >
                 </div>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-carousel-item>
-      </v-carousel>
+              </VCard>
+            </VCol>
+          </VRow>
+        </VCarouselItem>
+      </VCarousel>
       <div class="d-flex justify-center align-center py-4">
-        <v-btn
+        <VBtn
           :rounded="0"
           v-for="button in sliderButtons"
           :key="button.icon"
           :icon="button.icon"
           @click="button.action()"
           color="rgba(	50, 58, 68, 0.5)"
-        ></v-btn>
+        ></VBtn>
       </div>
-    </v-sheet>
-  </v-container>
+    </VSheet>
+  </VContainer>
 </template>
 
 <script setup>

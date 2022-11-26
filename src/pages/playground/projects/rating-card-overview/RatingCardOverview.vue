@@ -1,6 +1,6 @@
 <template>
-  <v-container class="d-flex align-center justify-center flex-wrap fill-height">
-    <v-card
+  <VContainer class="d-flex align-center justify-center flex-wrap fill-height">
+    <VCard
       elevation="13"
       class="d-flex flex-column mx-auto py-8 rounded-lg"
       height="500"
@@ -30,12 +30,12 @@
         <div class="px-3">2,250 ratings</div>
       </div>
 
-      <v-list
+      <VList
         class="d-flex flex-column-reverse"
         bg-color="transparent"
         density="compact"
       >
-        <v-list-item v-for="raiting in 5">
+        <VListItem v-for="raiting in 5">
           <v-progress-linear
             height="20"
             :model-value="raiting * 18 + 8"
@@ -47,7 +47,7 @@
               <span>{{ raiting + 1 }}</span>
             </div>
             <div class="d-flex">
-              <v-icon class="mx-3">$mdiStar</v-icon>
+              <VIcon class="mx-3">$mdiStar</VIcon>
             </div>
           </template>
 
@@ -56,10 +56,10 @@
               <span class="ml-3"> {{ raiting * 224 + 2 }} </span>
             </div>
           </template>
-        </v-list-item>
-      </v-list>
-    </v-card>
-  </v-container>
+        </VListItem>
+      </VList>
+    </VCard>
+  </VContainer>
 </template>
 <route lang="yaml">
 meta:

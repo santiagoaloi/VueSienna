@@ -3,29 +3,21 @@
     :class="{ 'fill-height': filteredProjects.length }"
     class="d-flex flex-column mx-auto"
   >
-    <v-card
+    <VCard
       class="d-flex flex-column mx-auto rounded-lg my-10"
       width="70vw"
       elevation="14"
       style="backdrop-filter: saturate(50%) blur(8px)"
     >
-      <!-- <v-card color="grey-lighten-4" flat height="200px" rounded="0">
-        <v-toolbar extended>
-          <PlaygroundTitle />
-        </v-toolbar>
-      </v-card> -->
+      <VToolbar color="#322F3F">
+        <VToolbarTitle class="text-grey"> Playground Projects </VToolbarTitle>
 
-      <v-toolbar color="#322F3F">
-        <v-toolbar-title class="text-grey">
-          Playground Projects
-        </v-toolbar-title>
+        <VSpacer />
 
-        <v-spacer></v-spacer>
-
-        <v-btn size="small" icon>
-          <v-icon>$mdiFilterVariant</v-icon>
-        </v-btn>
-      </v-toolbar>
+        <VBtn size="small" icon>
+          <VIcon>$mdiFilterVariant</VIcon>
+        </VBtn>
+      </VToolbar>
 
       <VTextField
         prepend-inner-icon="$mdiMagnify"
@@ -36,7 +28,6 @@
         v-model="searchField"
       />
 
-      <!-- <VDivider class="mx-7" /> -->
       <div class="d-flex justify-end mr-5 pa-2">
         <small>
           {{ filteredProjects.length }}
@@ -44,28 +35,28 @@
         </small>
       </div>
 
-      <v-list bg-color="transparent" lines="two">
-        <v-list-item
+      <VList bg-color="transparent" lines="two">
+        <VListItem
           :to="project.to"
           v-for="project in filteredProjects"
           :key="project.title"
         >
           <template v-slot:prepend>
-            <v-list-item-action start>
-              <v-icon>{{ project.icon }}</v-icon>
-            </v-list-item-action>
+            <VListItem-action start>
+              <VIcon>{{ project.icon }}</VIcon>
+            </VListItem-action>
           </template>
           <div>
-            <v-list-item-title>
+            <VListItemTitle>
               <div class="text-capitalize" v-html="project.title"></div>
-            </v-list-item-title>
-            <v-list-item-subtitle>
+            </VListItemTitle>
+            <VListItem-subtitle>
               <div class="text-capitalize" v-html="project.subtitle"></div>
-            </v-list-item-subtitle>
+            </VListItem-subtitle>
           </div>
-        </v-list-item>
-      </v-list>
-    </v-card>
+        </VListItem>
+      </VList>
+    </VCard>
   </div>
 </template>
 
@@ -78,6 +69,5 @@ defineOptions({
 
 let playground = usePlaygroundStore()
 
-// Getters
 const { searchField, filteredProjects } = toRefs(playground)
 </script>

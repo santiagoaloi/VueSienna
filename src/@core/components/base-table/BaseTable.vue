@@ -4,9 +4,9 @@
     <BaseTableSearchField :data="table" />
     <VDivider />
     <BaseTableView :data="table" />
-    <v-card-actions class="my-2">
+    <VCardActions class="my-2">
       <BaseBtn>test</BaseBtn>
-    </v-card-actions>
+    </VCardActions>
   </VCard>
 </template>
 
@@ -58,19 +58,19 @@ table > thead > tr > th {
 }
 
 table > thead > tbody,
-.v-table__wrapper tr > td {
+.VTable__wrapper tr > td {
   height: v-bind(tableCompact) !important;
 }
 
-.v-table th {
+.VTable th {
   cursor: grab;
 }
-.v-table th:active {
+.VTable th:active {
   color: rgb(209, 203, 233);
   cursor: grabbing;
 }
 
-.v-table th.active .arrow {
+.VTable th.active .arrow {
   opacity: 1;
 }
 

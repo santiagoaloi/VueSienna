@@ -1,40 +1,40 @@
 <template>
-  <v-row>
-    <v-col sm="6">
-      <v-card
+  <VRow>
+    <VCol sm="6">
+      <VCard
         flat
         style="z-index: 2"
         min-height="300"
         class="d-flex justify-end bg-transparent flex-column ml-md-16 ml-5"
       >
         <div>
-          <v-img
+          <VImg
             width="130"
             src="https://images.opencollective.com/vuetify/39eea68/logo/256.png"
           >
-          </v-img>
+          </VImg>
         </div>
         <div class="pl-3">
           <h1>Vuetify</h1>
-          <v-btn
+          <VBtn
             class="rounded-s-xl mx-1 my-2 ml-md-n1"
             size="small"
             color="#373e47"
           >
             COLLECTIVE
-          </v-btn>
-          <v-btn
+          </VBtn>
+          <VBtn
             v-for="tag in filteredTags.basic"
             class="rounded-e-xl mx-1 text-lowercase"
             size="small"
             color="#373e47"
           >
             {{ tag }}
-          </v-btn>
+          </VBtn>
 
-          <v-menu>
+          <VMenu>
             <template v-slot:activator="{ props }">
-              <v-btn
+              <VBtn
                 v-bind="props"
                 v-if="tagsExtendedLength"
                 class="rounded-e-xl mx-1 text-lowercase"
@@ -42,37 +42,37 @@
                 color="#373e47"
               >
                 +{{ tagsExtendedLength }} more
-              </v-btn>
+              </VBtn>
             </template>
 
-            <v-card
+            <VCard
               color="#323a44"
               flat
               class="mt-2 mr-n3"
               min-width="100"
               height="250"
             >
-              <v-card-text
+              <VCardText
                 v-for="tag in filteredTags.extended"
                 class="text-center"
               >
                 <h4>{{ tag }}</h4>
-              </v-card-text>
-            </v-card>
-          </v-menu>
+              </VCardText>
+            </VCard>
+          </VMenu>
 
           <div class="d-flex align-center mt-2 flex-wrap">
-            <v-btn
+            <VBtn
               class="mr-3"
               size="x-small"
               color="#373e47"
               v-for="icon in socialIcons"
               icon
             >
-              <v-icon> {{ icon.name }}</v-icon>
-            </v-btn>
+              <VIcon> {{ icon.name }}</VIcon>
+            </VBtn>
 
-            <v-btn
+            <VBtn
               v-if="repo"
               prepend-icon="$mdiGithub"
               size="small"
@@ -81,7 +81,7 @@
               class="text-capitalize"
             >
               Code repository
-            </v-btn>
+            </VBtn>
 
             <div class="ml-3 text-capitalize">
               <a class="underline" href="#"> fiscal host:</a>
@@ -91,18 +91,18 @@
             </div>
           </div>
         </div>
-      </v-card>
-    </v-col>
+      </VCard>
+    </VCol>
 
-    <v-col sm="6" class="d-none d-md-flex">
-      <v-img
+    <VCol sm="6" class="d-none d-md-flex">
+      <VImg
         class="img-mask mt-n3"
         cover
         src="https://images.opencollective.com/vuetify/12cc40f/background.png"
       >
-      </v-img>
-    </v-col>
-  </v-row>
+      </VImg>
+    </VCol>
+  </VRow>
 </template>
 
 <script setup>

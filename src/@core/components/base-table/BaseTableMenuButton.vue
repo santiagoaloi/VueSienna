@@ -1,6 +1,6 @@
 <template>
   <VBtn class="mt-n1" icon v-bind="props" size="x-small" variant="plain">
-    <v-icon :icon="icon" />
+    <VIcon :icon="icon" />
     <VTooltip openDelay="800" activator="parent"> {{ tooltip }} </VTooltip>
   </VBtn>
 </template>

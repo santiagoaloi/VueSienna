@@ -1,9 +1,9 @@
 <template>
-  <v-card color="transparent" flat class="d-flex flex-column fill-height">
-    <v-card-actions>
-      <v-row density="compact" dense>
-        <v-col cols="8">
-          <v-autocomplete
+  <VCard color="transparent" flat class="d-flex flex-column fill-height">
+    <VCardActions>
+      <VRow density="compact" dense>
+        <VCol cols="8">
+          <VAutocomplete
             v-model:search="search"
             :items="filteredItems"
             item-title="name"
@@ -18,11 +18,11 @@
                 Loading...
               </div>
             </template>
-          </v-autocomplete>
-        </v-col>
-      </v-row>
-    </v-card-actions>
-  </v-card>
+          </VAutocomplete>
+        </VCol>
+      </VRow>
+    </VCardActions>
+  </VCard>
 </template>
 
 <script setup>

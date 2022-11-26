@@ -8,7 +8,7 @@
     href="https://github.com/santiagoaloi/VueSienna"
     target="_blank"
   >
-    <v-icon start icon="$mdiGithub" />
+    <VIcon start icon="$mdiGithub" />
     v1.0.1
   </VChip>
 </template>

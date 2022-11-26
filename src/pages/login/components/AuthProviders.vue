@@ -15,19 +15,19 @@
 
 <script setup>
 import { useAuthStore } from '@/stores/authenticationStore'
-import { LoginButton } from '../scripts/instances'
+import { AuthProviderLoginButton } from '../scripts/instances'
 
 let auth = useAuthStore()
 
 let buttons = $ref([
-  new LoginButton({
+  new AuthProviderLoginButton({
     name: 'Google',
     icon: '$mdiGoogle',
     action() {
       return auth.authenticateWithGoogle(this)
     },
   }),
-  new LoginButton({
+  new AuthProviderLoginButton({
     name: 'GitHub',
     icon: '$mdiGithub',
     disabled: true,

@@ -1,8 +1,8 @@
 <template>
   <PlaygroundWrapper>
-    <v-img src="/hero.svg" cover>
+    <VImg src="hero.svg" cover>
       <PlaygroundList />
-    </v-img>
+    </VImg>
   </PlaygroundWrapper>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
-  <v-card class="overflow-visible" min-height="300" color="#323a44">
-    <v-card-text>
+  <VCard class="overflow-visible" min-height="300" color="#323a44">
+    <VCardText>
       <span class="pa-4">
         <div>
           <code> searchable keys: {{ searchableKeys }} </code>
@@ -13,23 +13,22 @@
         </div>
       </span>
 
-      <v-menu attach class="overflow-visible">
+      <VMenu attach class="overflow-visible">
         <template v-slot:activator="{ props }">
-          <v-text-field v-model="search" color.trim="primary" v-bind="props">
-          </v-text-field>
+          <VTextField v-model="search" color.trim="primary" v-bind="props" />
         </template>
-        <v-list v-model:selected="selectedItem">
+        <VList v-model:selected="selectedItem">
           <template v-for="(item, index) in filteredItems" :key="index">
-            <v-list-item :value="item">
-              <v-list-item-title>{{ getItemText(item) }}</v-list-item-title>
-            </v-list-item>
+            <VListItem :value="item">
+              <VListItemTitle>{{ getItemText(item) }}</VListItemTitle>
+            </VListItem>
           </template>
-        </v-list>
-      </v-menu>
+        </VList>
+      </VMenu>
 
-      <!-- <v-autocomplete :items="items" item-title="name"></v-autocomplete> -->
-    </v-card-text>
-  </v-card>
+      <!-- <VAutocomplete :items="items" item-title="name"></VAutocomplete> -->
+    </VCardText>
+  </VCard>
 </template>
 <script setup>
 import { isObject } from '@U/methods'

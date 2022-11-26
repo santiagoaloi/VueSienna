@@ -1,42 +1,36 @@
 <template>
-  <v-container class="py-3">
-    <div class="display-2">Endless scrolling with v-lazy</div>
+  <VContainer class="py-3">
+    <div class="display-2">Endless scrolling with VLazy</div>
     <h5>
       <span v-text="visibleProjects"></span> of
       <span>{{ projects.length }}</span> posts shown
     </h5>
-    <v-row class="fill-height overflow-y-auto" v-if="projects.length">
-      <v-col
-        lg="3"
-        md="4"
-        sm="6"
-        cols="12"
-        v-for="(project, index) in projects"
-      >
-        <v-sheet min-height="300" class="fill-height" color="red">
-          <v-lazy
+    <VRow class="fill-height overflow-y-auto" v-if="projects.length">
+      <VCol lg="3" md="4" sm="6" cols="12" v-for="(project, index) in projects">
+        <VSheet min-height="300" class="fill-height" color="red">
+          <VLazy
             v-model="project.isActive"
             :options="{
               threshold: 0.8,
             }"
             class="fill-height"
           >
-            <v-card color="rgba(20, 20, 20, 0.8)" class="fill-height" hover>
-              <v-card-text>
-                <v-row :key="index" @click="">
-                  <v-col sm="10" cols="12" class="text-sm-left text-center">
+            <VCard color="rgba(20, 20, 20, 0.8)" class="fill-height" hover>
+              <VCardText>
+                <VRow :key="index" @click="">
+                  <VCol sm="10" cols="12" class="text-sm-left text-center">
                     #{{ index + 1 }}
                     <h2 v-html="project.title"></h2>
                     <div v-html="project.subtitle"></div>
-                  </v-col>
-                </v-row>
-              </v-card-text>
-            </v-card>
-          </v-lazy>
-        </v-sheet>
-      </v-col>
-    </v-row>
-  </v-container>
+                  </VCol>
+                </VRow>
+              </VCardText>
+            </VCard>
+          </VLazy>
+        </VSheet>
+      </VCol>
+    </VRow>
+  </VContainer>
 </template>
 
 <script setup>

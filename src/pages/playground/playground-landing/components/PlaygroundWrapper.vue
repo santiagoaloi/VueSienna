@@ -1,12 +1,10 @@
 <template>
-  <div class="fill-height">
-    <div
-      :class="{ 'fill-height': mdAndUp }"
-      color="transparent"
-      class="d-flex flex-column"
-    >
-      <slot />
-    </div>
+  <div
+    :class="{ 'fill-height': mdAndUp }"
+    color="transparent"
+    class="d-flex flex-column"
+  >
+    <slot />
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
-  <v-card class="overflow-visible" min-height="300" color="#323a44">
-    <v-card-text>
+  <VCard class="overflow-visible" min-height="300" color="#323a44">
+    <VCardText>
       <span class="pa-4">
         <div>
           <code> searchable keys: {{ searchableKeys }} </code>
@@ -17,46 +17,46 @@
         <div>
           <code>
             return-object: {{ isReturnObject }}
-            <v-btn
+            <VBtn
               color="success"
               @click="isReturnObject = !isReturnObject"
               density="compact"
             >
               switch
-            </v-btn>
+            </VBtn>
           </code>
         </div>
 
         <div>
           <code>
             focus-on-select: {{ isFocusOnSelect }}
-            <v-btn
+            <VBtn
               color="success"
               @click="focusOnSelect = !focusOnSelect"
               density="compact"
             >
               switch
-            </v-btn>
+            </VBtn>
           </code>
         </div>
 
         <div>
           <code>
             clear-search-on-select: {{ isClearSearchOnSelect }}
-            <v-btn
+            <VBtn
               color="success"
               @click="clearSearchOnSelect = !clearSearchOnSelect"
               density="compact"
             >
               switch
-            </v-btn>
+            </VBtn>
           </code>
         </div>
       </span>
 
-      <v-menu>
+      <VMenu>
         <template v-slot:activator="{ props, isActive }">
-          <v-text-field
+          <VTextField
             v-model="search"
             color.trim="primary"
             v-bind="props"
@@ -68,27 +68,27 @@
           />
         </template>
 
-        <v-list
+        <VList
           v-model:selected="selectedItem"
           @click:select="clickOnSelect"
           @update:selected="getSelectedItem()"
         >
-          <v-list-item
+          <VListItem
             v-for="(item, index) in filteredItems"
             :key="index"
             :value="item"
           >
-            <v-list-item-title>{{
+            <VListItemTitle>{{
               itemToString(item, itemText, 'hasDefault')
-            }}</v-list-item-title>
-            <v-list-item-subtitle>{{
+            }}</VListItemTitle>
+            <VListItem-subtitle>{{
               itemToString(item, itemSubtitle)
-            }}</v-list-item-subtitle>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-    </v-card-text>
-  </v-card>
+            }}</VListItem-subtitle>
+          </VListItem>
+        </VList>
+      </VMenu>
+    </VCardText>
+  </VCard>
 </template>
 <script setup>
 import { isObject } from '@/utils/methods'
