@@ -1,5 +1,9 @@
 # Vue 3 + Vite + Vuetify 3 + Firebase 9
 
+### Customize configuration
+
+See [Live version: ](https://santiagoaloi.github.io/VueSienna/).
+
 ## Features
 
 - ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite 3](https://github.com/vitejs/vite) - born with fastness
