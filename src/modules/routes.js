@@ -5,8 +5,11 @@ import { setupLayouts } from 'virtual:generated-layouts'
 // Customize styles in @/styles/_progress-bar.css
 import NProgress from 'nprogress'
 
+// Changes based on build mode ( '' || github)
+const baseRoute = import.meta.env.VITE_BASE_ROUTE
+
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(baseRoute),
   routes: setupLayouts(generatedRoutes),
 })
 
