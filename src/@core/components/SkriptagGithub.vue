@@ -5,6 +5,8 @@
     color="primary"
     text-color="white"
     border
+    href="https://github.com/santiagoaloi/VueSienna"
+    target="_blank"
   >
     <v-icon start icon="$mdiGithub" />
     v1.0.1
