@@ -3,14 +3,15 @@
     @click="$router.push('/')"
     :is="size"
     :class="{
-      'skriptag-logo-hover': large,
-      'text-white': !large,
-      'skriptag-logo': !large,
+      'text-white': !large && appbar,
+      'skriptag-logo-link': link,
+      'skriptag-glow': glow,
     }"
   >
     <slot name="text" />
     <span :class="{ large: large }"
-      >Skript<span :class="{ 'skriptag-a': large, 'skriptag-a-appbar': !large }"
+      >Skript<span
+        :class="{ 'skriptag-a': !appbar, 'skriptag-a-appbar': appbar }"
         >â</span
       >g</span
     >
@@ -24,6 +25,14 @@ let props = defineProps({
     default: true,
   },
   large: {
+    type: Boolean,
+    default: false,
+  },
+  appbar: {
+    type: Boolean,
+    default: false,
+  },
+  glow: {
     type: Boolean,
     default: false,
   },
@@ -51,16 +60,17 @@ let size = computed(() => {
   color: rgba(var(--v-app-skriptag-title));
 }
 
-.skriptag-logo-hover {
+.skriptag-glow {
   filter: drop-shadow(0 0.1rem 1.8em #9397cfaa);
 }
 
-.skriptag-logo {
+.skriptag-logo-link {
+  cursor: pointer;
   opacity: 1;
   transition: opacity 0.25s;
 }
 
-.skriptag-logo:hover {
+.skriptag-logo-link:hover {
   opacity: 0.8;
   transition: opacity 0.25s;
 }
