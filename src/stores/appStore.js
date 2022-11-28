@@ -1,6 +1,7 @@
 export const useAppStore = defineStore('app', {
   state: () => ({
     drawer: true,
+    isRouting: null,
     currentTheme: 'dark',
   }),
   persist: true,
