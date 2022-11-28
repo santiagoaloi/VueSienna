@@ -14,7 +14,6 @@
 <script setup>
 // Pinia appStore module is persisted.
 // currentTheme values are light/dark
-
 import { useAppStore } from '@S/appStore'
 const { currentTheme } = toRefs(useAppStore())
 </script>
