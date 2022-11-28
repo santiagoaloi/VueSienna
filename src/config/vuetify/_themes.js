@@ -9,13 +9,16 @@ export default {
       'on-surface-variant': '#2e3640',
     },
     variables: {
-      //Custom Skriptag vars
+      //Custom vars
       'app-background': '#22272e',
       'app-typography': '#adbac7',
       'app-gradient-title-from': '#9898df',
       'app-gradient-title-to': '#adbac7',
       'app-app-bar-tab-slider-color': '#192430',
       'app-skriptag-title': '#192430',
+
+      // Tab bg hover color not being highlighted.
+      'theme-appbar-background-overlay-multiplier': '0.1',
     },
   },
   light: {
@@ -27,13 +30,16 @@ export default {
       'primary-button': '#223141',
     },
     variables: {
-      //Custom Skriptag vars
+      //Custom vars
       'app-background': '#e8eaed',
       'app-typography': '#192430',
       'app-gradient-title-from': '#9898df',
       'app-gradient-title-to': '#192430',
       'app-app-bar-tab-slider-color': '#192430',
       'app-skriptag-title': '#192430',
+
+      // Tab bg hover color not being highlighted.
+      'theme-appbar-background-overlay-multiplier': '0.1',
     },
   },
 }
