@@ -1,21 +1,41 @@
 @use 'vuetify';
 
-.split-col-img {
-@extend .d-lg-flex, .d-none, .fill-height 
-};
 
 .no-gutters {
-    @extend .pa-0, .ma-0 
+    @extend .pa-0, .ma-0
 };
 
+// Spit layout
+.split-col-img {
+@extend .fill-height , .d-lg-flex, .d-none
+};
+
+// Table
 .base-table-no-data-wrapper {
-    @extend .d-flex, .flex-column, .fill-height , .align-center, .justify-center 
+    @extend .d-flex, .fill-height , .flex-column, , .align-center, .justify-center 
 };
 
 .base-table-wrapper {
-    @extend .d-flex, .flex-column, .fill-height, .px-11 
+    @extend .d-flex, .fill-height, .flex-column,  .px-11 
 };
 
 .base-table {
-    @extend .no-gutters , .fill-height , .bg-transparent 
+    @extend .fill-height, .no-gutters , .bg-transparent 
+};
+
+
+// Home Landing
+.home-landing-img-wrap {
+    @extend .d-flex , .fill-height , .align-center , .justify-center 
+};
+ 
+
+// Global Appbar
+.g-appbar-container {
+    @extend .d-flex , .fill-height , .align-center ,  .px-10
+};
+
+// Global Appbar
+.g-appbar-switch-wrapper {
+    @extend .d-flex, .fill-height, .align-center, .justify-center, .mr-10
 };
