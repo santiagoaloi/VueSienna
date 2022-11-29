@@ -1,6 +1,5 @@
 @use 'vuetify';
 
-
 .no-gutters {
     @extend .pa-0, .ma-0
 };
@@ -23,12 +22,10 @@
     @extend .fill-height, .no-gutters , .bg-transparent 
 };
 
-
 // Home Landing
 .home-landing-img-wrap {
     @extend .d-flex , .fill-height , .align-center , .justify-center 
 };
- 
 
 // Global Appbar
 .g-appbar-container {
