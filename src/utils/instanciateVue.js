@@ -1,5 +1,6 @@
 import rootApp from '@/App.vue'
 import { log } from 'vue-chemistry/console'
+import { router } from '@M/routes'
 
 // State Managemenet
 import { useAuthStore } from '@/stores/authenticationStore'
@@ -27,8 +28,12 @@ function mount(user) {
   // Set firebase user (jf any) saved in indexedDB in browser.
   setStoreUser(user)
 
-  // Mount Vue after auth and modules are done.
-  appMounted.mount('#app')
+  router.isReady().then(() => {
+    // Mount Vue after auth and modules are done.
+    appMounted.mount('#app')
+
+    console.log('router is now ready')
+  })
 
   log('Vue application mounted.')
 }

@@ -1,7 +1,6 @@
 import generatedRoutes from '~pages'
-import { setupLayouts } from 'virtual:generated-layouts'
-
 import { useAppStore } from '@/stores/appStore'
+import { setupLayouts } from 'virtual:generated-layouts'
 
 // Progress bar on top of the page.
 // Customize styles in @/styles/_progress-bar.css
@@ -20,17 +19,21 @@ router.beforeEach(async (to, from, next) => {
     // Calling useAppStore inside guards
     // to avoid getting `pinia not being instanciated` error.
     const store = useAppStore()
+
     //Avoids button flickering on fast routing.
     setTimeout(() => {
       store.isRouting = true
     }, 600)
+
     NProgress.start()
   }
 
   const isAuth = await getUserState()
+
   const atLoginAndAuthenticated = to.matched.some(
     r => r.path === '/login' && isAuth
   )
+
   const requiresAuth = to.matched.some(r => r.meta.requiresAuth)
 
   // If the route requires the user to be authenticated and it is not,
@@ -50,7 +53,18 @@ router.beforeEach(async (to, from, next) => {
   next()
 })
 
-router.afterEach(() => {
+router.onError(() => {
+  const store = useAppStore()
+
+  //Avoids button flickering on fast routing.
+  setTimeout(() => {
+    store.isRouting = false
+  }, 600)
+
+  console.log('Route not reachable.')
+})
+
+router.afterEach((to, from, failure) => {
   // Calling useAppStore inside guards
   // to avoid getting `pinia not being instanciated` error.
   const store = useAppStore()
