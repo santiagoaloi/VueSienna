@@ -18,4 +18,5 @@ export default {
     menuProps: { contentClass: 'autocomplete-list-bg-color', maxHeight: '200' },
   },
   VTooltip: { location: 'bottom' },
+  VImg: { transition: false },
 }

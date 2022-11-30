@@ -27,6 +27,7 @@ export const install = app => {
     theme: {
       themes,
     },
+
     defaults,
   })
   app.use(vuetify)
