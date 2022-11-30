@@ -1,6 +1,7 @@
 <template>
   <div class="g-appbar-switch-wrapper">
     <VSwitch
+      title="Switch theme"
       true-icon="$mdiMoonWaxingCrescent"
       false-icon="$mdiWhiteBalanceSunny"
       inset
