@@ -1,6 +1,6 @@
 <template>
   <VContainer fluid class="fill-height d-flex align-center">
-    <VCard class="mx-auto" width="500" min-height="200" :class="{ shake }">
+    <VCard class="mx-auto pa-3" width="500" min-height="200" :class="{ shake }">
       <VCardTitle v-text="`Shake on wrong credentials`" />
       <VCardText>
         <div class="mb-5">
@@ -9,10 +9,14 @@
         <form @submit.prevent="login()">
           <VRow>
             <VCol cols="12">
-              <VTextField v-model="username" label="Account" />
+              <VTextField v-model="form.username" label="Account" />
             </VCol>
             <VCol>
-              <VTextField label="Password" type="password" v-model="password" />
+              <VTextField
+                label="Password"
+                type="password"
+                v-model="form.password"
+              />
             </VCol>
           </VRow>
           <VCardActions>
@@ -30,12 +34,10 @@ defineOptions({
   name: 'playgroundShakeLogin',
 })
 
-let loginForm = toRefs(
-  reactive({
-    username: '',
-    password: '',
-  })
-)
+let form = reactive({
+  username: '',
+  password: '',
+})
 
 let shake = $ref(false)
 
