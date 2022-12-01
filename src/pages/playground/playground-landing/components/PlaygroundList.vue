@@ -7,9 +7,8 @@
       class="d-flex flex-column mx-auto rounded-lg my-10"
       width="70vw"
       elevation="14"
-      style="backdrop-filter: saturate(50%) blur(8px)"
     >
-      <VToolbar color="#322F3F">
+      <VToolbar color="transparent">
         <VToolbarTitle class="text-grey"> Playground Projects </VToolbarTitle>
 
         <VSpacer />
@@ -19,14 +18,15 @@
         </VBtn>
       </VToolbar>
 
-      <VTextField
-        prepend-inner-icon="$mdiMagnify"
-        placeholder="Search..."
-        clearable
-        autofocus
-        bgColor="transparent"
-        v-model="searchField"
-      />
+      <div class="pa-4">
+        <VTextField
+          prepend-inner-icon="$mdiMagnify"
+          placeholder="Search..."
+          clearable
+          autofocus
+          v-model="searchField"
+        />
+      </div>
 
       <div class="d-flex justify-end mr-5 pa-2">
         <small>
