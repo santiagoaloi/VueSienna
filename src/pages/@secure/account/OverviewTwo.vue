@@ -1,8 +1,4 @@
 <template>
-  <VList>
-    <VListItem title="Account Balance" subtitle="$ 0"> </VListItem>
-  </VList>
-
   <VDivider />
   <VContainer fluid>
     <VAlert
