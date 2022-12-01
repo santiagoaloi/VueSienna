@@ -1192,7 +1192,7 @@ find-up@^4.0.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
-firebase@^9.13.0:
+firebase@^9.14.0:
   version "9.14.0"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-9.14.0.tgz#407de4855092e607d3ee1fb222294ab2b45c4798"
   integrity sha512-wePrsf7W33mhT7RVXQavragoAgXb/NDm22vuhwJXkprrQ2Y9alrEKC5LTAtLJL3P2dHdDmeylS6PLZwWPEE79A==
@@ -2332,6 +2332,13 @@ vue@^3.2.37, vue@^3.2.38:
     "@vue/runtime-dom" "3.2.45"
     "@vue/server-renderer" "3.2.45"
     "@vue/shared" "3.2.45"
+
+vuefire@^3.0.0-alpha.11:
+  version "3.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/vuefire/-/vuefire-3.0.0-alpha.11.tgz#05d9b927f0afe443cc26510274a34948990e3911"
+  integrity sha512-OVRC013a/EHH5WLZJ51pRqjqaPKPn91a5a2x3SDjELiaJ8kabfQk2qGZwGiUFmTSJxOzsHvXg3F2uAvQw5jTXw==
+  dependencies:
+    vue-demi latest
 
 vuetify@^3.0.1:
   version "3.0.2"
