@@ -4,9 +4,12 @@ export default {
     colors: {
       primary: '#7b55c7',
       surface: '#22272e',
+      'on-surface': '#ccc',
       'appbar-background': '#22272e',
       'primary-button': '#373e47',
       'on-surface-variant': '#2e3640',
+      'text-field-background': '#2d333d',
+      'navigation-drawer': '#22272e',
     },
     variables: {
       //Custom vars
@@ -14,7 +17,6 @@ export default {
       'app-typography': '#adbac7',
       'app-gradient-title-from': '#9898df',
       'app-gradient-title-to': '#adbac7',
-      'app-app-bar-tab-slider-color': '#192430',
       'app-skriptag-title': '#192430',
 
       // Tab bg hover color not being highlighted.
@@ -25,23 +27,27 @@ export default {
     dark: false,
     colors: {
       primary: '#7b55c7',
-      surface: '#e8eaed',
+      surface: '#f6fcff',
       'on-surface': '#2c3b49',
       'appbar-background': '#22272e',
       'primary-button': '#223141',
-      'on-surface-variant': '#eceef0',
+      'on-surface-variant': '#fff',
+      'text-field-background': '#e9eef5',
+      'on-background': '#2c3b49',
     },
     variables: {
       //Custom vars
-      'app-background': '#E2E3E5',
+      'app-background': '#eff3f8',
       'app-typography': '#2c3b49',
       'app-gradient-title-from': '#9898df',
       'app-gradient-title-to': '#2c3b49',
-      'app-app-bar-tab-slider-color': '#192430',
       'app-skriptag-title': '#192430',
 
       // Tab bg hover color not being highlighted.
       'theme-appbar-background-overlay-multiplier': '0.1',
+
+      // V-list item nav looks much better this way.
+      'theme-navigation-drawer-overlay-multiplier': '1',
     },
   },
 }
