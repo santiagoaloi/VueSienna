@@ -42,10 +42,6 @@ let props = defineProps({
   },
 })
 
-const titleColor = computed(() => {
-  return 'rgba(var(--v-app-skriptag-title))'
-})
-
 let size = computed(() => {
   if (props.small) return 'h2'
 })
@@ -53,7 +49,7 @@ let size = computed(() => {
 
 <style scoped>
 .large {
-  font-size: 350% !important;
+  font-size: 280% !important;
 }
 
 .skriptag-title {
