@@ -1,5 +1,4 @@
 import rootApp from '@/App.vue'
-import { log } from 'vue-chemistry/console'
 import { router } from '@M/routes'
 
 // State Managemenet
