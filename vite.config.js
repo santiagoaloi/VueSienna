@@ -91,6 +91,9 @@ export default use.defineConfig({
             'useRoute',
           ],
 
+          // Vue Chemistry
+          'vue-chemistry/console': ['log'],
+
           // Vuetify
           vuetify: ['useDisplay', 'createVuetify'],
 
