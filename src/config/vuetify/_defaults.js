@@ -11,7 +11,7 @@ export default {
   VTextField: {
     variant: 'solo',
     hideDetails: true,
-    density: 'compact',
+    density: 'comfortable',
     bgColor: 'text-field-background',
   },
   VAutocomplete: {
@@ -19,4 +19,7 @@ export default {
   },
   VTooltip: { location: 'bottom' },
   VImg: { transition: false },
+  VNavigationDrawer: {
+    color: 'navigation-drawer',
+  },
 }
