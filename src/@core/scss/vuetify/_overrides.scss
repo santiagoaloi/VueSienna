@@ -22,7 +22,6 @@ h6,
 
 html,
 #app .v-aplication {
-  // background: #323a44 !important;
   overflow-y: auto !important;
   user-select: none;
 }
@@ -36,10 +35,6 @@ html,
   background-color: rgba(var(--v-app-background));
 }
 
-.table-header-background {
-  background: rgba(34, 39, 46) !important;
-}
-
 .autocomplete-list-bg-color .v-list {
   background: #2e363e !important;
   padding: 0;
@@ -47,6 +42,10 @@ html,
 
 .v-input--density-compact {
   --v-input-control-height: 25px !important;
+}
+
+.app-bar-border {
+  outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
 }
 
  

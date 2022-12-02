@@ -3,12 +3,12 @@ export default {
     dark: true,
     colors: {
       primary: '#7b55c7',
-      surface: '#22272e',
+      surface: '#2b3139',
       'on-surface': '#ccc',
       'appbar-background': '#22272e',
       'primary-button': '#373e47',
       'on-surface-variant': '#2e3640',
-      'text-field-background': '#2d333d',
+      'text-field-background': '#363b41',
       'navigation-drawer': '#22272e',
     },
     variables: {

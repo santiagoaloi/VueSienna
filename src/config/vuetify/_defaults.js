@@ -4,7 +4,7 @@ export default {
   },
   VAppBar: {
     flat: true,
-    border: true,
+    // border: true,
     density: 'comfortable',
     color: 'appbar-background',
   },
