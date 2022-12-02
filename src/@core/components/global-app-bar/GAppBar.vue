@@ -1,5 +1,5 @@
 <template>
-  <VAppBar height="72">
+  <VAppBar class="app-bar-border" height="72">
     <VContainer fluid class="g-appbar-container">
       <SkriptagTitle appbar link />
       <VSpacer />
