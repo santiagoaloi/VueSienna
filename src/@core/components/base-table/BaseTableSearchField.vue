@@ -1,10 +1,9 @@
 <template>
   <VTextField
     :disabled="isSearchFieldDisabled"
-    prepend-icon="$mdiMagnify"
+    prepend-inner-icon="$mdiMagnify"
     placeholder="Search..."
     v-model="searchField"
-    bg-color="transparent"
     clearable
   />
 </template>

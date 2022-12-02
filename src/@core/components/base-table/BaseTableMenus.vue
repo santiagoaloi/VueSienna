@@ -9,7 +9,7 @@
       </VBtn>
     </template>
 
-    <VCard color="#323a44" flat class="mr-n3" min-width="300" max-height="300">
+    <VCard flat class="mr-n3" min-width="300" max-height="300">
       <VCardTitle v-text="title" class="mb-n4" />
 
       <VExpandTransition>
