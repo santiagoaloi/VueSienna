@@ -19,7 +19,7 @@ let appMounted
 
 const setStoreUser = user => (useAuthStore().user = user)
 
-function mount(user) {
+async function mount(user) {
   appMounted = createApp(rootApp)
 
   // install all plugin modules.
@@ -28,12 +28,9 @@ function mount(user) {
   // Set firebase user (jf any) saved in indexedDB in browser.
   setStoreUser(user)
 
-  router.isReady().then(() => {
-    // Mount Vue after auth and modules are done.
-    appMounted.mount('#app')
-
-    console.log('router is now ready')
-  })
+  // Render Vue after auth and modules are done.
+  await router.isReady()
+  appMounted.mount('#app')
 
   log('Vue application mounted.')
 }
