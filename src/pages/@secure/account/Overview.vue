@@ -5,7 +5,7 @@
       title="Accounts"
       icon="mdi-bank"
       border="start"
-      border-color="deep-purple accent-4"
+      border-color="purple-accent-4"
       elevation="2"
       class="mt-n2"
     >
@@ -14,7 +14,7 @@
         <VBtn
           @click="$router.push({ path: '/account/createaccount' })"
           size="small"
-          class="mt-4"
+          class="my-4"
           >Create new account</VBtn
         >
       </div>
