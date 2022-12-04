@@ -1,4 +1,4 @@
-import { router } from '@M/routes'
+import { router } from '@/modules/router'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 export const install = app => {
