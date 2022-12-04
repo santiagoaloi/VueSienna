@@ -1,11 +1,16 @@
 {
   "name": "vue-sienna",
+  "description": "VueJS - Vuetfiy3 Playground",
   "version": "1.0.1",
-  "private": true,
-  "author": {
-    "name": "Santiago Aloi",
-    "email": "santiago@skriptag.com",
-    "url": "https://https://github.com/santiagoaloi/VueSienna"
+  "private": false,
+  "author": "Santiago Aloi <santiago@skriptag.com> (https: //https://github.com/santiagoaloi/)",
+  "funding": {
+    "type": "individual",
+    "url": "https://buymeacoffee.com/santiagoald"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/santiagoaloi/VueSienna.git"
   },
   "scripts": {
     "dev": "vite --open",
