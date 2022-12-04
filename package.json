@@ -4,15 +4,16 @@
   "private": true,
   "author": {
     "name": "Santiago Aloi",
-    "email": "santiago@skriptag.com"
+    "email": "santiago@skriptag.com",
+    "url": "https://https://github.com/santiagoaloi/VueSienna"
   },
   "scripts": {
     "dev": "vite --open",
     "dev:disable-firebase": "vite -mode disable-firebase --open",
     "build": "vite build --mode production",
     "build:github": "vite build --mode github --base=/VueSienna/ && gh-pages -d dist",
-    "build:preview": "vite build && vite preview --open",
-    "preview": "vite preview"
+    "preview": "vite build && vite preview --open",
+    "preview:dist": "vite preview"
   },
   "dependencies": {
     "gh-pages": "^4.0.0",
