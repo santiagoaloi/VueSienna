@@ -1,7 +1,5 @@
 <div align="center"> <a href="https://github.com/santiagoaloi/VueSienna"> <img alt="VbenAdmin Logo" width="200" height="200" src="https://github.com/santiagoaloi/VueSienna/blob/main/public/favicon.png"> </a> <br> <br>
 
-[![license](https://img.shields.io/github/license/anncwb/vue-vben-admin.svg)](LICENSE)
-
 <h1>Vue 3 + Vite + Vuetify 3 + Firebase 9</h1>
 
 </div>
