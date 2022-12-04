@@ -1,6 +1,6 @@
 import rootApp from '@/App.vue'
 import { log } from 'vue-chemistry/console'
-import { router } from '@M/routes'
+import { router } from '@/modules/router'
 
 // State Managemenet
 import { useAuthStore } from '@/stores/authenticationStore'
@@ -20,16 +20,19 @@ let appMounted
 const setStoreUser = user => (useAuthStore().user = user)
 
 async function mount(user) {
+  // Create an application instance
   appMounted = createApp(rootApp)
 
-  // install all plugin modules.
+  // register modules
   autoImportModules(appMounted)
 
   // Set firebase user (jf any) saved in indexedDB in browser.
   setStoreUser(user)
 
-  // Render Vue after auth and modules are done.
+  // Mount when the route is ready (https://next.router.vuejs.org/api/#isready)
   await router.isReady()
+
+  // Mount the application
   appMounted.mount('#app')
 
   log('Vue application mounted.')
