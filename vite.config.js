@@ -63,7 +63,6 @@ export default use.defineConfig({
 
   define: {
     'process.env': {},
-    __VUE_PROD_DEVTOOLS__: false,
   },
 
   plugins: [
