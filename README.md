@@ -1,5 +1,3 @@
-<div> <a href="https://github.com/santiagoaloi/VueSienna"> <img alt="VbenAdmin Logo" width="200" height="200" src="https://github.com/santiagoaloi/VueSienna/blob/main/public/favicon.png"> </a> <br> <br>
-
 <h1>Vue 3 + Vite + Vuetify 3 + Firebase 9</h1>
 
 </div>
