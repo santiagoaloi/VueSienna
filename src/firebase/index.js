@@ -25,4 +25,4 @@ const getUserState = () =>
     onAuthStateChanged(auth, resolve, reject)
   })
 
-export { db, storage, auth, functions, getUserState }
+export { app, db, storage, auth, functions, getUserState }
