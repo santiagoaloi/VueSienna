@@ -3,6 +3,8 @@ export {
   mdiGoogle,
   mdiLink,
   mdiAccount,
+  mdiAccountCogOutline,
+  mdiViewDashboardOutline,
   mdiSpaceInvaders,
   mdiDotsVertical,
   mdiFilterVariant,
