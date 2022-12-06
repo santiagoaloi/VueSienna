@@ -54,6 +54,7 @@ export default use.defineConfig({
 
   // Server ports and behavior.
   server: {
+    https: false,
     port: 8000,
   },
 
@@ -69,6 +70,8 @@ export default use.defineConfig({
     use.vue({
       reactivityTransform: true,
     }),
+
+    // use.basicSsl(),
 
     // https://github.com/sxzz/unplugin-vue-macros
     use.vueMacros(),
@@ -96,16 +99,31 @@ export default use.defineConfig({
           // Vuetify
           vuetify: ['useDisplay', 'createVuetify'],
 
+          // 🔥 VueFire
+          'vuefire  ': [
+            'useDocument',
+            'useCollection',
+            'getCurrentUser',
+            'usePendingPromises',
+          ],
+
           // 🔥 Firebase
-          'firebase/firestore': ['doc', 'getDoc', 'setDoc'],
+          'firebase/firestore': [
+            'query',
+            'doc',
+            'getDoc',
+            'setDoc',
+            'collection',
+            'onSnapshot',
+          ],
           'firebase/auth': ['GoogleAuthProvider', 'signInWithPopup', 'signOut'],
           '@/firebase': ['auth', 'db', 'functions', 'getUserState'],
         },
       ],
       dirs: [
         'src/utils/**',
+        'src/stores/*',
         'src/presets/**',
-        'src/composables/*',
         'src/composables/*',
       ],
       vueTemplate: true,
@@ -148,8 +166,6 @@ export default use.defineConfig({
         },
 
         // 🔗 http://skriptag.com/SomePage
-        // @/pages/secure/[ignoredFolder]/somePage.vue
-        // @/pages/secure/[ignoredFolder]/[someFolder]/somePage.vue
         {
           dir: 'src/pages/*',
           baseRoute: '',
@@ -167,9 +183,16 @@ export default use.defineConfig({
           dir: 'src/pages/playground/projects/**',
           baseRoute: '/playground',
         },
+
+        // 🔗 http://skriptag.com/account/somePage
+        // @/pages/@secure/[anyFolder]/somePage.vue
+        {
+          dir: 'src/pages/@secure/**',
+          baseRoute: '/account',
+        },
       ],
 
-      // @/pages/playground/projects/[components]/someProject.vue
+      // @/pages/someFolder/someOtherFolder/[components]/someProject.vue
       exclude: ['**/components/**'],
 
       // Only vue SFCs allowed, exclude any other extension from becoming a route.
