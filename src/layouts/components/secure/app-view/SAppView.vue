@@ -8,9 +8,7 @@
       <template v-if="Component">
         <VFadeTransition leave-absolute>
           <keep-alive>
-            <suspense>
-              <component :is="Component" />
-            </suspense>
+            <component :is="Component" />
           </keep-alive>
         </VFadeTransition>
       </template>
