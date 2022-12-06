@@ -11,4 +11,5 @@ export const install = app => {
 
   app.use(pinia)
   pinia.use(piniaPluginPersistedstate)
+  log('Pinia initialized')
 }
