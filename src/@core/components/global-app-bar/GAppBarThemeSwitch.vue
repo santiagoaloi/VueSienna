@@ -16,8 +16,6 @@
   </div>
 </template>
 <script setup>
-import { useAppStore } from '@S/appStore'
-
 // Theme logic
 const { currentTheme } = toRefs(useAppStore())
 </script>
