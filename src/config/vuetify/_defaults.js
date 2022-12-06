@@ -21,5 +21,7 @@ export default {
   VImg: { transition: false },
   VNavigationDrawer: {
     color: 'navigation-drawer',
+    width: 280,
+    permanent: true,
   },
 }
