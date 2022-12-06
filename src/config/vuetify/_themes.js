@@ -10,6 +10,7 @@ export default {
       'on-surface-variant': '#242B33',
       'text-field-background': '#2D333B',
       'navigation-drawer': '#22272e',
+      'logout-btn': '#472e72',
     },
     variables: {
       //Custom vars
@@ -34,6 +35,7 @@ export default {
       'on-surface-variant': '#fff',
       'text-field-background': '#e9eef5',
       'on-background': '#2c3b49',
+      'logout-btn': '#22272e', // Medium purple
     },
     variables: {
       //Custom vars
