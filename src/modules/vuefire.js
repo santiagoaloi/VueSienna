@@ -1,10 +1,10 @@
-import { VueFire, VueFireAuth } from 'vuefire'
+import { VueFire, VueFireAuth, VueFireFirestoreOptionsAPI } from 'vuefire'
 import { app as firebaseApp } from '@/firebase'
 
 export const install = app => {
   app.use(VueFire, {
     firebaseApp,
-    modules: [VueFireAuth()],
+    modules: [VueFireAuth(), VueFireFirestoreOptionsAPI()],
   })
   log('VueFire initialized.')
 }
