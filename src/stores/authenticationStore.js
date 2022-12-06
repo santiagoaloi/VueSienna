@@ -3,23 +3,24 @@ import NProgress from 'nprogress'
 export const useAuthStore = defineStore('authentication', {
   state: () => ({
     user: null,
+    profile: null,
   }),
+
+  actions: {
+    getUserId() {
+      return getters => getters.userId
+    },
+  },
 
   getters: {
     isLoggedIn: state => !!state.user,
+    userId: state => state.user?.uid,
     userEmail: state => state.user?.email,
     userAvatar: state => state.user?.photoURL,
     userName: state => state.user?.displayName,
   },
 
   actions: {
-    async saveCustomer(customer) {
-      // Add a new document in collection "cities"
-      await setDoc(doc(db, 'customers', 'newCustomer'), {
-        ...JSON.parse(JSON.stringify(customer)),
-      })
-    },
-
     async addUserToUsersCollectionGgoogle(user) {
       console.log(user)
       // Adds a document in a firestore collection.
@@ -52,6 +53,9 @@ export const useAuthStore = defineStore('authentication', {
           created: true,
         }
       } catch ({ ...error }) {
+        console.log(error)
+        console.log({ ...error })
+
         return {
           created: false,
         }
