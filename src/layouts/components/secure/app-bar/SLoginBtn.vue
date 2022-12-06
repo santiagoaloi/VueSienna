@@ -11,8 +11,6 @@
 </template>
 
 <script setup>
-import { useAuthStore } from '@/stores/authenticationStore'
-
 let loading = $ref(false)
 let auth = useAuthStore()
 
