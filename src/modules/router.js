@@ -8,12 +8,26 @@ import NProgress from 'nprogress'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_PUBLIC_PATH),
-  routes: setupLayouts(generatedRoutes),
+  routes: [
+    ...setupLayouts(generatedRoutes),
+    { name: 'logout', path: '/logout' },
+  ],
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })
 
 router.beforeEach(async (to, from, next) => {
+  const isAuth = await getUserState()
+
+  const isLogout = to.matched.some(r => r.path === '/logout')
+
+  const atLoginAndAuthenticated = to.matched.some(
+    r => r.path === '/login' && isAuth
+  )
+
+  //Requires Authentication
+  const requiresAuth = to.matched.some(r => r.meta.requiresAuth)
+
   if (to.path !== from.path) {
     // Calling useAppStore inside guards
     // to avoid getting `pinia not being instanciated` error.
@@ -27,13 +41,14 @@ router.beforeEach(async (to, from, next) => {
     NProgress.start()
   }
 
-  const isAuth = await getUserState()
-
-  const atLoginAndAuthenticated = to.matched.some(
-    r => r.path === '/login' && isAuth
-  )
-
-  const requiresAuth = to.matched.some(r => r.meta.requiresAuth)
+  // If the route requires the user to be authenticated and it is not,
+  // route to the login page.
+  if (isLogout) {
+    const auth = useAuthStore()
+    await auth.logout()
+    next({ path: '/' })
+    return
+  }
 
   // If the route requires the user to be authenticated and it is not,
   // route to the login page.
@@ -61,7 +76,7 @@ router.onError(() => {
     store.isRouting = false
   }, 600)
 
-  console.log('Route not reachable.')
+  log('Route not reachable.')
 })
 
 router.afterEach((to, from, failure) => {
