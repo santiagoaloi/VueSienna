@@ -31,4 +31,5 @@ export const install = app => {
     defaults,
   })
   app.use(vuetify)
+  log('Vuetify initialized')
 }
