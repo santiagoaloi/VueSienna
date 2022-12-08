@@ -4,11 +4,12 @@
       <GAppBar />
       <router-view v-slot="{ Component }">
         <template v-if="Component">
-          <VFadeTransition mode="out-in">
+          <VFadeTransition>
             <component :is="Component" />
           </VFadeTransition>
         </template>
       </router-view>
+      <GSnackbar />
     </VApp>
   </AuthProvider>
 </template>

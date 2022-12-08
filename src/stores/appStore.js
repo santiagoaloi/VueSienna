@@ -3,8 +3,36 @@ export const useAppStore = defineStore('app', {
     drawer: true,
     isRouting: null,
     currentTheme: 'dark',
+    globalSnackbar: {
+      model: false,
+      text: '',
+      color: '',
+    },
   }),
   persist: true,
+
+  actions: {
+    snackbar(text, type) {
+      let color
+
+      switch (type) {
+        case 'error':
+          color = 'red'
+          break
+
+        default:
+          color = 'primary'
+
+          break
+      }
+
+      this.globalSnackbar = {
+        model: true,
+        text,
+        color,
+      }
+    },
+  },
 })
 
 if (import.meta.hot)
