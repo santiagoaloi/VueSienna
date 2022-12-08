@@ -1,4 +1,4 @@
-### Vue 3 + Vite + Vuetify 3 + Firebase 9
+# Vue 3 + Vite + Vuetify 3 + Firebase 9
 ***
 
 ### Github pages Preview
@@ -6,7 +6,7 @@
 
 🔗 [Live preview ](https://santiagoaloi.github.io/VueSienna/)
 
-## Features
+### Features
 ***
 
 - ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite 3](https://github.com/vitejs/vite) - born with fastness
@@ -25,7 +25,7 @@
 
 - 🔆 Dark / Light theme switch with persistance
 
-## CSS shortcuts
+### CSS shortcuts
 ***
 
 ```scss
@@ -40,7 +40,7 @@
 <VBtn class="buttonClass"> ... </VBtn>
 ```
 
-## Auto import plugins
+### Auto import plugins
 ***
 
  ```js
@@ -56,9 +56,6 @@ auth.onAuthStateChanged(async user => {
 const modules = import.meta.globEager('@M/*.js')
 export default app => Object.values(modules).map(m => m.install(app))
 ```
-
-### Plugin module example
-***
 
 ```js
 import { router } from '@M/routes'
@@ -108,7 +105,7 @@ export const install = app => {
   - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - Vue 3 `<script setup>` IDE support
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-## Project Setup
+### Project Setup
 ***
 
 ```sh
