@@ -48,7 +48,7 @@ export default use.defineConfig({
   },
 
   optimizeDeps: {
-    exclude: ['vuetify'],
+    exclude: ['vuetify', 'Yup'],
     entries: ['./src/**/*.vue'],
   },
 
