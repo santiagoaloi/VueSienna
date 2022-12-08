@@ -1,17 +1,15 @@
 <template>
   <VMain scrollable>
-    <VList bg-color="navigation-drawer">
-      <VListItem title="Account Balance" subtitle="$ 0"> </VListItem>
-    </VList>
+    <VAppBar class="bottom-border" color="transparent" height="72">
+      <VList bg-color="transparent">
+        <VListItem title="Account Balance" subtitle="$ 0" />
+      </VList>
+    </VAppBar>
 
     <router-view v-slot="{ Component }">
-      <template v-if="Component">
-        <VFadeTransition leave-absolute>
-          <keep-alive>
-            <component :is="Component" />
-          </keep-alive>
-        </VFadeTransition>
-      </template>
+      <keep-alive>
+        <component :is="Component" />
+      </keep-alive>
     </router-view>
   </VMain>
 </template>
