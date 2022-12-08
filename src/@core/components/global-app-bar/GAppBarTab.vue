@@ -6,7 +6,7 @@
     :value="'tab-' + tab.name"
     :to="tab.to"
   >
-    {{ tab.name }}
+    {{ tab.name.toUpperCase() }}
   </VTab>
 </template>
 <script setup>
@@ -17,7 +17,7 @@ const tabs = computed(() => {
 
   const tabs = [
     { name: 'Skriptag', to: '/', disabled: true },
-    { name: 'playground', to: '/playground', disabled: false },
+    { name: 'Playground', to: '/playground', disabled: false },
     { name: loginName, to: '/login', disabled: false },
   ]
 
