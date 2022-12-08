@@ -6,12 +6,6 @@ export const useAuthStore = defineStore('authentication', {
     profile: null,
   }),
 
-  actions: {
-    getUserId() {
-      return getters => getters.userId
-    },
-  },
-
   getters: {
     isLoggedIn: state => !!state.user,
     userId: state => state.user?.uid,
@@ -53,7 +47,6 @@ export const useAuthStore = defineStore('authentication', {
           created: true,
         }
       } catch ({ ...error }) {
-        console.log(error)
         console.log({ ...error })
 
         return {
