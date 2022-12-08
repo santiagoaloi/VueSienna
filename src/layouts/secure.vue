@@ -1,5 +1,5 @@
 <template>
-  <section id="SecureLayout" v-show="auth.profile">
+  <section id="SecureLayout" v-if="auth.profile">
     <SDrawer />
     <SAppView />
   </section>
