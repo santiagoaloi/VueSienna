@@ -1,7 +1,5 @@
 # Vue 3 + Vite + Vuetify 3 + Firebase 9
 
-## Preview
-
 🔗 [Live preview ](https://santiagoaloi.github.io/VueSienna/)
 
 ### Features
