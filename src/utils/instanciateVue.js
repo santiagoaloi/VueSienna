@@ -19,6 +19,7 @@ async function mount() {
   autoImportModules(appMounted)
 
   appMounted.mount('#app')
+  log('Vue initialized')
 }
 
 export const Vue = user => {
