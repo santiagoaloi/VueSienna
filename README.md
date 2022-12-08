@@ -1,5 +1,4 @@
 # Vue 3 + Vite + Vuetify 3 + Firebase 9
-***
 
 ### Github pages Preview
 ***
