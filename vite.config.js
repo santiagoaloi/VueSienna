@@ -99,6 +99,14 @@ export default use.defineConfig({
           // Vuetify
           vuetify: ['useDisplay', 'createVuetify'],
 
+          yup: [
+            // field validations
+            ['*', 'Yup'], // import { * as yup } from 'yup',
+          ],
+
+          //Facilitates dealing with validation form schemas
+          'vuetify/components': ['VTextField', 'VTextarea'],
+
           // 🔥 VueFire
           'vuefire  ': [
             'useDocument',
@@ -109,7 +117,7 @@ export default use.defineConfig({
 
           // 🔥 Firebase
           'firebase/firestore': [
-            'query',
+            'updateDoc',
             'doc',
             'getDoc',
             'setDoc',
