@@ -17,7 +17,7 @@ h6,
 .text-body-2,
 .text-subtitle-1,
 .text-subtitle-2 {
-  color: rgba(var(--v-app-typography))!important;
+  color: rgba(var(--v-app-typography)) !important;
 }
 
 html,
@@ -26,7 +26,7 @@ html,
   user-select: none;
 }
 
-.v-main--scrollable>.v-main__scroller {
+.v-main--scrollable > .v-main__scroller {
   overflow-y: overlay;
   overflow-x: hidden !important;
 }
@@ -44,8 +44,6 @@ html,
   --v-input-control-height: 25px !important;
 }
 
-.app-bar-border {
+.bottom-border {
   outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
 }
-
- 
