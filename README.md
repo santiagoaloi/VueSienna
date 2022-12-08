@@ -1,6 +1,5 @@
-<h1>Vue 3 + Vite + Vuetify 3 + Firebase 9</h1>
+### Github pages Preview Vue 3 + Vite + Vuetify 3 + Firebase 9
 ***
-</div>
 
 ### Github pages Preview
 
