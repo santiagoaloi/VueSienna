@@ -1,0 +1,1 @@
+import{_ as r}from"./index.c1df4990.js";import{j as o}from"./vuetify.0ecd34a8.js";import{Q as e,R as a,S as n,U as s}from"./vue.4c54b776.js";const c={};function _(t,i){return e(),a(o,{border:"",color:"primary-button",class:"text-capitalize px-2 font-weight-regular"},{default:n(()=>[s(t.$slots,"default")]),_:3})}const m=r(c,[["render",_]]);export{m as _};
