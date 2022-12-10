@@ -1,0 +1,49 @@
+/* 👉 Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-h1,
+.text-h2,
+.text-h3,
+.text-h4,
+.text-h5,
+.text-h6,
+.text-button,
+.text-overline,
+.text-body-1,
+.text-body-2,
+.text-subtitle-1,
+.text-subtitle-2 {
+  color: rgba(var(--v-app-typography)) !important;
+}
+
+html,
+#app .v-aplication {
+  overflow-y: auto !important;
+  user-select: none;
+}
+
+.v-main--scrollable > .v-main__scroller {
+  overflow-y: overlay;
+  overflow-x: hidden !important;
+}
+
+.v-application__wrap {
+  background-color: rgba(var(--v-app-background));
+}
+
+.autocomplete-list-bg-color .v-list {
+  background: #2e363e !important;
+  padding: 0;
+}
+
+.v-input--density-compact {
+  --v-input-control-height: 25px !important;
+}
+
+.bottom-border {
+  outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+}
