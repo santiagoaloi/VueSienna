@@ -1,6 +1,6 @@
 <template>
   <HomeLanding>
-    <SkriptagGithub />
+    <SkriptagGithub> v1.0.2 </SkriptagGithub>
     <SkriptagTitle glow large class="mb-2" />
     <GradientTitle v-html="`Make the best app you've ever made.`" />
     <HomeSubtitle>
