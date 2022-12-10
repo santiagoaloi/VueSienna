@@ -25,6 +25,7 @@ async function mount() {
 export const Vue = user => {
   if (!appMounted) mount()
 
+  // Firebase Auth related.
   useAuthStore().user = user
   useAuthStore().profile = null
 }

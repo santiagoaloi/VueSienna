@@ -1,3 +1,7 @@
+/*
+ * Firebase authentication related logic.
+ */
+
 import NProgress from 'nprogress'
 
 export const useAuthStore = defineStore('authentication', {

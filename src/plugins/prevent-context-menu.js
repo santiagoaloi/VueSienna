@@ -1,3 +1,4 @@
+// Prevents right clicks.
 document.addEventListener(
   'contextmenu',
   e => {

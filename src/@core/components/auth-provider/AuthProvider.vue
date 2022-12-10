@@ -5,6 +5,9 @@
 <script setup>
 let auth = useAuthStore()
 
+// If the user is logged-in, this watcher will create
+// a real-time snapshot of the user profile document.
+// otherwise the listener will be killed (if ever started).
 watch(
   () => auth.isLoggedIn,
   isLoggedIn => {

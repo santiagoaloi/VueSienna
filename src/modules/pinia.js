@@ -1,4 +1,6 @@
 import { router } from '@/modules/router'
+
+//github.com/prazdevs/pinia-plugin-persistedstate
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 export const install = app => {
@@ -10,6 +12,8 @@ export const install = app => {
   })
 
   app.use(pinia)
+
   pinia.use(piniaPluginPersistedstate)
+
   log('Pinia initialized')
 }

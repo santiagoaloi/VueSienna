@@ -1,3 +1,7 @@
+/*
+ * General application related logic.
+ */
+
 export const useAppStore = defineStore('app', {
   state: () => ({
     drawer: true,

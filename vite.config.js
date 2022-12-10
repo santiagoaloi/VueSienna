@@ -1,7 +1,17 @@
+/*
+ * Keeping inports separately to clean Vite config.
+ * Any library usage should be prefixed with `use.`
+ */
+
 import * as use from './vite.config.inports.js'
 
 // https://vitejs.dev/config/
 export default use.defineConfig({
+  /*
+   * Resolvers provide path shortcuts,
+   * autocomplete is configured in jsconfig.json
+   */
+
   resolve: {
     alias: [
       { find: '@', replacement: use.resolve(__dirname, './src') },
@@ -29,6 +39,12 @@ export default use.defineConfig({
     rollupOptions: {
       output: {
         compact: true,
+
+        /*
+         * Segregating chunks increases bundle size slightly
+         * but its very clear what's being downloaded.
+         */
+
         manualChunks: {
           //Vue
           vue: ['vue-router', 'vue', 'pinia'],
@@ -48,7 +64,7 @@ export default use.defineConfig({
   },
 
   optimizeDeps: {
-    exclude: ['vuetify', 'Yup'],
+    exclude: ['vuetify'],
     entries: ['./src/**/*.vue'],
   },
 
@@ -68,6 +84,11 @@ export default use.defineConfig({
 
   plugins: [
     use.vue({
+      /*
+       * reactivityTransform is in beta stage.
+       * Use with caution.
+       */
+
       reactivityTransform: true,
     }),
 
@@ -208,6 +229,7 @@ export default use.defineConfig({
 
       // Metadata injection is done 👉 @/utils/autoGenerateRoutes.js.
       onRoutesGenerated: use.injectMetadata,
+
       importMode(filepath, options) {
         for (const page of options.dirs) {
           if (

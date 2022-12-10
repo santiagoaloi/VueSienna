@@ -1,3 +1,7 @@
+/*
+ * User profile related logic.
+ */
+
 export const useAccountStore = defineStore('account', {
   actions: {
     async updateProfile(payload) {
