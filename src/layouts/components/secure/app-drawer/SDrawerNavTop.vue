@@ -8,7 +8,6 @@
   </VList>
 </template>
 <script setup>
-import { capitalize } from '@U/methods'
 let auth = useAuthStore()
 
 const fullName = computed(() => {
