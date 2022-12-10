@@ -1,4 +1,5 @@
 export default {
+  // Native Vuetify Components
   VToolbar: {
     VBtn: { variant: 'elevated' },
   },
@@ -35,5 +36,25 @@ export default {
     border: 'start',
     borderColor: 'purple-accent-4',
     elevation: true,
+  },
+
+  // Custom Component Aliases
+  ThemeSwitch: {
+    color: '#6B6975',
+    ripple: false,
+    hideDetails: true,
+    inset: true,
+    trueIcon: '$mdiMoonWaxingCrescent',
+    falseIcon: '$mdiWhiteBalanceSunny',
+    trueValue: 'dark',
+    falseValue: 'light',
+  },
+
+  SkriptagGithub: {
+    color: 'primary',
+    textColor: 'white',
+    border: true,
+    href: 'https://github.com/santiagoaloi/VueSienna',
+    prependIcon: '$mdiGithub',
   },
 }
