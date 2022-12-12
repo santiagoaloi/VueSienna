@@ -1,6 +1,6 @@
 <template>
   <div class="pa-2">
-    <v-btn to="/logout" color="logout-btn" block> Logout </v-btn>
+    <v-btn to="/logout" color="primary-button" block> Logout </v-btn>
     <div class="text-center">
       <small> Last login </small>
       <small> {{ lastLogin }} </small>
