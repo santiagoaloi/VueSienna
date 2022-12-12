@@ -60,7 +60,7 @@ router.beforeEach(async (to, from, next) => {
   // If the user navigates to the login page and it's already authenticated,
   // route to the profile page instead.
   if (atLoginAndAuthenticated) {
-    next({ path: '/account/overview' })
+    next({ path: '/account/publicprofile' })
     return
   }
 
