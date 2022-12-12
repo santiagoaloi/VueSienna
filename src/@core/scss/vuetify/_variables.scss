@@ -1,13 +1,16 @@
 $defaultFont: 'Product Sans', sans-serif;
 
+
+// 👉 Card transition properties
+$card-transition-property-custom: box-shadow, opacity;
+
 @forward 'vuetify/settings' with (
     
 // Tabs
 $tab-slider-size: 6px,
 
 // Text fields
-$field-control-solo-elevation: 0,
- 
+
 // Buttons
 $button-disabled-opacity: 0.5,
 $button-disabled-overlay: 0.1,
@@ -17,4 +20,12 @@ $button-text-transform: false,
 $body-font-family: $defaultFont,
 $heading-font-family: $defaultFont,
 
+
+// Fields
+$field-input-opacity: .1,
+$field-outline-opacity: .1,
+$field-transition-timing: 0s,
+$field-subtle-transition-timing: 0ms,
+$field-focused-border-width: 3px,
+$field-control-solo-elevation: 0,
 );
