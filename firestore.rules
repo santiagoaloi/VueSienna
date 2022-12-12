@@ -2,7 +2,6 @@ rules_version = '2';
 service cloud.firestore {
 match /databases/{database}/documents {
 
-
   // Roots can do anything.
   // Checking for root means one document read per rule check.
   match /{document=**} {
