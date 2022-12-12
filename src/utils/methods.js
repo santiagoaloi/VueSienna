@@ -1,6 +1,6 @@
 import cloneDeep from 'lodash.clonedeep'
 
-export function useDebouncedRef(value, delay = 200) {
+function useDebouncedRef(value, delay = 200) {
   let timeout
   return customRef((track, trigger) => {
     return {
@@ -19,13 +19,13 @@ export function useDebouncedRef(value, delay = 200) {
   })
 }
 
-export function isObject(obj) {
+function isObject(obj) {
   return obj !== null && typeof obj === 'object' && !Array.isArray(obj)
 }
 
-export function capitalize(str) {
+function capitalize(str) {
   if (!str) return
   return str[0].toUpperCase() + str.slice(1)
 }
 
-export { cloneDeep }
+export { cloneDeep, isObject, capitalize, useDebouncedRef }
