@@ -47,3 +47,8 @@ html,
 .bottom-border {
   outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
 }
+
+/* Avoid field outline showing up on hover */
+.v-field:hover .v-field__outline:not(.text-field-outline-focus) {
+  --v-field-border-opacity: unset;
+}
