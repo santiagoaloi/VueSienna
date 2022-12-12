@@ -1,5 +1,10 @@
 export default {
   // Native Vuetify Components
+
+  VCard: {
+    border: true,
+    flat: true,
+  },
   VToolbar: {
     VBtn: { variant: 'elevated' },
   },
@@ -10,16 +15,20 @@ export default {
     color: 'appbar-background',
   },
   VTextField: {
-    variant: 'solo',
     hideDetails: 'auto',
     density: 'comfortable',
+    variant: 'outlined',
+    color: 'field-outline-focus',
     bgColor: 'text-field-background',
+    hideDetails: 'auto',
   },
   VTextarea: {
-    variant: 'solo',
     hideDetails: 'auto',
     density: 'comfortable',
+    variant: 'outlined',
+    color: 'field-outline-focus',
     bgColor: 'text-field-background',
+    hideDetails: 'auto',
     rows: 3,
   },
   VAutocomplete: {
