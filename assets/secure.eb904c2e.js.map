@@ -1,0 +1,1 @@
+{"version":3,"file":"secure.eb904c2e.js","sources":["../../src/layouts/secure.vue"],"sourcesContent":["<template>\n  <section id=\"SecureLayout\" v-if=\"auth.profile\">\n    <SDrawer />\n    <SAppView />\n  </section>\n</template>\n\n<script setup>\nconst auth = useAuthStore()\n</script>\n"],"names":["auth","useAuthStore"],"mappings":"i3BAQA,MAAAA,EAAAC,EAAA"}
