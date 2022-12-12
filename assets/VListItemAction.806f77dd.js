@@ -1,0 +1,1 @@
+import{d as s}from"./index.4d4089e3.js";import{d as a,u as i}from"./vuetify.963a462a.js";import{L as n}from"./vue.05eca872.js";const d=a({name:"VListItemAction",props:{start:Boolean,end:Boolean,...s()},setup(t,e){let{slots:o}=e;return i(()=>n(t.tag,{class:["v-list-item-action",{"v-list-item-action--start":t.start,"v-list-item-action--end":t.end}]},o)),{}}});export{d as V};
