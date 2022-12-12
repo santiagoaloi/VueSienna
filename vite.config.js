@@ -3,6 +3,17 @@
  * Any library usage should be prefixed with `use.`
  */
 
+import { dependencies } from './package.json'
+
+function renderChunks(deps) {
+  let chunks = {}
+  Object.keys(deps).forEach(key => {
+    if (['firebase', '@firebase'].includes(key)) return
+    chunks[key] = [key]
+  })
+  return chunks
+}
+
 import * as use from './vite.config.inports.js'
 
 // https://vitejs.dev/config/
@@ -41,18 +52,14 @@ export default use.defineConfig({
         compact: true,
 
         /*
-         * Segregating chunks increases bundle size slightly
+         * Segregating chunks slightly increases bundle size
          * but its very clear what's being downloaded.
          */
 
         manualChunks: {
-          //Vue
-          vue: ['vue-router', 'vue', 'pinia'],
+          ...renderChunks(dependencies),
 
-          //Vuetify
-          vuetify: ['vuetify', 'vuetify/components', 'vuetify/directives'],
-
-          // 🔥 Firebase
+          // 🔥 Firebase chunks
           'firebase-app': ['firebase/app'],
           'firebase-auth': ['firebase/auth'],
           'firebase-storage': ['firebase/storage'],
@@ -128,15 +135,15 @@ export default use.defineConfig({
           //Facilitates dealing with validation form schemas
           'vuetify/components': ['VTextField', 'VTextarea'],
 
-          // 🔥 VueFire
-          'vuefire  ': [
-            'useDocument',
-            'useCollection',
-            'getCurrentUser',
-            'usePendingPromises',
-          ],
+          // // 🔥 VueFire
+          // 'vuefire  ': [
+          //   'useDocument',
+          //   'useCollection',
+          //   'getCurrentUser',
+          //   'usePendingPromises',
+          // ],
 
-          // 🔥 Firebase
+          // 🔥 Firebase auto-imports
           'firebase/firestore': [
             'updateDoc',
             'doc',
@@ -149,12 +156,7 @@ export default use.defineConfig({
           '@/firebase': ['auth', 'db', 'functions', 'getUserState'],
         },
       ],
-      dirs: [
-        'src/utils/**',
-        'src/stores/*',
-        'src/presets/**',
-        'src/composables/*',
-      ],
+      dirs: ['src/utils/**', 'src/stores/**', 'src/presets/**'],
       vueTemplate: true,
       dts: true,
     }),
