@@ -20,7 +20,6 @@ export const useAuthStore = defineStore('authentication', {
 
   actions: {
     async addUserToUsersCollectionGgoogle(user) {
-      console.log(user)
       // Adds a document in a firestore collection.
       // doc (Firestore instance, collection name, collection id).
       const userDocRef = doc(db, 'users', user.uid)
@@ -88,7 +87,7 @@ export const useAuthStore = defineStore('authentication', {
         }
 
         //Set user data to state management.
-        await this.router.push('/account/overview')
+        await this.router.push('/account/publicprofile')
         ctx.loading = false
       } catch ({ ...error }) {
         NProgress.done()
