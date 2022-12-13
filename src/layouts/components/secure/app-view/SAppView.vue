@@ -1,6 +1,8 @@
 <template>
   <VMain scrollable>
     <VAppBar class="bottom-border" color="transparent" height="72">
+      <SProfileDetails />
+
       <VList bg-color="transparent">
         <VListItem title="Account Balance" subtitle="$ 0" />
       </VList>

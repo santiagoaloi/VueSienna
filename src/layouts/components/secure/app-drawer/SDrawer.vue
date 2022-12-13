@@ -1,11 +1,6 @@
 <template>
-  <VNavigationDrawer v-model="app.drawer">
-    <template v-slot:prepend>
-      <SDrawerNavTop class="bottom-border" />
-    </template>
-
+  <VNavigationDrawer order="1" width="260" v-model="app.drawer">
     <SDrawerNav />
-
     <template v-slot:append>
       <SDrawerNavBottom />
     </template>
