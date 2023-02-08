@@ -1,9 +1,13 @@
-# Vue 3 + Vite + Vuetify 3 + Firebase 9
+![image](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
+![image](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![image](https://img.shields.io/badge/Vuetify-1867C0?style=for-the-badge&logo=vuetify&logoColor=white)
+![image](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
 
 🔗 [Live preview ](https://santiagoaloi.github.io/VueSienna/)
 
 ### Features
-***
+
+---
 
 - ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite 3](https://github.com/vitejs/vite) - born with fastness
 - 🗂 [File based routing](./src/pages)
@@ -22,7 +26,8 @@
 - 🔆 Dark / Light theme switch with persistance
 
 ### CSS shortcuts
-***
+
+---
 
 ```scss
 @use 'vuetify';
@@ -37,9 +42,10 @@
 ```
 
 ### Auto import plugins
-***
 
- ```js
+---
+
+```js
 import { Vue } from '@U/instanciateVue'
 
 // Init Vue and set new user on auth changes.
@@ -68,20 +74,22 @@ export const install = app => {
 }
 ```
 
- 
 ### Frameworks
-***
+
+---
 
 - [Vue 3](https://vuejs.org/) - Progressive JavaScript Framework
 - [Vuetify 3](https://next.vuetifyjs.com/en/) - Material Design Framework
 
 ## Recommended IDE Setup
-***
+
+---
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 
 ### Plugins
-***
+
+---
 
 - [Vue Macros](https://github.com/sxzz/unplugin-vue-macros)
 - [Vue Router](https://github.com/vuejs/router)
@@ -92,7 +100,8 @@ export const install = app => {
 - [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing
 
 ### Coding Style
-***
+
+---
 
 - Use Composition API with [`<script setup>` SFC syntax](https://github.com/vuejs/rfcs/pull/227)
 
@@ -102,7 +111,8 @@ export const install = app => {
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ### Project Setup
-***
+
+---
 
 ```sh
 Yarn install
