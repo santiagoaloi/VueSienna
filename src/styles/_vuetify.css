@@ -44,10 +44,6 @@ html,
   --v-input-control-height: 25px !important;
 }
 
-.bottom-border {
-  outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
-}
-
 .right-border {
   border-right: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
 }
