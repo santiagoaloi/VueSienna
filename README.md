@@ -115,7 +115,7 @@ export const install = app => {
 ---
 
 ```sh
-Yarn install
+yarn install
 ```
 
 ### Compile and Hot-Reload for Development
