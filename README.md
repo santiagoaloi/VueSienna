@@ -3,7 +3,7 @@
 ![image](https://img.shields.io/badge/Vuetify-1867C0?style=for-the-badge&logo=vuetify&logoColor=white)
 ![image](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
 
-🔗 [Live preview ](https://santiagoaloi.github.io/VueSienna/)
+🔗 [Live preview ](vue-sienna-hanm.vercel.app/)
 
 ### Features
 
